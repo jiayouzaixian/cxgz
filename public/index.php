@@ -18,10 +18,18 @@ define('APP_PATH', __DIR__ . '/../application/');
 $base_path = $_SERVER['SERVER_NAME'];
 
 if(strstr($base_path, 'localhost')){
-	$base_path = 'http://localhost/www.guizhou.xin/public/';
+	$base_path = 'http://localhost/cxgz/public/';
 }
 
 define('STATIC_SOURCE_PATH',  $base_path.'static/');
+
+//定义后台css,js目录
+define('APP_ADMIN_BOOTSTRAP',  $base_path.'template/');
+
+//定义图片路径
+define('APP_IMAGE_PATH',  'http://img2.t.jiayou9.com/');
+
+define('SITE_BASE_PATH',  $base_path);
 
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';

@@ -1,0 +1,142 @@
+<header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini">诚信贵州企业后台</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">诚信贵州企业后台</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">切换导航</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="messages-menu">
+            <a href="{:url('@user/logout')}" class="">
+              登出
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown messages-menu">
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+<!--      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{$Think.APP_ADMIN_BOOTSTRAP}dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>家有在线-</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+        </div>
+      </div> -->
+      <!-- search form -->
+      <!--
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      -->
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+       <!-- <li class="header">导航</li> -->
+
+        <!-- 控制台 -->
+        <!--
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>控制台</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
+        -->
+
+        <!-- 商品管理 -->
+        {php} 
+          if(!empty($_REQUEST['s'])){
+            $request = $_REQUEST['s'];           
+          }else{
+            $request = '';
+          }
+        {/php}
+        <li class="treeview {php} if(strpos($request, 'goods')){echo 'active';} {/php} ">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>商品管理</span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@goods/add')}"><i class="fa fa-circle-o"></i>添加商品</a></li>
+            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@goods/list')}"><i class="fa fa-circle-o"></i>商品列表</a></li>
+            <li><a href="/admin/category/index"><i class="fa fa-circle-o"></i>商品分类</a></li>
+            <li><a href="/admin/brand/index"><i class="fa fa-circle-o"></i>商品品牌</a></li>
+          </ul>
+        </li>
+        
+        <!-- 订单管理 -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>订单管理</span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/order/index.html"><i class="fa fa-circle-o"></i>订单列表</a></li>
+          </ul>  
+        </li>
+
+
+        <!-- 会员管理 -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>会员管理</span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/users/index.html"><i class="fa fa-circle-o"></i>会员列表</a></li>
+          </ul>  
+        </li>
+
+
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>首页管理</span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/index/lists?type=1"><i class="fa fa-circle-o"></i>轮播管理</a></li>
+            <li><a href="/admin/index/lists?type=2"><i class="fa fa-circle-o"></i>分类管理</a></li>
+            <li><a href="/admin/index/lists?type=3"><i class="fa fa-circle-o"></i>频道管理</a></li>
+          </ul>  
+        </li>
+
+
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

@@ -28,5 +28,9 @@ Route::get('/', 					'index/index');
 //品牌
 Route::get('brand', 			'index/brand/list');
 
+//诚信贵州后台
+include_once('route_admin.php');
 
+//企业后台
+include_once('route_company.php');
 

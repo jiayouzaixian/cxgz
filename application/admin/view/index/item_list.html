@@ -1,0 +1,179 @@
+{include file="public/header" /}
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    {include file="public/menu" /}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+         {$index.title}
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+        <li><a href="#">首页</a></li>
+        <li class="active">{$index.title}</li>
+      </ol>
+    </section>
+    <div>
+    <!-- <select class="form-control">
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+        <option>option 4</option>
+        <option>option 5</option>
+    </select> -->
+    </div>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>id</th>
+                  <th>商品名称</th>
+                  <th>商品编号</th>
+                  <th>商品售价</th>
+                  <th>排序</th>
+                  <th>操作</th>
+                </tr>
+                </thead>
+                   {notempty name="result"}
+                   {foreach name="result" item="index_item" key="k" }
+                     <tbody>
+                      <tr index_item_id='{$index_item.id}'>
+                        <td>{$index_item.id}</td>
+                        <td>{$index_item.goods_name}</td>
+                        <td>{$index_item.goods_sn} </td>
+                        <td>{$index_item.sale_price}</td>
+                        <td>{$index_item.sort}</td>
+                        <td>
+                           <a href="javascript:;" class="fa fa-fw fa-remove"></a>
+                        </td>
+                      </tr>
+                     </tfoot>
+                    {/foreach}
+                    {/notempty}
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+    {include file="public/footer" /}
+
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+  /*$(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+
+    $('.fa-remove').click(function(){
+        var id = $(this).parents('tr').attr('index_item_id');
+        var url   = '/admin/index/item_remove';
+        var data  = {'id':id};
+        var res = getAjax(url,data,'post');
+        if(res.code == 0){
+             window.location.href=window.location.href;
+        }
+    })
+ 
+
+    /* ajax函数 */
+    /*function getAjax(url,data,method)
+    {   
+         var result = '';
+         $.ajax({
+            type: method,
+            url: url,
+            data: data,
+            cache: false,
+            async : false,
+            dataType: "json",
+            success: function (res)
+            {
+                if(res.code != 0){
+                    alert(res.message);
+                }else{
+                    result = res;
+                }
+            },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {      
+                alert("请求失败！");
+            }
+        });
+
+        return result;
+    }
+
+ });*/
+    var table;
+
+    //        翻页，排序，搜索
+    $(function () {
+        table = $('#example1').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": true,
+            "info": false,
+            "autoWidth": false,
+        });
+
+    });
+
+    function city(city){
+        table.column( 1 ).search( city ).draw();
+
+    }
+
+    function state(state){
+        table.column( 3 ).search( state ).draw();
+    }
+
+
+ 
+
+</script>
+</body>
+</html>
