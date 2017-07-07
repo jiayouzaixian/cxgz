@@ -1,0 +1,121 @@
+{include file="public/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="public/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+         添加商品
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="#">商品</a></li>
+          <li class="active" >添加</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+            <form action='{:url("/goods/form_submit")}'  method="post" class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="goods_name" class="">商品名称</label>
+                  <input type="text" name="goods_name" class="form-control" id="goods_name" placeholder="商品名称">
+                </div>
+                <div class="form-group">
+                  <label for="goods_sn" class="">商品货号</label>
+                  <input type="text" class="form-control" id="goods_sn" name="goods_sn" placeholder="">
+                </div>
+                
+                <div class="form-group">
+                  <label for="goods_number" class="">商品库存</label>
+                  <input type="text" class="form-control" id="goods_number" name="goods_number" placeholder="0">
+                </div>
+ 
+                <div class="form-group">
+                  <label for="cat_id" class="">商品分类</label>
+                  <select class="form-control" type="cat_id" id="cat_id" name="cat_id">
+                    <option value="0">选择分类</option>
+                    {foreach name="categorys" item="cat" key="k" }
+                       <option value="{$cat.cat_id}" {notempty name="result"} {if $cat.cat_id eq $result.cat_id}selected="selected"{/if} {/notempty}>
+                            {for start="0" end="$cat.level"}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                            {/for}
+                           {$cat.cat_name}
+                       </option>
+                    {/foreach}
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="brand" class="">商品品牌</label>
+                  <select class="form-control" type="brand_id" id="brand_id" name="brand_id">
+                         <option value="0">选择品牌</option>
+                        {foreach name="brands" item="brand" key="k" }
+                         <option value="{$brand.brand_id}" {notempty name="result"} {if $brand.brand_id eq $result.brand_id}selected="selected"{/if} {/notempty}>
+                             {$brand.brand_name}
+                         </option>
+                        {/foreach}
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="sale_price" class="">销售价</label>
+                  <input type="text" class="form-control" id="shop_price" name="sale_price" placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                  <label for="market_price" class="">市场价</label>
+                  <input type="text" class="form-control" id="shop_price" name="market_price" placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                  <label for="keywords" class="">关键词</label>
+                  <input type="text" class="form-control" id="keywords" name="keywords" placeholder="keywords">
+                </div>
+
+                <div class="form-group">
+                  <label for="goods_desc" class="">简短介绍</label>
+                  <textarea class="form-control" name="goods_desc" rows="5" cols="60" ></textarea>
+                </div>
+ 
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="goods_id" {notempty name="result"} value="{$result.goods_id}" {/notempty}>
+                <input type="hidden" name="op" value="add" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="public/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+</body>
+</html>
