@@ -1,0 +1,143 @@
+#home-top {
+  width: 100%;
+  height: 34px;
+  background: #f1f1f1;
+  font-size: 12px;
+  color: #666;
+  line-height: 34px;
+}
+#home-top div {
+  width: 1200px;
+  height: 34px;
+  margin: 0 auto;
+}
+#home-top div .left {
+  float: left;
+}
+#home-top div .left span {
+  color: #d42f1b;
+  margin-left: 12px;
+}
+#home-top div .right {
+  float: right;
+}
+#home-top div .right .rightLi {
+  float: left;
+  margin: 0 20px;
+  line-height: 34px;
+  position: relative;
+}
+#home-top div .right .rightLi p .up-icon,
+#home-top div .right .rightLi p .down-icon {
+  position: relative;
+  color: #999;
+}
+#home-top div .right .rightLi p i {
+  margin: 0 5px;
+}
+#home-top div .right .rightLi .secleck {
+  display: none;
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 11;
+}
+#home-header {
+  width: 100%;
+}
+#home-header .header {
+  height: 102px;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home-header .header h1 {
+  margin: 0;
+  width: 208px;
+  height: 68px;
+}
+#home-header .header h1 img {
+  width: 100%;
+}
+#home-header .header form .input {
+  position: relative;
+}
+#home-header .header form .input input {
+  width: 500px;
+  height: 37px;
+  float: left;
+  border: 1px #95c357 solid;
+  border-right: none;
+  font-size: 15px;
+  padding: 0 10px;
+  border-radius: 5px 0 0 5px;
+}
+#home-header .header form .input button {
+  float: left;
+  width: 93px;
+  height: 39px;
+  outline: none;
+  background: #95c357;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 0 5px 5px 0;
+}
+#home-header .header form .input .xiala {
+  width: 520px;
+  background: #fff;
+  position: absolute;
+  top: 39px;
+  border-radius: 5px;
+  display: none;
+  z-index: 10;
+}
+#home-header .header form .input .xiala li {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #eee;
+  padding: 0 24px;
+  border-top: none;
+}
+#home-header .header form .sousuo ul li {
+  padding: 3px 0;
+  float: left;
+  margin: 0 10px;
+  color: #D42F1B;
+  font-size: 12px;
+}
+#home-header .header form .sousuo ul .noClor {
+  color: #666;
+}
+#home-header .header form .sousuo ul li:hover {
+  text-decoration: underline;
+  color: #D42F1B;
+}
+#home-header .header .shop {
+  position: relative;
+  font-size: 12px;
+  top: -10px;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+#home-header .header .shop i {
+  margin: 0 8px;
+}
+#home-header .header .shop span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  right: -10px;
+  top: -5px;
+  background: #d12f18;
+  color: #fff;
+}

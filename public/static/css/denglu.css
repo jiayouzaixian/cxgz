@@ -1,0 +1,128 @@
+#denglu-header {
+  width: 990px;
+  margin: 0 auto;
+  height: 100px;
+  line-height: 100px;
+}
+#dengli-banner {
+  width: 100%;
+  background: url(../img/denglubg.png);
+  overflow: hidden;
+}
+#dengli-banner .banner {
+  width: 990px;
+  min-height: 475px;
+  margin: 0 auto;
+  position: relative;
+  top: 100%;
+}
+#dengli-banner .banner img {
+  float: left;
+}
+#dengli-banner .banner .dengluMessage {
+  float: right;
+}
+#dengli-banner .banner .dengluMessage .message {
+  width: 346px;
+  height: 360px;
+  background: #fff;
+  margin-top: 60px;
+}
+#dengli-banner .banner .dengluMessage .message .message-option {
+  height: 54px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+#dengli-banner .banner .dengluMessage .message .message-option span {
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+  height: 26px;
+  font-size: 18px;
+  margin-top: 15px;
+}
+#dengli-banner .banner .dengluMessage .message .message-option .zhanghao {
+  border-left: 1px solid #ccc;
+  color: #e5383a;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd {
+  padding: 0 20px;
+  margin-top: 30px;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd p {
+  line-height: 60px;
+  height: 60px;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd p input[type="text"],
+#dengli-banner .banner .dengluMessage .message .message-pswd p input[type="password"] {
+  height: 40px;
+  width: 250px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  float: left;
+  padding-left: 8px;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd p span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  float: left;
+  border-right: 0;
+  background: #eee;
+  line-height: 40px;
+  text-align: center;
+  font-size: 24px;
+  color: #ccc;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd .automatic {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+}
+#dengli-banner .banner .dengluMessage .message .message-pswd .automatic .checked {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+#dengli-banner .banner .dengluMessage .message .message-btn {
+  padding: 0 20px;
+  margin-top: 30px;
+}
+#dengli-banner .banner .dengluMessage .message .message-btn button {
+  width: 100%;
+  height: 40px;
+  background: #e43a3d;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 15px;
+  margin-bottom: 15px;
+}
+#dengli-banner .banner .dengluMessage .message .message-btn .fast {
+  color: #e43a3d;
+  display: inline-block;
+  margin-left: 20px;
+}
+#denglu-footer {
+  width: 990px;
+  margin: 0 auto;
+}
+#denglu-footer .footerUl {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+#denglu-footer .footerUl ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#denglu-footer .footerUl ul li a {
+  border-right: 2px solid #999;
+  padding: 0 8px;
+}
+#denglu-footer .footerUl ul li:last-of-type a {
+  border: 0;
+}

@@ -1,0 +1,459 @@
+//个人中心的主体部分
+#vue-main{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding-bottom: 30px;
+    .vue-left{
+        width: 120px;
+        border: 1px solid #ccc;
+        padding-bottom: 20px;
+        float: left;
+        ul{
+            li{
+                border-bottom: 1px solid #ccc;
+                line-height: 30px;
+                font-size: 12px;
+                p{
+                    padding-left: 14px;
+                    
+                }
+                .left-li-one{
+                    font-size: 16px;
+                }
+                p:hover{
+                    color: #95c357;
+                }
+                .left-li-one:hover{
+                    color: #333;
+                    cursor: default;
+                }
+            }
+            li:last-of-type{
+                border-bottom: 0;
+            }
+        }
+    }
+    .vue-right{
+        width: 1062px;
+        min-height: 700px;
+        float: right;
+        .vue-right-ul{
+            .vue-right-ul-li{
+                width: 1060px;
+                min-height: 600px;
+//              border: 2px solid;
+            }
+            .right-floor{
+                display: none;
+            }
+            
+// ==========================个人中心的信息头像这里
+            .right-home{
+//              display: none;
+                .right-vuer{
+                    width: 1060px;
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                    ul{
+                        li:nth-of-type(odd){
+                            width: 696px;
+                            border-right: 1px solid #ccc;
+                            float: left;
+                        }
+                        .right-vuer-top{
+                            height: 138px;
+                            background: #f4f8fb;
+                            
+                        }
+                        .right-vuer-btm{
+                            height: 45px;
+                            border-top: 1px solid #ccc;
+                            background: #fff;
+                        }
+                        li:nth-of-type(even){
+                            width: 361px;
+                            float: right;
+                        }
+                        .right-vuer-top-one{
+                            .vuer-name{
+                                height: 100%;
+                                width: 50%;
+                                float: left;
+                                line-height: 138px;
+                                .head-portrait{
+                                    display: inline-block;
+                                    width: 60px;
+                                    height: 60px;
+                                    border-radius: 50%;
+                                    background: gold;
+                                    margin: 35px;
+                                    float: left;
+                                }
+                                .user-name{
+                                    display: inline-block;
+                                }
+                            }
+                            .vuer-data{
+                                width: 50%;
+                                float: left;
+                                padding-top: 40px;
+                                line-height: 30px;
+                                font-size: 12px;
+                                .percentage{
+                                    color: #fd0100;
+                                    margin-right: 25px;
+                                }
+                            }
+                        }
+                        .right-vuer-btm-one{
+                            p{
+                                width: 160px;
+                                margin: 12px 0 0 40px;
+                                float: left;
+                                border-right: 1px solid #ccc;
+                            }
+                            .two{
+                                border: 0;
+                            }
+                        }
+                        .right-vuer-btm-two{
+                            p{
+                                width: 200px;
+                                margin-left: 20px;
+                                float: left;
+                                line-height: 45px;
+                            }
+                        }
+                        .right-vuer-top-two{
+                            div{
+                                width: 50%;
+                                height: 50%;
+                                float: left;
+                                font-size: 12px;
+                                .icon{
+                                    display: inline-block;
+                                    width: 40px;
+                                    height: 40px;
+                                    float: left;
+                                    margin:16px;
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                                p{
+                                    margin-left: 70px;
+                                    line-height: 24px;
+                                }
+                                .youxiaoxi{
+//                                  display: none;
+                                    color: #fe0003;
+                                }
+                                .wuxiaoxi{
+//                                  display: none;
+                                }
+                                .notice{
+                                    margin-top: 10px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+//  个人中心的待付款 待收货这里
+                .right-myOrder{
+                    border: 1px solid #ccc;
+                    margin: 20px 0;
+                    width: 1060px;
+                    .myOrder-top{
+                        overflow: hidden;
+                        padding: 0 30px 0 16px;
+                        height: 46px;
+                        background: #f4f8fb;
+                        font-size: 14px;
+                        ul{
+                            li{
+                                float: left;
+                                margin: 14px 50px 0 0;
+                                padding: 0 8px;
+                                position: relative;
+                                border-bottom: 2px solid transparent;
+                                .order-number{
+                                    position: absolute;
+                                    right: -10px;
+                                    top:-10px;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    border-radius: 50%;
+                                    background: #97c256;
+                                    color: #fff;
+                                    text-align: center;
+                                    line-height: 20px;
+                                    font-size: 12px;
+                                    display: none;
+                                }
+                            }
+                            li:first-child{
+                                border-bottom: 2px solid #97c256;
+                                .order-number{
+                                    display: block;
+                                }
+                            }
+                        }
+                        .allOrder{
+                            line-height: 46px;
+                            float: right;
+                        }
+                    }
+                    .gongGongOrderStyle{
+                        display: none;
+                        li{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 0 30px 0 16px;
+                            height: 110px;
+                            border-top: 1px solid #ccc;
+                            background: #fff;
+                            font-size: 14px;
+                            .img{
+                                width: 80px;
+                                height: 80px;
+                                position: relative;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                .goods-num{
+                                    position: absolute;
+                                    width: 100%;
+                                    color: #fff;
+                                    bottom: 0;
+                                    text-align: center;
+                                    height: 18px;
+                                    line-height: 18px;
+                                    font-size: 12px;
+                                    background: rgba(10,10,10,.5);
+                                }
+                            }
+                            .goods-price{
+                                color: #fe0000;
+                            }
+                            button{
+                                width: 100px;
+                                height: 30px;
+                                border: 1px solid #94c454;
+                                color: #94c454;
+                            }
+                            button:hover{
+                                background: #94C454;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .goods-order-fukuan{
+                        display: block;
+                    }
+                }
+                
+//              我的关注样式
+                .right-myGuanzhu{
+                    border: 1px solid #ccc;
+                    font-size: 14px;
+                    .myGuanzhu-top{
+                        height: 46px;
+                        background: #f4f8fb;
+                        padding: 0 30px 0 16px;
+                        line-height: 46px;
+                        border-bottom: 1px solid #ccc;
+                        .allOrder{
+                            float: right;
+                        }
+                    }
+                    .guanzhu-goods{
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            width: 200px;
+                            height: 240px;
+                            margin: 5px;
+                            text-align: center;
+                            img{
+                                width: 160px;
+                                height: 160px;
+                                margin: 20px 0;
+                            }
+                            p{
+                                width: 80%;
+                                display: inline-block;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+            }
+// =================我的订单样式
+
+//======================退换   售后样式
+
+//=========================我的优惠券
+
+//============================我的关注
+
+//===========================消息
+
+//===========================设置账户管理
+
+//         =================== 收货地址的样式
+            .right-floor-shouhuo{
+                display: none;
+//              display: block;
+                .shouhuoTitle{
+                    border: 1px solid #ccc;
+                    height: 45px;
+                    line-height: 45px;
+                    padding-left: 16px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+                .shouhuoName{
+                    border: 1px solid #ccc;
+                    font-size: 14px;
+                    padding-bottom: 200px;
+                    .addressTop{
+                        height: 46px;
+                        line-height: 46px;
+                        border-bottom: 1px solid #ccc;
+                        p{
+                            float: left;
+                        }
+                        .name{
+                            padding-left: 40px;
+                            width: 160px;
+                        }
+                        .address{
+                            width: 360px;
+                        }
+                        .phone{
+                            width: 250px;
+                        }
+                        .option{
+                        }
+                    }
+                    .shouhuo-address{
+                        li{
+                            height: 56px;
+                            line-height: 56px;
+                            border-bottom: 1px solid #ccc;
+                            p{
+                                float: left;
+                            }
+                            .name{
+                                width: 160px;
+                                margin-left: 40px;
+                            }
+                            .address{
+                                width: 350px;
+                            }
+                            .phone{
+                                width: 200px;
+                            }
+                            .option{
+                                width: 150px;
+                            }
+                            .moren{
+                                display: inline-block;
+                                width: 100px;
+                                height: 30px;
+                                line-height: 30px;
+                                margin-top: 13px;
+                                border: 1px solid #a5b471;
+                                color: #a5b471;
+                                text-align: center;
+                                display: none;
+                            }
+                            .nomoren{
+                                display: inline-block;
+                                width: 100px;
+                                height: 30px;
+                                line-height: 30px;
+                                margin-top: 13px;
+                                border: 1px solid #fc4f41;
+                                color: #fc4f41;
+                                text-align: center;
+                                display: none;
+                            }
+                        }
+                        
+                    }
+                    .add-address{
+                        h2{
+                            height: 50px;
+                            line-height: 60px;
+                            font-size: 16px;
+                            font-weight: 600;
+                            padding-left: 16px;
+                        }
+                        .address-form{
+                            li{
+                                height: 44px;
+                                line-height: 44px;
+                                .left{
+                                    display: inline-block;
+                                    width: 115px;
+                                    text-align: right;
+                                    margin-right: 20px;
+                                    span{
+                                        color: #e0281c;
+                                    }
+                                    
+                                }
+                                input[type="text"]{
+                                    height: 24px;
+                                    width: 260px;
+                                    border: 1px solid #ccc;
+                                }
+//                              input[type="checkbox"]{
+//                                  border: 1px solid red;
+//                                  width: 15px;
+//                                  height: 15px;
+//                                  border-radius: 50%;
+//                              }
+                                #detailed-address{
+                                    width: 450px;
+                                }
+                                select{
+                                    width: 80px;
+                                    height: 24px;
+                                    margin-right: 10px;
+                                }
+                                .zhushi{
+                                    font-size: 12px;
+                                    color: #999;
+                                }
+                                button{
+                                    width: 120px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    border-radius: 4px;
+                                    background: #7BBB49;
+                                    border: 0;
+                                    color: #fff;
+                                    margin-bottom: 200px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+//===========================账户安全
+
+//===========================账户绑定
+
+        }
+    }
+}

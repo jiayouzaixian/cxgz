@@ -1,0 +1,405 @@
+
+
+//======================导航条
+#home-nav{
+    width: 100%;
+    background: #95c357;
+    color: #fff;
+    ul{
+        height: 44px;
+        width: 1200px;
+        margin: 0 auto;
+        line-height: 44px;
+        li{
+            float: left;
+            width: 140px;
+            text-align: center;
+           a{
+                color: #fff;
+           }
+        }
+        li:first-child{
+            background: #5e8f1a;
+        }
+    }
+}
+//=======================================轮播图
+#home-banner{
+    min-width: 1200px;
+    height: 400px;
+    
+    .swiper-pagination-bullet{
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+    }
+    .swiper-pagination-bullet-active{
+        background: #95c357;
+    }
+    article{
+        position: relative;
+        top: -230px;
+        width: 1200px;
+        height: 100px;
+        margin: 0 auto;
+        z-index: 100;
+        .nextBtn{
+            display: none;
+            top: 3px;
+            width: 40px;
+            height: 80px;
+        }
+        .swiper-button-prev{
+            background: url(../img/next.png);
+        }
+        .swiper-button-next{
+            background: url(../img/prav.png);
+        }
+    }
+}
+#home-banner:hover .nextBtn{
+    display: block;
+}
+// =============================侧栏部分
+#home-aside{
+    position: fixed;
+    top: 0;
+    display: none;
+    li{
+        margin: 5px 0;
+        a{
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            line-height: 44px;
+            text-align: center;
+            span{
+                display: none;
+            }
+            
+        }
+        .asideStyle{
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            line-height: 22px;
+            text-align: center;
+            background: #95c357;
+            i{
+                display: none;
+            }
+            span{
+                display: inline-block;
+                font-size: 12px;
+                padding: 0 5px;
+                color: #fff;
+                line-height: 16px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+//============================主体部分
+#home-main{
+    width: 1200px;
+    margin: 0 auto;
+//  background: pink;
+    margin-top: 20px;
+    
+    .mainOne{
+        display: flex;
+        justify-content: space-between;
+        .zreo{
+            width: 290px;
+            height: 220px;
+            color: #fff;
+            text-align: center;
+            .top{
+                font-size: 38px;
+                margin-top: 15px;
+            }
+            .moddle{
+                height: 40px;
+                line-height: 40px;
+                font-size: 23px;
+                margin:20px 0 30px 0;
+            }
+            .btm{
+                display: inline-block;
+                font-size: 18px;
+                width: 120px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: #fff;
+                border-radius: 5px;
+            }
+        }
+        .one{
+            background: url(../img/chaojimiaosha.png);
+            span{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+                background: #fff;
+                color: #ff004c;
+                text-align: center;
+                line-height: 40px;
+                font-size: 26px;
+            }
+            .btm{
+                color: #ff004c;
+            }
+        }
+        .two{
+            background: url(../img/dijiapintuan.png);
+            .btm{
+                color: #9695f2;
+            }
+        }
+        .three{
+            background: url(../img/lingquanzhongxin.png);
+            .btm{
+                color: #e18b04;
+            }
+        }
+        .four{
+            background: url(../img/xinpinzhuanqu.png);
+            .btm{
+                color: #2cc7bf;
+            }
+        }
+    }
+//  这是公共头部的样式
+    .main-title{
+        height: 40px;
+        font-size: 26px;
+        margin: 30px 0 20px 0;
+        .styleTitle{
+            display: inline-block;
+            width: 6px;
+            height: 30px;
+            background: #97c256;
+            margin:7px 10px 0 0;
+            float: left;
+        }
+        .titleName{
+            float: left;
+        }
+    }
+    p{
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+//  公共样式1   这是生态馆与地区的li的样式
+    .gonggongStyleOne{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        li{
+            width: 288px;
+            height: 410px;
+            border: 1px solid #eee;
+            text-align: center;
+            background: #fff;
+            .img{
+//              padding: 50px 0;
+//                  background: red;
+                img{
+                    width: 240px;
+                    height: 240px;
+                    margin: 25px 0;
+                }
+            }
+            .message{
+                width: 80%;
+                display: inline-block;
+                .goodPri{//这是大容器
+                    font-size: 20px;
+                    height: 25px;
+                    line-height: 25px;
+                    span{
+                        display: inline-block;
+                    }
+                    .price{
+                        width: 100px;
+                        height: 100%;
+                        border-radius: 12px;
+                        background: #95c357;
+                        color: #fff;
+                    }
+                    .dashed{
+                        width: 60px;
+                        border: 1px dashed #ccc;
+                        position: relative;
+                        top: -30%;
+                    }
+                } 
+                .goodName{
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 18px;
+                    margin-top: 15px;
+                }  
+                .goodMessage{
+                    font-size: 14px;
+                }
+            }  
+        } 
+        li:hover{
+            box-shadow: 0px 0px 4px 4px #ececec;
+        }  
+    }
+    .gonggongStyleTwo{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        li{
+            width: 290px;
+            height: 380px;
+            border: 1px solid #eee;
+            text-align: center;
+            background: #fff;
+            position: relative;
+            margin-bottom: 12px;
+            img{
+                width: 240px;
+                height: 240px;
+                margin: 25px 0;
+            }
+            .message{
+                padding: 0 24px;
+                .goodsName{
+                    font-size: 18px;
+                    margin-top: 4px;
+                }
+                .price{
+                    font-size: 20px;
+                    text-align: left;
+                    margin-top: 4px;
+                    color: #fe0000;
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+                .shopping{
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 40px;
+                    position: absolute;
+                    right: 15px;
+                    bottom: 15px;
+                }
+            }
+        }
+        li:hover{
+            box-shadow: 0px 0px  4px 4px #ececec;
+            .shopping{
+                background: #98c358;
+                .shop1-icon::before{
+                    content: '\e627';
+                    font-size: 24px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+//  这是生态馆
+    .main-shengtai{
+        .shengtaiTop{
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 595px;
+                height: 300px;
+            }
+        }
+        
+    }
+//  这是伴手礼
+    .main-banshou{
+        .banshouTopImg{
+            width: 1200px;
+            height: 400px;
+        }
+        ul{
+            li{
+                height: 360px;
+                border: 1px solid #ccc;
+                margin: 12px 0;
+                img{
+                    float: left;
+                    width: 800px;
+                    height: 360px;
+                }
+                .message{
+                    float: left;
+                    height: 90%;
+                    width: 340px;
+                    padding: 24px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    p{
+                        display: inline-block;
+                    }
+                    .banshouTitle{
+                        width: 220px;
+                        height: 70px;
+                        border: 1px dashed #ccc;
+                        border-left: none;
+                        border-right: none;
+                        text-align: center;
+                        line-height: 70px;
+                        font-size: 30px;
+                    }
+                    .goodName{
+                        font-size: 24px;
+                        width: 100%; 
+                    }
+                    .goodMessage{
+                        font-size: 16px;
+                        color: #999;
+                    }
+                    .price{
+                        font-size: 18px;
+                        color: #fff;
+                        width: 120px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        border-radius: 15px;
+                        background: #95c357;
+                    }
+                }
+                
+            }
+            li:hover{
+                box-shadow: 0px 0px 4px 4px #ececec;
+            }
+        }
+    }
+    .main-meishi{
+    }
+    
+}
+#home-footer{
+    margin-top: 40px;
+}

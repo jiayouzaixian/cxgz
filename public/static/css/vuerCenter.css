@@ -1,0 +1,393 @@
+#vue-main {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+#vue-main .vue-left {
+  width: 120px;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+  float: left;
+}
+#vue-main .vue-left ul li {
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  font-size: 12px;
+}
+#vue-main .vue-left ul li p {
+  padding-left: 14px;
+}
+#vue-main .vue-left ul li .left-li-one {
+  font-size: 16px;
+}
+#vue-main .vue-left ul li p:hover {
+  color: #95c357;
+}
+#vue-main .vue-left ul li .left-li-one:hover {
+  color: #333;
+  cursor: default;
+}
+#vue-main .vue-left ul li:last-of-type {
+  border-bottom: 0;
+}
+#vue-main .vue-right {
+  width: 1062px;
+  min-height: 700px;
+  float: right;
+}
+#vue-main .vue-right .vue-right-ul .vue-right-ul-li {
+  width: 1060px;
+  min-height: 600px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor {
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer {
+  width: 1060px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul li:nth-of-type(odd) {
+  width: 696px;
+  border-right: 1px solid #ccc;
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top {
+  height: 138px;
+  background: #f4f8fb;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-btm {
+  height: 45px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul li:nth-of-type(even) {
+  width: 361px;
+  float: right;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-one .vuer-name {
+  height: 100%;
+  width: 50%;
+  float: left;
+  line-height: 138px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-one .vuer-name .head-portrait {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: gold;
+  margin: 35px;
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-one .vuer-name .user-name {
+  display: inline-block;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-one .vuer-data {
+  width: 50%;
+  float: left;
+  padding-top: 40px;
+  line-height: 30px;
+  font-size: 12px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-one .vuer-data .percentage {
+  color: #fd0100;
+  margin-right: 25px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-btm-one p {
+  width: 160px;
+  margin: 12px 0 0 40px;
+  float: left;
+  border-right: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-btm-one .two {
+  border: 0;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-btm-two p {
+  width: 200px;
+  margin-left: 20px;
+  float: left;
+  line-height: 45px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div {
+  width: 50%;
+  height: 50%;
+  float: left;
+  font-size: 12px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div .icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 16px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div .icon img {
+  width: 100%;
+  height: 100%;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div p {
+  margin-left: 70px;
+  line-height: 24px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div .youxiaoxi {
+  color: #fe0003;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-vuer ul .right-vuer-top-two div .notice {
+  margin-top: 10px;
+  font-size: 14px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  width: 1060px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top {
+  overflow: hidden;
+  padding: 0 30px 0 16px;
+  height: 46px;
+  background: #f4f8fb;
+  font-size: 14px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top ul li {
+  float: left;
+  margin: 14px 50px 0 0;
+  padding: 0 8px;
+  position: relative;
+  border-bottom: 2px solid transparent;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top ul li .order-number {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #97c256;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top ul li:first-child {
+  border-bottom: 2px solid #97c256;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top ul li:first-child .order-number {
+  display: block;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .myOrder-top .allOrder {
+  line-height: 46px;
+  float: right;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle {
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 16px;
+  height: 110px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li .img {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li .img img {
+  width: 100%;
+  height: 100%;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li .img .goods-num {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  bottom: 0;
+  text-align: center;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+  background: rgba(10, 10, 10, 0.5);
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li .goods-price {
+  color: #fe0000;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li button {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #94c454;
+  color: #94c454;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .gongGongOrderStyle li button:hover {
+  background: #94C454;
+  color: #fff;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myOrder .goods-order-fukuan {
+  display: block;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu {
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .myGuanzhu-top {
+  height: 46px;
+  background: #f4f8fb;
+  padding: 0 30px 0 16px;
+  line-height: 46px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .myGuanzhu-top .allOrder {
+  float: right;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .guanzhu-goods {
+  overflow: hidden;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .guanzhu-goods li {
+  float: left;
+  width: 200px;
+  height: 240px;
+  margin: 5px;
+  text-align: center;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .guanzhu-goods li img {
+  width: 160px;
+  height: 160px;
+  margin: 20px 0;
+}
+#vue-main .vue-right .vue-right-ul .right-home .right-myGuanzhu .guanzhu-goods li p {
+  width: 80%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo {
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoTitle {
+  border: 1px solid #ccc;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding-bottom: 200px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop {
+  height: 46px;
+  line-height: 46px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop p {
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .name {
+  padding-left: 40px;
+  width: 160px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .address {
+  width: 360px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .phone {
+  width: 250px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li {
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li p {
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .name {
+  width: 160px;
+  margin-left: 40px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .address {
+  width: 350px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .phone {
+  width: 200px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .option {
+  width: 150px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .moren {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 13px;
+  border: 1px solid #a5b471;
+  color: #a5b471;
+  text-align: center;
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .nomoren {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 13px;
+  border: 1px solid #fc4f41;
+  color: #fc4f41;
+  text-align: center;
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address h2 {
+  height: 50px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 16px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li {
+  height: 44px;
+  line-height: 44px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .left {
+  display: inline-block;
+  width: 115px;
+  text-align: right;
+  margin-right: 20px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .left span {
+  color: #e0281c;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li input[type="text"] {
+  height: 24px;
+  width: 260px;
+  border: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li #detailed-address {
+  width: 450px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li select {
+  width: 80px;
+  height: 24px;
+  margin-right: 10px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .zhushi {
+  font-size: 12px;
+  color: #999;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li button {
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  background: #7BBB49;
+  border: 0;
+  color: #fff;
+  margin-bottom: 200px;
+}

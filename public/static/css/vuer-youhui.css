@@ -1,0 +1,91 @@
+#vue-main {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+#vue-main .vue-left {
+  width: 120px;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+  float: left;
+}
+#vue-main .vue-left ul li {
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  font-size: 12px;
+}
+#vue-main .vue-left ul li p {
+  padding-left: 14px;
+}
+#vue-main .vue-left ul li p a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#vue-main .vue-left ul li .left-li-one {
+  font-size: 16px;
+}
+#vue-main .vue-left ul li p:hover {
+  color: #95c357;
+}
+#vue-main .vue-left ul li .left-li-one:hover {
+  color: #333;
+  cursor: default;
+}
+#vue-main .vue-left ul .bgstyle {
+  background: #7BBB49;
+}
+#vue-main .vue-left ul .bgstyle a {
+  color: #fff;
+}
+#vue-main .vue-left ul li:last-of-type {
+  border-bottom: 0;
+}
+#vue-main .vue-right {
+  width: 1062px;
+  min-height: 700px;
+  float: right;
+  font-size: 14px;
+}
+#vue-main .vue-right .right-title {
+  border: 1px solid #ccc;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 30px 0 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+#vue-main .vue-right .right-title .right {
+  float: right;
+  font-weight: 100;
+  font-size: 14px;
+}
+#vue-main .vue-right .youhui-content {
+  border: 1px solid #ccc;
+}
+#vue-main .vue-right .youhui-content .content-top {
+  width: 100%;
+  height: 48px;
+  background: #f4f8fb;
+  font-size: 14px;
+  padding: 0 30px 0 16px;
+}
+#vue-main .vue-right .youhui-content .content-top li {
+  float: left;
+  height: 22px;
+  line-height: 22px;
+  margin-top: 12px;
+  margin-right: 30px;
+  padding: 0 5px;
+  border-bottom: 2px solid transparent;
+}
+#vue-main .vue-right .youhui-content .content-top li:first-child {
+  border-bottom: 2px solid #aad373;
+  color: #aad373;
+}
+#vue-main .vue-right .youhui-content .content-top .xiala {
+  float: right;
+  font-size: 20px;
+}

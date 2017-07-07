@@ -1,0 +1,155 @@
+#home-top{
+    width: 100%;
+    height: 34px;
+    background: #f1f1f1;
+    font-size: 12px;
+    color: #666;
+    line-height: 34px;
+    div{
+        width: 1200px;
+        height: 34px;
+        margin: 0 auto;
+        .left{
+            float: left;
+            span{
+                color: #d42f1b;
+                margin-left: 12px;
+            }
+        }  
+        .right{
+            float: right;
+            .rightLi{
+                float: left;
+                margin: 0 20px;
+                line-height: 34px;
+                position: relative;
+                p{
+                    .up-icon,.down-icon{
+                        position: relative;
+//                      top: 3px;
+                       color: #999;
+                    }
+                    i{
+                         margin: 0 5px;
+                    }
+                }
+                .secleck{
+                    display: none;
+                    position: absolute;
+                    top: 34px;
+                    left: 0;
+                    width: 100px;
+                    height: 100px;
+                    z-index: 11;
+                }
+            }
+        }
+    }
+}
+
+//=======================================头部
+#home-header{
+    width: 100%;
+    .header{
+        height: 102px;
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            margin: 0;
+            width: 208px;
+            height: 68px;
+
+            img{
+                width: 100%;
+            }
+        }
+        form{
+            .input{
+                position: relative;
+                input{
+                    width: 500px;
+                    height: 37px;
+                    float: left;
+                    border:1px #95c357 solid;
+                    border-right: none;
+                    font-size: 15px;
+                    padding: 0 10px;
+                    border-radius: 5px 0 0 5px;
+                }
+                button{
+                    float: left;
+                    width: 93px;
+                    height: 39px;
+                    outline:none;
+                    background: #95c357;
+                    border: none;
+                    color: #fff;
+                    font-size: 18px;
+                    border-radius:0 5px 5px 0;
+                }
+                .xiala{
+                    width: 520px;
+                    background: #fff;
+                    position: absolute;
+                    top: 39px;
+                    border-radius: 5px;
+                    display: none;
+                    z-index: 10;
+                    li{
+                        height: 30px;
+                        line-height: 30px;
+                        border: 1px solid #eee;
+                        padding: 0 24px;
+                        border-top: none;
+                    }
+                }
+            }
+            .sousuo{
+                ul{
+                    li{
+                        padding: 3px 0;
+                        float: left;
+                        margin: 0 10px;
+                        color: #D42F1B;
+                        font-size: 12px;
+                    }
+                    .noClor{
+                        color: #666;
+                    }
+                    li:hover{
+                        text-decoration: underline;
+//                      border-bottom: 1px solid #D42F1B;
+                        color: #D42F1B;
+                    }
+                }
+            }
+        }
+        .shop{
+            position: relative;
+            font-size: 12px;
+            top: -10px;
+            border: 1px solid #ccc;
+            padding-left: 5px;
+            border-radius: 5px;
+            i{
+                margin: 0 8px;
+            }
+            span{
+                position: absolute;
+                display: block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                border-radius: 50%;
+                right: -10px;
+                top: -5px;
+                background: #d12f18;
+                color: #fff;
+            }
+        }
+    }
+}

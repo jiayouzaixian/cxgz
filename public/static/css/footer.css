@@ -1,0 +1,119 @@
+#footNav {
+  background: #e6e4e5;
+}
+#footNav .footBox {
+  width: 1200px;
+  height: 110px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#footNav .footBox .boxUl {
+  display: flex;
+  justify-content: space-around;
+}
+#footNav .footBox .boxUl .boxLi {
+  width: 220px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+}
+#footNav .footBox .boxUl .boxLi .message {
+  margin-left: 20px;
+  color: #333;
+}
+#footNav .footBox .boxUl .boxLi .message .name {
+  font-size: 24px;
+}
+#footNav .footBox .boxUl .boxLi .message .value {
+  font-size: 16px;
+}
+#footFuwu {
+  width: 1200px;
+  margin: 0 auto;
+}
+#footFuwu .outUl {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#footFuwu .outUl .outLi {
+  width: 180px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #666;
+}
+#footFuwu .outUl .outLi .inLi:hover {
+  color: #fe0000;
+}
+#footFuwu .outUl .outLi .inLi:first-of-type:hover {
+  color: #333;
+}
+#footFuwu .outUl .outLi .inLi:first-of-type {
+  font-size: 16px;
+  color: #333;
+}
+#footFuwu .outUl .lastLi {
+  width: 220px;
+}
+#footFuwu .outUl .lastLi p {
+  height: 30px;
+  color: #d2301b;
+}
+#footFuwu .outUl .lastLi img {
+  margin-top: 10px;
+}
+#footer-img {
+  width: 1200px;
+  margin: 0 auto;
+}
+#footer-img .footerUl {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+#footer-img .footerUl ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+#footer-img .footerUl ul li a {
+  border-right: 2px solid #999;
+  padding: 0 8px;
+}
+#footer-img .footerUl ul li:last-of-type a {
+  border: 0;
+}
+#home-kefu {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+}
+#home-kefu p {
+  position: relative;
+  top: -5px;
+}
+#home-kefu div {
+  box-shadow: 0 5px 5px #d1321c;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d1321c;
+  margin-top: 20px;
+}
+#home-kefu .returnTop a {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+#home-kefu .returnTop a .footerTop {
+  font-size: 26px;
+}
+#home-kefu .returnTop a p {
+  position: relative;
+  top: -15px;
+}

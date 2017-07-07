@@ -1,0 +1,159 @@
+#vue-main {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+#vue-main .vue-left {
+  width: 120px;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+  float: left;
+}
+#vue-main .vue-left ul li {
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  font-size: 12px;
+}
+#vue-main .vue-left ul li p {
+  padding-left: 14px;
+}
+#vue-main .vue-left ul li p a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#vue-main .vue-left ul li .left-li-one {
+  font-size: 16px;
+}
+#vue-main .vue-left ul li p:hover {
+  color: #95c357;
+}
+#vue-main .vue-left ul li .left-li-one:hover {
+  color: #333;
+  cursor: default;
+}
+#vue-main .vue-left ul .bgstyle {
+  background: #7BBB49;
+}
+#vue-main .vue-left ul .bgstyle a {
+  color: #fff;
+}
+#vue-main .vue-left ul li:last-of-type {
+  border-bottom: 0;
+}
+#vue-main .vue-right {
+  width: 1062px;
+  min-height: 700px;
+  float: right;
+  font-size: 14px;
+}
+#vue-main .vue-right .right-title {
+  border: 1px solid #ccc;
+  height: 46px;
+  line-height: 46px;
+  padding-left: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+#vue-main .vue-right .right-content {
+  overflow: hidden;
+}
+#vue-main .vue-right .right-content .content-top {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  height: 48px;
+  line-height: 48px;
+  background: #f4f8fb;
+}
+#vue-main .vue-right .right-content .content-top p {
+  float: right;
+  overflow: hidden;
+  margin: 15px 30px 0 0 ;
+}
+#vue-main .vue-right .right-content .content-top p input {
+  height: 22px;
+  width: 190px;
+  border: 1px solid #ccc;
+  float: left;
+}
+#vue-main .vue-right .right-content .content-top p span {
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  border: 1px solid #ccc;
+  border-left: 0;
+  text-align: center;
+  line-height: 20px;
+  float: left;
+  background: #f5f3f4;
+  color: #999;
+}
+#vue-main .vue-right .right-content table {
+  width: 100%;
+}
+#vue-main .vue-right .right-content table,
+#vue-main .vue-right .right-content td {
+  border: 1px solid #ccc;
+}
+#vue-main .vue-right .right-content td {
+  text-align: center;
+  width: 148px;
+}
+#vue-main .vue-right .right-content td:first-of-type,
+#vue-main .vue-right .right-content td:nth-of-type(2) {
+  width: 178px;
+}
+#vue-main .vue-right .right-content td:nth-of-type(3) {
+  width: 252px;
+  padding: 0 20px;
+}
+#vue-main .vue-right .right-content .six-td {
+  color: #5E8F1A;
+}
+#vue-main .vue-right .right-content tr {
+  height: 110px;
+}
+#vue-main .vue-right .right-content tr:first-child {
+  height: 50px;
+}
+#vue-main .vue-right .right-content tr:first-child td {
+  border: 0;
+}
+#vue-main .vue-right .right-tuijian {
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+#vue-main .vue-right .right-tuijian .tuijian-top {
+  height: 46px;
+  background: #f4f8fb;
+  padding: 0 30px 0 16px;
+  line-height: 46px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .right-tuijian .tuijian-top .allOrder {
+  float: right;
+}
+#vue-main .vue-right .right-tuijian .tuijian-goods {
+  overflow: hidden;
+}
+#vue-main .vue-right .right-tuijian .tuijian-goods li {
+  float: left;
+  width: 200px;
+  height: 240px;
+  margin: 5px;
+  text-align: center;
+}
+#vue-main .vue-right .right-tuijian .tuijian-goods li img {
+  width: 160px;
+  height: 160px;
+  margin: 20px 0;
+}
+#vue-main .vue-right .right-tuijian .tuijian-goods li p {
+  width: 80%;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,174 @@
+#vue-main {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding-bottom: 30px;
+}
+#vue-main .vue-left {
+  width: 120px;
+  border: 1px solid #ccc;
+  padding-bottom: 20px;
+  float: left;
+}
+#vue-main .vue-left ul li {
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  font-size: 12px;
+}
+#vue-main .vue-left ul li p {
+  padding-left: 14px;
+}
+#vue-main .vue-left ul li p a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+#vue-main .vue-left ul li .left-li-one {
+  font-size: 16px;
+}
+#vue-main .vue-left ul li p:hover {
+  color: #95c357;
+}
+#vue-main .vue-left ul li .left-li-one:hover {
+  color: #333;
+  cursor: default;
+}
+#vue-main .vue-left ul .bgstyle {
+  background: #7BBB49;
+}
+#vue-main .vue-left ul .bgstyle a {
+  color: #fff;
+}
+#vue-main .vue-left ul li:last-of-type {
+  border-bottom: 0;
+}
+#vue-main .vue-right {
+  width: 1062px;
+  min-height: 700px;
+  float: right;
+}
+#vue-main .vue-right .vue-right-ul .vue-right-ul-li {
+  width: 1060px;
+  min-height: 600px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoTitle {
+  border: 1px solid #ccc;
+  height: 45px;
+  line-height: 45px;
+  padding-left: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding-bottom: 200px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop {
+  height: 46px;
+  line-height: 46px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop p {
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .name {
+  padding-left: 40px;
+  width: 160px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .address {
+  width: 360px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .addressTop .phone {
+  width: 250px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li {
+  height: 56px;
+  line-height: 56px;
+  border-bottom: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li p {
+  float: left;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .name {
+  width: 160px;
+  margin-left: 40px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .address {
+  width: 350px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .phone {
+  width: 200px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .option {
+  width: 150px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .moren {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 13px;
+  border: 1px solid #a5b471;
+  color: #a5b471;
+  text-align: center;
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .shouhuo-address li .nomoren {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 13px;
+  border: 1px solid #fc4f41;
+  color: #fc4f41;
+  text-align: center;
+  display: none;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address h2 {
+  height: 50px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 16px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li {
+  height: 44px;
+  line-height: 44px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .left {
+  display: inline-block;
+  width: 115px;
+  text-align: right;
+  margin-right: 20px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .left span {
+  color: #e0281c;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li input[type="text"] {
+  height: 24px;
+  width: 260px;
+  border: 1px solid #ccc;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li #detailed-address {
+  width: 450px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li select {
+  width: 80px;
+  height: 24px;
+  margin-right: 10px;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li .zhushi {
+  font-size: 12px;
+  color: #999;
+}
+#vue-main .vue-right .vue-right-ul .right-floor-shouhuo .shouhuoName .add-address .address-form li button {
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  background: #7BBB49;
+  border: 0;
+  color: #fff;
+  margin-bottom: 200px;
+}

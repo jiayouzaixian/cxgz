@@ -1,0 +1,240 @@
+#jicai-banner {
+  min-width: 1200px;
+  height: 400px;
+}
+#jicai-banner .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+#jicai-banner .swiper-pagination-bullet-active {
+  background: #95c357;
+}
+#jicai-banner article {
+  position: relative;
+  top: -230px;
+  width: 1200px;
+  height: 100px;
+  margin: 0 auto;
+  z-index: 100;
+}
+#jicai-banner article .nextBtn {
+  display: none;
+  top: 3px;
+  width: 40px;
+  height: 80px;
+}
+#jicai-banner article .swiper-button-prev {
+  background: url(../img/next.png);
+}
+#jicai-banner article .swiper-button-next {
+  background: url(../img/prav.png);
+}
+#jicai-banner:hover .nextBtn {
+  display: block;
+}
+#jicai-main {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  position: relative;
+}
+#jicai-main .jicai-sign {
+  width: 240px;
+  height: 380px;
+  background: #FFF;
+  position: absolute;
+  border: 1px solid #ccc;
+  top: -390px;
+  right: 0;
+  z-index: 10;
+}
+#jicai-main .jicai-sign .sign-title {
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  overflow: hidden;
+}
+#jicai-main .jicai-sign .sign-title .portrait {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: red;
+  float: left;
+  margin: 20px;
+}
+#jicai-main .jicai-sign .sign-title p {
+  margin-top: 20px;
+  float: left;
+}
+#jicai-main .jicai-sign .sign-option {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+#jicai-main .jicai-sign .sign-option a {
+  flex: 1;
+  text-align: center;
+  line-height: 40px;
+}
+#jicai-main .jicai-sign .sign-option .denglu {
+  border-right: 1px solid #ccc;
+  background: #eee;
+}
+#jicai-main .jicai-sign .sign-option .denglu:hover {
+  background: #95c357;
+  color: #fff;
+}
+#jicai-main .jicai-sign .sign-option .zhuce:hover {
+  background: #eee;
+}
+#jicai-main .jicai-sign .sign-ul li {
+  height: 52px;
+  padding: 0 30px;
+  line-height: 50px;
+}
+#jicai-main .jicai-sign .sign-ul li p {
+  border-bottom: 1px dashed #ccc;
+  height: 100%;
+}
+#jicai-main .jicai-sign .sign-ul li i {
+  font-size: 26px;
+  margin-right: 25px;
+}
+#jicai-main .jicai-sign .sign-ul li:last-of-type {
+  border-top: 1px solid #ccc;
+}
+#jicai-main .jicai-sign .sign-ul li:last-of-type i {
+  margin: 0  10px 0 20px;
+}
+#jicai-main .jicai-sign .sign-ul li:hover {
+  color: #95c357;
+}
+#jicai-main .main-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#jicai-main .main-title {
+  height: 40px;
+  margin: 20px 0 12px 0;
+}
+#jicai-main .main-title .styleTitle {
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  background: #97c256;
+  margin-right: 10px;
+  float: left;
+}
+#jicai-main .main-title .titleName {
+  float: left;
+  font-size: 26px;
+}
+#jicai-main .main-title .titleMessage {
+  font-size: 14px;
+  display: inline-block;
+  margin: 16px 0  0 12px;
+}
+#jicai-main .shangpin {
+  overflow: auto;
+}
+#jicai-main .shangpin .leftImg {
+  float: left;
+}
+#jicai-main .shangpin .rightUl {
+  float: left;
+  height: 500px;
+  width: 949px;
+  overflow: hidden;
+  display: table;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-bottom: 0;
+}
+#jicai-main .shangpin .rightUl li {
+  float: left;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  min-width: 236px;
+  height: 249px;
+  text-align: center;
+}
+#jicai-main .shangpin .rightUl li .goodImg {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  display: inline-block;
+  margin: 10px 0;
+}
+#jicai-main .shangpin .rightUl li .goodImg .slideUP {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #a1c968;
+  color: #fff;
+  border-radius: 5px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  z-index: 10px;
+  display: none;
+}
+#jicai-main .shangpin .rightUl li .goodMessage {
+  line-height: 25px;
+  text-align: left;
+  padding-left: 30px ;
+}
+#jicai-main .shangpin .rightUl li .goodMessage .goodsName {
+  font-size: 14px;
+}
+#jicai-main .shangpin .rightUl li .goodMessage .goodsPrice {
+  color: #e20d00;
+  font-size: 20px;
+}
+#jicai-main .main-kajuan .kajuanUl {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#jicai-main .main-kajuan .kajuanUl li {
+  width: 290px;
+  height: 400px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-top: 20px;
+}
+#jicai-main .main-kajuan .kajuanUl li p {
+  margin-left: 20px;
+}
+#jicai-main .main-kajuan .kajuanUl li .one {
+  font-size: 30px;
+}
+#jicai-main .main-kajuan .kajuanUl li .two {
+  font-size: 18px;
+  margin: 12px 20px;
+}
+#jicai-main .main-kajuan .kajuanUl li div {
+  font-size: 14px;
+}
+#jicai-main .main-kajuan .kajuanUl li img {
+  margin: 40px 30px 0 30px;
+}
+#jicai-main .main-kajuan .kajuanUl li:first-of-type .one,
+#jicai-main .main-kajuan .kajuanUl li:first-of-type .two {
+  color: #d99e2a;
+}
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(2) .one,
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(2) .two {
+  color: #e5343a;
+}
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(3) .one,
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(3) .two {
+  color: #a64268;
+}
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(4) .one,
+#jicai-main .main-kajuan .kajuanUl li:nth-of-type(4) .two {
+  color: #7bbb49;
+}

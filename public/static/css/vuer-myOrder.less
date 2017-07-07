@@ -1,0 +1,394 @@
+
+//个人中心的主体部分
+#vue-main{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+    padding-bottom: 30px;
+    .vue-left{
+        width: 120px;
+        border: 1px solid #ccc;
+        padding-bottom: 20px;
+        float: left;
+        ul{
+            li{
+                border-bottom: 1px solid #ccc;
+                line-height: 30px;
+                font-size: 12px;
+                p{
+                    padding-left: 14px;
+                    a{
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .left-li-one{
+                    font-size: 16px;
+                }
+                p:hover{
+                    color: #95c357;
+                }
+                .left-li-one:hover{
+                    color: #333;
+                    cursor: default;
+                }
+            }
+            .bgstyle{
+                background: #7BBB49;
+                a{
+                    color: #fff;
+                }
+            }
+            li:last-of-type{
+                border-bottom: 0;
+            }
+        }
+    }
+    .vue-right{
+        width: 1062px;
+        min-height: 700px;
+        float: right;
+        .vue-right-ul{
+            
+// ==========================个人中心的信息头像这里
+            .right-home{
+//              display: none;
+                .right-vuer{
+                    width: 1060px;
+                    height: 47px;
+                    line-height: 47px;
+                    padding-left: 17px;
+                    font-size: 15px;
+                    color: #343434;
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                }
+//  个人中心的待付款 待收货这里
+                .right-myOrder{
+                    border: 1px solid #ccc;
+                    margin-top: 20px;
+                    width: 1060px;
+                    overflow: hidden;
+                    .myOrder-top{
+                        overflow: hidden;
+                        padding: 0 30px 0 16px;
+                        height: 46px;
+                        background: #f4f8fb;
+                        font-size: 14px;
+                        ul{
+                            li{
+                                float: left;
+                                margin: 14px 50px 0 0;
+                                padding: 0 8px;
+                                position: relative;
+                                border-bottom: 2px solid transparent;
+                                .order-number{
+                                    position: absolute;
+                                    right: -10px;
+                                    top:-10px;
+                                    display: inline-block;
+                                    width: 20px;
+                                    height: 20px;
+                                    border-radius: 50%;
+                                    background: #97c256;
+                                    color: #fff;
+                                    text-align: center;
+                                    line-height: 20px;
+                                    font-size: 12px;
+                                    display: none;
+                                }
+                            }
+                            li:first-child{
+//                              border-bottom: 2px solid #97c256;
+                                .order-number{
+//                                  display: block;
+                                }
+                            }
+                        }
+                        .allOrder{
+                            line-height: 46px;
+                            height: 46px;
+                            float: right;
+                            position: relative;
+                            span{
+                                display: inline-block;
+                                border: 1px solid #e5e5e5;
+                                border-left: none;
+//                              margin-top: 13px;
+                                width: 50px;
+                                height: 24px;
+                                color: #757575;
+                                background: #f5f3f4;
+                                text-align: center;
+                                position: absolute;
+                                top: 11px;
+                                right: 0;
+                                i{
+                                    position: relative;
+                                    top: -12px;
+                                }
+                            }
+                            input{
+                                height: 24px;
+                                width: 190px;
+                                margin-right: 50px;
+                                border: 1px solid #e5e5e5;
+                                font-size: 11px;
+                                color: #c3c3c3;
+                                background: #fff;
+                                padding-left: 8px;
+                            }
+                        }
+                    }
+                    .myOrder_second{
+                        height: 46px;
+                        line-height: 46px;
+                        border-top: 1px solid #e5e5e5;
+                        .shijian{
+                            width: 120px;
+                            height: 24px;
+                            margin-left: 16px;
+                            border: 1px solid #e5e5e5;
+                            font-size: 11px;
+                            color: #666666;
+                        }
+                        span{
+                            font-size: 14px;
+                            color: #4a4a4a;
+                        }
+                        .dingdanxiangqing{
+                            margin-left: 115px;
+                        }
+                        .shouhuoren{
+                            margin-left: 290px;
+                        }
+                        .jine{
+                            margin-left: 85px;
+                        }
+                        .state{
+                            width: 120px;
+                            height: 24px;
+                            margin-left: 45px;
+                            border: 1px solid #e5e5e5;
+                            font-size: 11px;
+                            color: #666666;
+                        }
+                        .caozuo{
+                            margin-left: 57px;
+                        }
+                    }
+                    .dingdan{
+                        li{
+//                          border: 1px solid #ccc;
+                            header{
+                                height: 30px;
+                                line-height: 30px;
+                                background: #f4f8fb;
+                                border-top: 1px solid #e5e5e5;
+                                .time{
+                                    font-size: 9px;
+                                    color: #a6a7a9;
+                                    margin-left: 16px;
+                                }
+                                .dingdan_num{
+                                    font-size: 13px;
+                                    color: #999999;
+                                    margin-left: 58px;
+                                    .num{
+                                        color: #333335;
+                                        font-size: 9px;
+                                    }
+                                }
+                                .delete{
+                                    float: right;
+                                    height: 26px;
+                                    margin-right: 18px;
+                                    .icon-delete{
+                                        color: #666666;
+                                    }
+                                }
+                            }
+                            main{
+                                ul{
+                                    border-top: 1px solid #e5e5e5;
+                                    border-bottom: 1px solid #e5e5e5;
+                                    margin-bottom: 12px;
+                                    display: -ms-flexbox;     /* TWEENER - IE 10 */
+                                    display: -webkit-flex;   /* NEW - Chrome */
+                                    display: flex;  
+                                    align-content: center;
+                                    -webkit-align-content: center;
+                                    -moz--align-content: center;
+                                    -ms-align-content: center;
+                                    overflow: hidden;
+                                    li{
+                                        border-right: 1px solid #ccc;
+                                        overflow: hidden;
+                                        .dingdan-left{
+                                            height: 114px;
+                                            width: 558px;
+                                            display: -ms-flexbox;     /* TWEENER - IE 10 */
+                                            display: -webkit-flex;   /* NEW - Chrome */
+                                            display: flex; 
+                                            font-size: 14px;
+                                            border-bottom: 1px solid #ccc;
+                                            -webkit-align-items: center;
+                                            -moz--align-items: center;
+                                            -ms-align-items: center;
+                                            -webkit-justify-content: space-around;
+                                            -moz-justify-content: space-around;
+                                            -ms-justify-content: space-around;
+                                            img{
+                                                width: 80px;
+                                                height: 80px;
+                                            }
+                                            .message{
+                                                width: 240px;
+                                                p{
+                                                    overflow: hidden;
+                                                    text-overflow: ellipsis;
+                                                    display: -webkit-box;
+                                                    -webkit-line-clamp: 2;
+                                                    -webkit-box-orient: vertical;
+                                                    -moz-line-clamp: 2;
+                                                    -moz-box-orient: vertical;
+                                                }
+                                                .goods_num{
+                                                    margin-top: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    li:last-of-type{
+                                        border: 0;
+                                    }
+                                    .shouhuoren{
+                                        padding-top: 22px;
+                                        font-size: 12px;
+                                        color: #333333;
+                                        width: 119px;
+                                        border-left: 1px solid #e5e5e5;
+                                        text-align: center;
+                                    }
+                                    .jine_num{
+                                        width: 119px;
+                                        border-left: 1px solid #e5e5e5;
+                                        text-align: center;
+                                        padding-top: 22px;
+                                        font-size: 13px;
+                                        color: #333333;
+                                        p:first-of-type,p:last-of-type{
+                                            color: #999999;
+                                            font-size: 12px;
+                                        }
+                                        p:nth-of-type(2),p:nth-of-type(3){
+                                            margin-top: 3px;
+                                        }
+                                        p:last-of-type{
+                                            margin: 0 10px;
+                                            margin-top: 3px;
+                                            border-top: 1px solid #e5e5e5;
+                                        }
+                                    }
+                                    .dingdan_state{
+                                        width: 119px;
+                                        border-left: 1px solid #e5e5e5;
+                                        text-align: center;
+                                        padding-top: 22px;
+                                        font-size: 12px;
+                                        line-height: 21px;
+                                        color: #5d5d5d;
+                                        .icon-car{
+                                            font-size: 14px;
+                                        }
+                                        p:first-of-type{
+                                            color: #97c256;
+                                        }
+                                        span{
+                                            display: inline-block;
+                                            width: 7px;
+                                            height: 7px;
+                                            background: #fd0000;
+                                            border-radius: 50%;
+                                            margin-left: 5px;
+                                        }
+                                    }
+                                    .dingdan_right{
+                                        border-left: 1px solid #e5e5e5;
+                                        text-align: center;
+                                        padding-top: 22px;
+                                        font-size: 12px;
+                                        width: 130px;
+                                        line-height: 25px;
+                                        .fukuan{
+                                            height: 30px;
+                                            width: 100px;
+                                            margin-left: 20px;
+                                            line-height: 30px;
+                                            color: #95C357;
+                                            border: 1px solid #95c357;
+                                            border-radius: 1px;
+                                        }
+                                        button{
+                                            width: 100px;
+                                            height: 30px;
+                                            border: 1px solid #ccc;
+                                            background: #f5f5f5;
+                                        }
+                                        .again-buy{
+                                            margin: 25px;
+                                        }
+                                        .lijigoumai{
+                                            margin: 5px 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+//              我的关注样式
+                .right-myGuanzhu{
+                    border: 1px solid #ccc;
+                    font-size: 14px;
+                    .myGuanzhu-top{
+                        height: 46px;
+                        background: #f4f8fb;
+                        padding: 0 30px 0 16px;
+                        line-height: 46px;
+                        border-bottom: 1px solid #ccc;
+                        .allOrder{
+                            float: right;
+                        }
+                    }
+                    .guanzhu-goods{
+                        overflow: hidden;
+                        li{
+                            float: left;
+                            width: 200px;
+                            height: 240px;
+                            margin: 5px;
+                            text-align: center;
+                            img{
+                                width: 160px;
+                                height: 160px;
+                                margin: 20px 0;
+                            }
+                            p{
+                                width: 80%;
+                                display: inline-block;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+                }
+            }
+// 
+        }
+    }
+}
