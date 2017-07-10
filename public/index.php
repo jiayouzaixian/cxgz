@@ -31,5 +31,8 @@ define('APP_IMAGE_PATH',  'http://img2.t.jiayou9.com/');
 
 define('SITE_BASE_PATH',  $base_path);
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';

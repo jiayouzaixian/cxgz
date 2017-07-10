@@ -1,5 +1,5 @@
 <?php
-namespace app\admin\controller;
+namespace app\company\controller;
 
 use think\Controller;
 
@@ -39,7 +39,7 @@ class Base extends Controller
          $adminUser = session('admin_user');
 
          if(!$adminUser){
-           $this->redirect('company'); 
+           $this->redirect('@user/login'); 
          }else{
             $adminUser = json_decode($adminUser,true);
          }

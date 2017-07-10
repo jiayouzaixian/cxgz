@@ -1,7 +1,11 @@
 <?php
 namespace app\company\controller;
 
-class Index
+use app\company\controller\Base; 
+
+use \think\Db;
+
+class Index extends Base
 {
     public function index()
     {
