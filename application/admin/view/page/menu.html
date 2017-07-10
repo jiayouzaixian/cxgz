@@ -86,42 +86,41 @@
         {/php}
         <li class="treeview active">
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
-            <span>企业管理</span>
+            <i class="fa fa-dashboard"></i>&nbsp;&nbsp;<span>企业管理</span>
           </div>
           <ul class="treeview-menu" >
-            <li class="{php} if(strpos($request, 'company/add')){echo 'active';} {/php}"><a href="{:url('@admin/company/add')}"><i class="fa fa-circle-o"></i>添加企业</a></li>
-            <li class="{php} if(strpos($request, 'company/list')){echo 'active';} {/php}"><a href="{:url('@admin/company/list')}"><i class="fa fa-circle-o"></i>企业列表</a></li>
-            <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/add')}"><i class="fa fa-circle-o"></i>添加企业会员</a></li>
-            <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/list')}"><i class="fa fa-circle-o"></i>企业会员列表</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>企业分类</a></li>
+            <li class="{php} if(strpos($request, 'company/add')){echo 'active';} {/php}"><a href="{:url('@admin/company/add')}"><i class="fa fa-angle-right"></i>添加企业</a></li>
+            <li class="{php} if(strpos($request, 'company/list')){echo 'active';} {/php}"><a href="{:url('@admin/company/list')}"><i class="fa fa-angle-right"></i>企业列表</a></li>
+            <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/add')}"><i class="fa fa-angle-right"></i>添加企业会员</a></li>
+            <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/list')}"><i class="fa fa-angle-right"></i>企业会员列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>企业分类</a></li>
           </ul>
         </li>
         
         <li class="treeview active" >
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-th"></i>&nbsp;&nbsp;
             <span>品牌管理</span>
           </div>
           <ul class="treeview-menu">
-            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>添加品牌</a></li>
-            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>品牌列表</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>品牌分类</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>知名品牌</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>推荐品牌</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>获奖品牌</a></li>
+            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>添加品牌</a></li>
+            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>品牌列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>品牌分类</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>知名品牌</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>推荐品牌</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>获奖品牌</a></li>
           </ul>
         </li>
         
         <!-- 产品管理 -->
         <li class="treeview active" >
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-cubes"></i>&nbsp;&nbsp;
             <span>产品管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>添加产品</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>产品列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>添加产品</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>产品列表</a></li>
           </ul>  
         </li>
 
@@ -129,74 +128,74 @@
         <!-- 商标管理 -->
         <li class="treeview active" >
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-list"></i>&nbsp;&nbsp;
             <span>商标管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>添加商标</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>商标列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>添加商标</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
           </ul>  
         </li>
 
         <!-- 景区管理 -->
         <li class="treeview active">
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-bank"></i>&nbsp;&nbsp;
             <span>景区管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>添加景区</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>景区列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>添加景区</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>景区列表</a></li>
           </ul>  
         </li>
 
         <!-- 数据中心 -->
         <li class="treeview active" >
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-bar-chart"></i>&nbsp;&nbsp;
             <span>数据中心</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>工业数据</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>农业数据</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>旅游业数据</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>工业数据</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>农业数据</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>旅游业数据</a></li>
           </ul>  
         </li>
 
         <!-- 查询管理 -->
         <li class="treeview active">
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-search-minus"></i>&nbsp;&nbsp;
             <span>查询管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>查询数据统计</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>查询人员分布</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>查询热度排行</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>查询数据统计</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>查询人员分布</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>查询热度排行</a></li>
           </ul>  
         </li>
 
         <!-- 新闻管理 -->
         <li class="treeview active" >
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;
             <span>新闻管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>添加新闻</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>新闻列表</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>添加新闻</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>新闻列表</a></li>
           </ul>  
         </li>
 
         <!-- 系统设置 -->
         <li class="treeview active">
           <div class="menu-title">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-bars"></i>&nbsp;&nbsp;
             <span>系统设置</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>系统设置</a></li>
-            <li><a href="{:url('@admin')}"><i class="fa fa-circle-o"></i>修改密码</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>系统设置</a></li>
+            <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>修改密码</a></li>
           </ul>  
         </li>
 
