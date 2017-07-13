@@ -16,22 +16,10 @@ class Company extends Base
     {    
 
       // $companys = Db::table('cx_company')->select();
-      $companys = Db::query('select c.*, u.username from cx_company as c LEFT JOIN cx_company_user as u ON c.id = u. enterprise_id;');
+      $companys = Db::query('select c.*, u.username from cx_company as c LEFT JOIN cx_company_user as u ON c.id = u. enterprise_id ORDER BY c.id DESC;');
       $this->assign('companys', $companys);
       return view('list');
     }
-
-    /**
-     *待售商品列表
-     *
-     */
-    public function stay()
-    {    
-         return 'stay';
-
-       return view('stay_list');
-    }
-    
 
 
     /**
@@ -53,9 +41,9 @@ class Company extends Base
      *商品添加
      *
      */
-    public function company_add_form()
+    public function add_form()
     {   
-
+       $this->assign('categorys', array());     
       return view('company/add_form');
     }
 
@@ -64,19 +52,13 @@ class Company extends Base
      * 商品编辑
      *
      */
-    public function company_edit_form()
+    public function edit_form()
     {   
-      $goods_id   = input("goods_id");
-      $goods      = Model('GoodsModel')->getGoods($goods_id);
-
-      $categorys  = Model('Category')->getCatList();
-      $brands     = Model('Brand')->getBrandses();
-      
-      $this->assign('goods',      $goods);     
-      $this->assign('brands',     $brands);      
-      $this->assign('categorys',  $categorys);
-
-      return view('goods/edit_form');
+      $company_id   = input("id");
+      $company = Db::table('cx_company')->where('id', $company_id)->find();
+      $this->assign('company',      $company);     
+      $this->assign('categorys',    array());    
+      return view('company/edit_form');
     }
 
 
@@ -129,14 +111,13 @@ class Company extends Base
     }
 
     /**
-     *待售商品列表
-     *
+     * 公司删除
      */
-    public function goods_delete()
+    public function company_delete()
     {    
-      $goods_id   = input("goods_id");
-      GoodsModel::destroy($goods_id);
-      $this->success('删除商品成功', '@goods/list');      
+      $company_id   = input("id");
+      Db::table('cx_company')->where('id', $company_id)->delete();
+      $this->success('删除企业成功', '@admin/company/list');      
     }
 
     /**
@@ -170,30 +151,30 @@ class Company extends Base
     * 商品添加提交处理
     */
     public function add_form_submit($post){
-        $param = array(
-           'goods_name'           => $post['goods_name'],
-           'goods_sn'             => $post['goods_sn'],
-           'goods_number'         => $post['goods_number'],
-           'cat_id'               => $post['cat_id'],
-           'brand_id'             => $post['brand_id'],
-           'sale_price'           => $post['sale_price'],
-           'market_price'         => $post['market_price'],
-           'keywords'             => $post['keywords'],
-           'goods_desc'           => $post['goods_desc'],
-           'status'               => 1,
-           'created'              => time(),
-           'updated'              => time(),
+        $data = array(
+           'enterprise_name'            => $post['company_name'],
+           'USCC'                       => $post['company_uscc'],
+           'legal_representative'       => $post['company_leader'],
+           'registered_capital'         => $post['company_money'],
+           // 'company_type'               => $post['company_type'],
+           'enterprise_url'             => $post['company_url'],
+           'registered_time'            => $post['company_created'],
+           'registered_address'         => $post['company_address'],
+           'enterprise_logo'            => $post['company_logo'],
+           'business_scope'             => $post['company_business'],
+           'phone'                      => $post['company_phone'],
+           // 'company_description'        => $post['company_description'],
+           'deleted'                    => 0,
+           'enterprise_registeraion_number' => '',
         );
-        
-        $goods_id                  =  input('goods_id');
 
-        $res = Model('GoodsModel')->addGoods($param,$goods_id);
+        $result = Db::table('cx_company')->insert($data);
 
-        if(!$res){
+        if(!$result){
             $this->error('添加商品失败');
         }
 
-        $this->success('添加商品成功', '@goods/add');      
+        $this->success('添加商品成功', '@admin/company/list');      
     }
 
     /**
@@ -201,30 +182,32 @@ class Company extends Base
      */
     public function edit_form_submit($post)
     {   
-        $param = array(
-           'goods_name'           => $post['goods_name'],
-           'goods_sn'             => $post['goods_sn'],
-           'goods_number'         => $post['goods_number'],
-           'cat_id'               => $post['cat_id'],
-           'brand_id'             => $post['brand_id'],
-           'sale_price'           => $post['sale_price'],
-           'market_price'         => $post['market_price'],
-           'keywords'             => $post['keywords'],
-           'goods_desc'           => $post['goods_desc'],
-           'status'               => 1,
-           'created'              => time(),
-           'updated'              => time(),
+        $data = array(
+           'enterprise_name'            => $post['company_name'],
+           'USCC'                       => $post['company_uscc'],
+           'legal_representative'       => $post['company_leader'],
+           'registered_capital'         => $post['company_money'],
+           // 'company_type'               => $post['company_type'],
+           'enterprise_url'             => $post['company_url'],
+           'registered_time'            => $post['company_created'],
+           'registered_address'         => $post['company_address'],
+           'enterprise_logo'            => $post['company_logo'],
+           'business_scope'             => $post['company_business'],
+           'phone'                      => $post['company_phone'],
+           // 'company_description'        => $post['company_description'],
+           // 'deleted'                    => 0,
+           // 'enterprise_registeraion_number' => '',
         );
         
-        $goods_id = $post['goods_id'];
+        $company_id = $post['company_id'];
 
-        $res = Model('GoodsModel')->editGoods($param, $goods_id);
+        $res = Db::table('cx_company')->where('id', $company_id)->update($data);
 
         if(!$res){
-            $this->error('编辑商品失败');
+            $this->error('编辑企业失败');
         }
 
-        $this->success('编辑商品成功', '@goods/list');
+        $this->success('编辑企业成功', '@admin/company/list');
     }
 
 

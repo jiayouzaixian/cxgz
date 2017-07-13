@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        商品列表 
+        企业分类列表 
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-        <li><a href="#">商品</a></li>
+        <li><a href="#">企业分类</a></li>
         <li class="active">列表</li>
       </ol>
     </section>
@@ -22,11 +22,9 @@
         <div class="col-xs-12">
           <div class="box">
 
-            <div class="box-header">
-              
-            </div>
 
             <div class="box-body">
+              <a href="{:url('@admin/category/add')}" class="btn btn-primary btn-sm">添加分类</a>
               <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                 <div class="row">
                   <div class="col-sm-12">
@@ -34,34 +32,27 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>公司名称</th>
-                        <th>信用代码</th>
-                        <th>法人代表</th>
-                        <th>公司电话</th>
-                        <th>注册资本</th>
-                        <th>成立日期</th>
-                        <th>登陆账号</th>
+                        <th>分类名称</th>
+                        <th>排序</th>
                         <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {foreach name="companys" item="company" key="k" }
+                    {if condition=" count($categorys) != 0 "}
+                      {foreach name="categorys" item="category" key="k" }
                         <tr>
-                          <td>{$company.id}</td>
-                          <td>{$company.enterprise_name}</td>
-                          <td>{$company.USCC}</td>
-                          <td>{$company.legal_representative}</td>
-                          <td>{$company.phone}</td>
-                          <td>{$company.registered_capital}</td>
-                          <td>{$company.registered_time}</td>
-                          <td>{$company.username}</td>
+                          <td>{$category.id}</td>
+                          <td>{$category.name}</td>
+                          <td>{$category.weight}</td>
                           <td>
-                            <a href="{:url('/admin/company/info?id='.$company.id)}" class="">详情</a> | 
-                            <a href="{:url('/admin/company/edit?id='.$company.id)}" class="">编辑</a> | 
-                            <a href="{:url('/admin/company/delete?id='.$company.id)}" class="">删除</a>
+                            <a href="{:url('/admin/category/edit?id='.$category.id)}" class="">编辑</a> | 
+                            <a href="{:url('/admin/category/delete?id='.$category.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}
+                      {else}
+                        <td>没有内容</td>
+                      {/if}
                     </tbody>
                     </table>
                   </div>

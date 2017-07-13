@@ -1,0 +1,84 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="page/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+         编辑分类
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="#">企业分类</a></li>
+          <li class="active" >添加</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+            <form action='{:url("/admin/category/form_submit")}'  method="post" class="form-horizontal">
+              <div class="box-body">
+              <p><a href="{:url('@admin/category/list')}" class="btn btn-primary btn-sm">返回列表</a></p>
+                <div class="form-group">
+                  <label for="category_name" class="">分类名称</label>
+                  <input type="text" name="category_name" class="form-control" id="category_name" value="{$category.name}">
+                </div>
+                <div class="form-group">
+                  <label for="category_weight" class="">排序</label>
+                  <input type="text" class="form-control" id="category_weight" name="category_weight" value="{$category.weight}">
+                </div>
+                <div class="form-group">
+                  <label for="category_parent" class="">上级分类</label>
+                  <select class="form-control" type="category_parent" id="category_parent" name="category_parent">
+                    <option value="0">选择分类</option>
+                    {if condition=" $categorys neq '' "}
+                      {foreach name="categorys" item="category" key="k" }
+                         <option value="{$category.id}" {notempty name="result"} {if $category.id eq $result.id}selected="selected"{/if} {/notempty}>
+                              {for start="0" end="$category.level"}
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                              {/for}
+                             {$category.name}
+                         </option>
+                      {/foreach}
+                    {/if}
+                  </select>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="op" value="edit" >
+                <input type="hidden" name="category_type" value="company" >
+                <input type="hidden" name="category_id" value="{$category.id}" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+
+</body>
+</html>
