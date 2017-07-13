@@ -1,0 +1,236 @@
+{include file="public/header" /} 
+<style type="text/css">
+.thumbnail {
+    width: 110px;
+    height: 110px;
+}
+.file-item {
+    float: left;
+    position: relative;
+    margin: 0 20px 20px 0;
+    padding: 4px;
+}
+.clear{
+  clear:both;
+}
+</style>
+<body class="hold-transition skin-blue sidebar-mini">
+
+<link rel="stylesheet" type="text/css" href="{$Think.APP_ADMIN_BOOTSTRAP}webuploader/webuploader.css">
+
+<div class="wrapper">
+
+     {include file="public/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          商品相册上传
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="{:url('/goods/list')}}">商品列表</a></li>
+          <li class="active" >相册上传</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+<!--             <form action='{:url("/goods/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data" >
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="goods_name" class="">商品名称</label>
+                  <br>
+                  {$goods.goods_name}
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">图片上传</label>
+                  <input type="file" id="exampleInputFile" name="gallery">
+                </div>
+ 
+              </div>
+              <div class="box-footer">
+                <input type="hidden" name="goods_id" {notempty name="goods"} value="{$goods.goods_id}" {/notempty}>
+                <input type="hidden" name="op" value="gallery_upload" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form> -->
+            <div class="box-body">
+              <div class="form-group">
+                    <label for="goods_name" class="">商品名称</label>
+                    <br>
+                    {$goods.goods_name}
+              </div>
+    
+              {notempty name="gallerys"}
+              <label for="goods_name" class="">缩略图</label><br>
+              <form action='{:url("/goods/form_submit")}'  method="post" class="form-horizontal" >
+                <div class="form-group" style="margin-top:10px;">
+                  <button type="submit"  class="btn btn btn-primary " >更新</button>
+                </div>
+                <div class="form-group">
+                  {volist name="gallerys" id="gallery"}
+                    <div style="float: left;  margin: 0px 50px 0 0; height: 100%;">
+                      <div><img src="{$gallery.thumb_url}"></div>
+                      <div style="margin:5px 0 5px 0;">
+                        <input type="textfield" size="10" class="form-control" style="height:30px;" value="{$gallery.weight}" name="old_img_weight[{$gallery.id}]"> 
+                      </div>
+                      <div style="text-align: center;"><a href="{$gallery.source_url}" target="_blank">查看原图</a> | <a href="{$gallery.delete_url}">删除</a></div>
+                    </div>
+                  {/volist}
+                
+                </div>
+                <input type="hidden" name="op" value="gallery_upload_update" >
+                <input type="hidden" name="goods_id" value="{$goods.goods_id}" >
+              </form>
+              {/notempty}
+              {empty name="gallerys"}
+              <div class="form-group">
+                <p>相册没有内容, 请选择图片上传!</p>
+              </div>
+              {/empty}
+              <div class="clear"></div>
+
+              <div class="form-group">
+                <div id="uploader" class="wu-example">
+                  <!--用来存放文件信息-->
+                  <div id="fileList" class="uploader-list"></div>
+                  <div class="clear"></div>
+                  <div class="btns">
+                      <div id="picker">选择图片</div>
+                      <button id="ctlBtn" class="btn btn-default">开始上传</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+
+          
+
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="public/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<script type="text/javascript" src="{$Think.APP_ADMIN_BOOTSTRAP}webuploader/webuploader.js"></script>
+<script type="text/javascript">
+ 
+  var $list = $("#fileList");   //这几个初始化全局的百度文档上没说明，好蛋疼。  
+  var $btn  = $("#ctlBtn");   //开始上传  
+
+  var uploader = WebUploader.create({
+
+      // swf文件路径
+      swf: '{$Think.APP_ADMIN_BOOTSTRAP}webuploader/Uploader.swf',
+
+      // 文件接收服务端。
+      server: '{$Think.SITE_BASE_PATH}goods/gallery_upload_form_submit',
+
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#picker',
+
+      // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+      resize: false,
+
+      method:'POST', 
+
+      formData:{
+        goods_id: '{$goods.goods_id}',
+      }
+  });
+  uploader.on( 'fileQueued', function( file ) {
+      // $('#fileList').append( '<div id="' + file.id + '" class="item">' +
+      //     '<h4 class="info">' + file.name + '</h4>' +
+      //     '<p class="state">等待上传...</p>' +
+      // '</div>' );
+
+
+    var $li = $(
+        '<div id="' + file.id + '" class="file-item thumbnail">' +
+            '<img>' +
+            '<div class="info">' + file.name + '</div>' +
+        '</div>'
+        ),
+    $img = $li.find('img');
+
+
+    // $list为容器jQuery实例
+    $list.append( $li );
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, 110, 110);
+
+  });
+  // 文件上传过程中创建进度条实时显示。
+  uploader.on( 'uploadProgress', function( file, percentage ) {
+      var $li = $( '#'+file.id ),
+          $percent = $li.find('.progress .progress-bar');
+
+      // 避免重复创建
+      if ( !$percent.length ) {
+          $percent = $('<div class="progress progress-striped active">' +
+            '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+            '</div>' +
+          '</div>').appendTo( $li ).find('.progress-bar');
+      }
+
+      $li.find('p.state').text('上传中');
+
+      $percent.css( 'width', percentage * 100 + '%' );
+  });
+  uploader.on( 'uploadSuccess', function( file ) {
+      $( '#'+file.id ).find('p.state').text('已上传');
+  });
+
+  uploader.on( 'uploadError', function( file ) {
+      $( '#'+file.id ).find('p.state').text('上传出错');
+  });
+
+  uploader.on( 'uploadComplete', function( file ) {
+      $( '#'+file.id ).find('.progress').fadeOut();
+  });
+
+  $btn.on( 'click', function() {  
+    console.log("上传...");  
+    uploader.upload();  
+    console.log("上传成功");  
+  }); 
+
+
+</script>
+</body>
+</html>

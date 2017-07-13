@@ -1,26 +1,34 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{:url('@company')}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini">诚信贵州企业后台</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">诚信贵州企业后台</span>
+      <span class="logo-lg">企业后台</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+   <!--   <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">切换导航</span>
       </a>
+-->
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
+           <li class="messages-menu">
+            <a href="http://www.guizhou.xin" target="_blank">
+              网站首页
+            </a>
+          </li>         
           <li class="messages-menu">
-            <a href="{:url('@user/logout')}" class="">
+            <a href="{:url('@company/user/logout')}" class="">
               登出
             </a>
+          </li>
+          <li class="messages-menu">
+&nbsp;&nbsp;&nbsp;&nbsp;
           </li>
         </ul>
       </div>
@@ -84,57 +92,80 @@
             $request = '';
           }
         {/php}
-        <li class="treeview {php} if(strpos($request, 'goods')){echo 'active';} {/php} ">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>商品管理</span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@goods/add')}"><i class="fa fa-circle-o"></i>添加商品</a></li>
-            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@goods/list')}"><i class="fa fa-circle-o"></i>商品列表</a></li>
-            <li><a href="/admin/category/index"><i class="fa fa-circle-o"></i>商品分类</a></li>
-            <li><a href="/admin/brand/index"><i class="fa fa-circle-o"></i>商品品牌</a></li>
+        <li class="treeview active">
+          <div class="menu-title">
+            <i class="fa fa-dashboard"></i>&nbsp;&nbsp;<span>企业信息</span>
+          </div>
+          <ul class="treeview-menu" >
+            <li class="{php} if(strpos($request, 'company/add')){echo 'active';} {/php}"><a href="{:url('@company/company/add')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
+            <li class="{php} if(strpos($request, 'company/list')){echo 'active';} {/php}"><a href="{:url('@company/company/list')}"><i class="fa fa-angle-right"></i>知识产权</a></li>
+            <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@company/company_user/add')}"><i class="fa fa-angle-right"></i>企业资质</a></li>
+            <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@company/company_user/list')}"><i class="fa fa-angle-right"></i>企业荣誉</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业相册</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>宣传视频</a></li>
           </ul>
         </li>
         
-        <!-- 订单管理 -->
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>订单管理</span>
-          </a>
+        <li class="treeview active" >
+          <div class="menu-title">
+            <i class="fa fa-th"></i>&nbsp;&nbsp;
+            <span>品牌管理</span>
+          </div>
           <ul class="treeview-menu">
-            <li><a href="/admin/order/index.html"><i class="fa fa-circle-o"></i>订单列表</a></li>
+            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加品牌</a></li>
+            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>品牌列表</a></li>
+          </ul>
+        </li>
+        
+        <!-- 产品管理 -->
+        <li class="treeview active" >
+          <div class="menu-title">
+            <i class="fa fa-cubes"></i>&nbsp;&nbsp;
+            <span>产品管理</span>
+          </div>
+          <ul class="treeview-menu">
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加产品</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>产品列表</a></li>
           </ul>  
         </li>
 
 
-        <!-- 会员管理 -->
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>会员管理</span>
-          </a>
+        <!-- 商标管理 -->
+        <li class="treeview active" >
+          <div class="menu-title">
+            <i class="fa fa-list"></i>&nbsp;&nbsp;
+            <span>商标管理</span>
+          </div>
           <ul class="treeview-menu">
-            <li><a href="/admin/users/index.html"><i class="fa fa-circle-o"></i>会员列表</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加商标</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
           </ul>  
         </li>
 
-
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>首页管理</span>
-          </a>
+        <!-- 发布管理 -->
+        <li class="treeview active" >
+          <div class="menu-title">
+            <i class="fa fa-list"></i>&nbsp;&nbsp;
+            <span>发布管理</span>
+          </div>
           <ul class="treeview-menu">
-            <li><a href="/admin/index/lists?type=1"><i class="fa fa-circle-o"></i>轮播管理</a></li>
-            <li><a href="/admin/index/lists?type=2"><i class="fa fa-circle-o"></i>分类管理</a></li>
-            <li><a href="/admin/index/lists?type=3"><i class="fa fa-circle-o"></i>频道管理</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>发布信息</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>信息列表</a></li>
           </ul>  
         </li>
 
-
+        <!-- 系统设置 -->
+        <li class="treeview active">
+          <div class="menu-title">
+            <i class="fa fa-bars"></i>&nbsp;&nbsp;
+            <span>系统设置</span>
+          </div>
+          <ul class="treeview-menu">
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>系统设置</a></li>
+            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>修改密码</a></li>
+          </ul>  
+        </li>
 
       </ul>
     </section>

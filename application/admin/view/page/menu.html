@@ -1,6 +1,6 @@
 <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{:url('@admin')}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg">诚信贵州后台</span>
@@ -18,9 +18,22 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="messages-menu">
+            <a href="http://www.guizhou.xin" target="_blank">
+              网站首页
+            </a>
+          </li>      
+          <li class="messages-menu">
+            <a href="{:url('@company')}" target="_blank">
+              公司后台
+            </a>
+          </li>     
+          <li class="messages-menu">
             <a href="{:url('@admin/user/logout')}" class="">
               登出
             </a>
+          </li>
+          <li class="messages-menu">
+&nbsp;&nbsp;&nbsp;&nbsp;
           </li>
         </ul>
       </div>
@@ -90,7 +103,7 @@
           </div>
           <ul class="treeview-menu" >
             <li class="{php} if(strpos($request, 'company/add')){echo 'active';} {/php}"><a href="{:url('@admin/company/add')}"><i class="fa fa-angle-right"></i>添加企业</a></li>
-            <li class="{php} if(strpos($request, 'company/list')){echo 'active';} {/php}"><a href="{:url('@admin/company/list')}"><i class="fa fa-angle-right"></i>企业列表</a></li>
+            <li class="{php} if(strpos($request, 'admin/company/list')){echo 'active';} {/php}"><a href="{:url('@admin/company/list')}"><i class="fa fa-angle-right"></i>企业列表</a></li>
             <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/add')}"><i class="fa fa-angle-right"></i>添加企业会员</a></li>
             <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@admin/company_user/list')}"><i class="fa fa-angle-right"></i>企业会员列表</a></li>
             <li><a href="{:url('@admin')}"><i class="fa fa-angle-right"></i>企业分类</a></li>

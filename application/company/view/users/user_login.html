@@ -28,19 +28,19 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <b>诚信贵州</b>
+    <b>诚信贵州企业后台</b>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">用戶登录</p>
+    <p class="login-box-msg">企业用戶</p>
  
-    <form action="{:url('user/login_submit')}" method="POST" onsubmit="return login();">
+    <form action="{:url('company/user/login_submit')}" method="POST" onsubmit="return login();">
       <div class="form-group has-feedback">
-        <input type="user_name" name="user_name" id="user_name" class="form-control" placeholder="用户名">
+        <input type="user_name" name="user_name" id="user_name" class="form-control" placeholder="cxgz6654" value="cxgz6654">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name="password" id="password" class="form-control" placeholder="密码">
+        <input type="password" name="password" id="password" class="form-control" placeholder="密码" value="123456">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -91,7 +91,7 @@
   });
 
   function login(){
-     var url = "{:url('@user/login_submit')}";
+     var url = "{:url('@company/user/login_submit')}";
      var user_name = $('#user_name').val();
      var password = $('#password').val();
      $.ajax({
@@ -106,7 +106,7 @@
             if(res.code == 1){
                 alert(res.message);
             }else{
-                var url = "{:url('@/')}";
+                var url = "{:url('@company')}";
                 window.location.href=url;
             }
         },

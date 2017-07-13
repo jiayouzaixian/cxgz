@@ -21,7 +21,7 @@ class Base extends Controller
      */
     protected function getAdminUser()
     {
-         $adminUser = session('admin_user');
+         $adminUser = session('company_user');
     
          if($adminUser){
             $adminUser = json_decode($adminUser,true);
@@ -34,12 +34,12 @@ class Base extends Controller
     /**
      * 分配管理员至模板，未登录则跳转至登录
      */
-    public function assignAdminUser($name = 'admin_user')
+    public function assignAdminUser($name = 'company_user')
     {
-         $adminUser = session('admin_user');
+         $adminUser = session('company_user');
 
          if(!$adminUser){
-           $this->redirect('@user/login'); 
+           $this->redirect('@company/user/login'); 
          }else{
             $adminUser = json_decode($adminUser,true);
          }

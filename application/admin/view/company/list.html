@@ -38,9 +38,9 @@
                         <th>信用代码</th>
                         <th>法人代表</th>
                         <th>公司电话</th>
-                        <th>公司网址</th>
                         <th>注册资本</th>
                         <th>成立日期</th>
+                        <th>登陆账号</th>
                         <th>操作</th>
                       </tr>
                     </thead>
@@ -52,14 +52,13 @@
                           <td>{$company.USCC}</td>
                           <td>{$company.legal_representative}</td>
                           <td>{$company.phone}</td>
-                          <td>{$company.enterprise_url}</td>
                           <td>{$company.registered_capital}</td>
                           <td>{$company.registered_time}</td>
+                          <td>{$company.username}</td>
                           <td>
-                            <a href="{:url('/goods/edit', 'goods_id='.$goods.goods_id)}" class="">编辑</a> | 
-                            <a href="{:url('/goods/gallery_upload', 'goods_id='.$goods.goods_id)}" class="">相册图片</a> | 
-                            <a href="{:url('/goods/detail_upload', 'goods_id='.$goods.goods_id)}" class="">详情图片</a> | 
-                            <a href="{:url('/goods/delete', 'goods_id='.$goods.goods_id)}" class="">删除</a>
+                            <a href="{:url('/admin/company/info?id='.$company.id)}" class="">详情</a> | 
+                            <a href="{:url('/admin/company/edit?id='.$company.id)}" class="">编辑</a> | 
+                            <a href="{:url('/admin/company/delete?id='.$company.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}
@@ -81,7 +80,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-    {include file="public/footer" /}
+    {include file="page/footer" /}
 
   <div class="control-sidebar-bg"></div>
 </div>
@@ -112,7 +111,8 @@
       "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": true
+      "autoWidth": true,
+      "pageLength": 25,
     });
   });
 </script>

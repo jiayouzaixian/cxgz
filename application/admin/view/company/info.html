@@ -1,0 +1,126 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  {include file="page/menu" /}
+
+  <div class="content-wrapper">
+
+    <section class="content-header">
+      <h1>
+        公司详情
+      </h1>
+     <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+        <li><a href="#">公司</a></li>
+        <li class="active">详情</li>
+      </ol>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-body">
+              <p><a href="{:url('@admin/company/list')}" class="btn btn-primary btn-sm">返回</a></p>
+              <table class="table table-bordered">
+                <tr>
+                  <td width="200" align="right"><b>公司名称</b></td>
+                  <td>{$company.enterprise_name}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>信用代码</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>法人代表</b></td>
+                  <td>{$company.legal_representative}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司电话</b></td>
+                  <td>{$company.phone}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>注册资本</b></td>
+                  <td>{$company.registered_capital}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司网址</b></td>
+                  <td>{$company.enterprise_url}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司Logo</b></td>
+                  <td>{$company.enterprise_logo}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司标签</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司商标</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>企业资质</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>企业荣誉</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>公司专利</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>软件著作权</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>作品著作权</b></td>
+                  <td>{$company.USCC}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>登陆账号</b></td>
+                  <td>{$company.username}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>成立日期</b></td>
+                  <td>{$company.registered_time}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>经营范围</b></td>
+                  <td>{$company.business_scope}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/demo.js"></script>
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+</body>
+</html>

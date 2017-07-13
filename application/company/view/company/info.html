@@ -1,0 +1,176 @@
+{include file="public/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="public/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+            <section class="content-header">
+              <h1>
+                编辑商品
+                <small>商品</small>
+              </h1>
+             <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+                <li><a href="#">商品</a></li>
+                <li class="active">商品详情</li>
+              </ol>
+            </section>
+
+            <form action='{:url("goods/$act")}'  method="post" class="form-horizontal">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="goods_name" class="col-sm-2 control-label">商品名称</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" name="goods_name" class="form-control" id="goods_name" {notempty name="result"} value="{$result.goods_name}" {/notempty} placeholder="商品名称">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="goods_sn" class="col-sm-2 control-label">商品货号</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="goods_sn" {notempty name="result"} value="{$result.goods_sn}" {/notempty} name="goods_sn" placeholder="商品货号">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="goods_number" class="col-sm-2 control-label">商品库存</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="goods_number" name="goods_number" {notempty name="result"} value="{$result.goods_number}" {/notempty} placeholder="商品库存">
+                  </div>
+                </div>
+
+ 
+                <div class="form-group">
+                  <label for="cat_id" class="col-sm-2 control-label">上级分类</label>
+
+                  <div class="col-sm-10">
+                      <select class="form-control" type="cat_id" id="cat_id" name="cat_id">
+                        <option value="0">选择分类</option>
+                        {foreach name="catList" item="cat" key="k" }
+                           <option value="{$cat.cat_id}" {notempty name="result"} {if $cat.cat_id eq $result.cat_id}selected="selected"{/if} {/notempty}>
+                                {for start="0" end="$cat.level"}
+                                    &nbsp;&nbsp;&nbsp;
+                                {/for}
+                               {$cat.cat_name}
+                           </option>
+                        {/foreach}
+                      </select>
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <label for="brand" class="col-sm-2 control-label">商品品牌</label>
+
+                  <div class="col-sm-10">
+                    <select class="form-control" type="brand_id" id="brand_id" name="brand_id">
+                           <option value="0">选择品牌</option>
+                          {foreach name="brandList" item="brand" key="k" }
+                           <option value="{$brand.brand_id}" {notempty name="result"} {if $brand.brand_id eq $result.brand_id}selected="selected"{/if} {/notempty}>
+                               {$brand.brand_name}
+                           </option>
+                          {/foreach}
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="shop_price" class="col-sm-2 control-label">本店售价</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" {notempty name="result"} value="{$result.shop_price}" {/notempty} id="shop_price" name="shop_price" placeholder="本店售价">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="keywords" class="col-sm-2 control-label">商品关键词</label>
+
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="keywords" name="keywords" {notempty name="result"} value="{$result.keywords}" {/notempty} placeholder="商品关键词">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="goods_desc" class="col-sm-2 control-label">商品详情</label>
+                  <div class="col-sm-10">
+                   <div class="row">
+                     <div class="col-md-12">
+                    <div class="box box-info">
+                      <div class="box-header">
+                        <h3 class="box-title">商品详情
+                          <small>商品编辑器</small>
+                        </h3>
+                        <!-- tools box -->
+                        <div class="pull-right box-tools">
+                          <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button>
+                        </div>
+                        <!-- /. tools -->
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body pad">
+                          <textarea id="editor1" name="goods_desc" rows="10" cols="80" {notempty name="result"} value="{$result.goods_desc}" {/notempty}>           
+                             {notempty name="result"} {$result.goods_desc} {/notempty}
+                          </textarea>
+                      </div>
+                    </div>
+             
+                  </div>
+                  <!-- /.col-->
+                   </div>
+                  </div>
+                </div>
+ 
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="goods_id" {notempty name="result"} value="{$result.goods_id}" {/notempty}>
+                <button type="submit" class="btn btn-default">清除</button>
+                <button type="submit" class="btn btn-info pull-right">提交</button>
+              </div>
+            </form>
+ 
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="public/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/demo.js"></script>
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1');
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
+  });
+</script>
+</body>
+</html>
