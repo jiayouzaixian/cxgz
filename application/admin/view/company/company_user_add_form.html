@@ -9,51 +9,44 @@
     <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-         添加企业分类
+         添加企业账号
         </h1>
        <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-          <li><a href="#">企业分类</a></li>
-          <li class="active" >添加</li>
+          <li><a href="#">企业</a></li>
+          <li class="active" >添加账号</li>
         </ol>
       </section>
       <section class="content">
       <div class="row">
       <div class="col-md-12">
-      <div class="box"><form action='{:url("/admin/category/form_submit")}'  method="post" class="form-horizontal">
+      <div class="box">
+            <form action='{:url("/admin/company/form_submit")}'  method="post" class="form-horizontal"  >
               <div class="box-body">
-              <p><a href="{:url('@admin/category/list')}" class="btn btn-primary btn-sm">返回列表</a></p>
-            
                 <div class="form-group">
-                  <label for="category_name" class="">分类名称</label>
-                  <input type="text" name="category_name" class="form-control" id="category_name">
+                  <label for="company_user_name" class="">企业账号名称</label>
+                  <input type="text" name="company_user_name" class="form-control" id="company_user_name" value="{$company_user_name}">
                 </div>
-
                 <div class="form-group">
-                  <label for="category_parent" class="">上级分类</label>
-                  <select class="form-control" type="category_parent" id="category_parent" name="category_parent">
+                  <label for="company_id" class="">企业选择</label>
+                  <select class="form-control" type="company_id" id="company_id" name="company_id">
                     <option value="0"> - 选择 - </option>
-                    {if condition=" $categorys neq '' "}
-                      {foreach name="categorys" item="category" key="k" }
-                         <option value="{$category.id}" {notempty name="result"} {if $category.id eq $result.id}selected="selected"{/if} {/notempty}>
-                              {for start="0" end="$category.level"}
-                                  &nbsp;&nbsp;&nbsp;&nbsp;
-                              {/for}
-                             {$category.name}
+                    {if condition=" $companys neq '' "}
+                      {foreach name="companys" item="company" key="k" }
+                         <option value="{$company.id}" >
+                             {$company.enterprise_name}
                          </option>
                       {/foreach}
                     {/if}
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="category_weight" class="">排序</label>
-                  <input type="text" class="form-control" id="category_weight" name="category_weight" placeholder="0">
+                  <label for="company_phone" class="">企业电话</label>
+                  <input type="text" class="form-control" id="company_phone" name="company_phone" >
                 </div>
-              </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="hidden" name="op" value="add" >
-                <input type="hidden" name="category_type" value="company" >
+                <input type="hidden" name="op" value="company_user_add" >
                 <button type="submit" class="btn btn btn-primary ">提交</button>
               </div>
             </form>
@@ -78,7 +71,6 @@
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
-
 
 </body>
 </html>

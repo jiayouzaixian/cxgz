@@ -7,12 +7,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        商品列表 
+        企业账号列表 
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-        <li><a href="#">商品</a></li>
-        <li class="active">列表</li>
+        <li><a href="#">企业</a></li>
+        <li class="active">账号列表</li>
       </ol>
     </section>
 
@@ -34,31 +34,22 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>公司名称</th>
-                        <th>信用代码</th>
-                        <th>法人代表</th>
-                        <th>公司电话</th>
-                        <th>注册资本</th>
-                        <th>成立日期</th>
+                        <th>企业名称</th>
                         <th>登陆账号</th>
+                        <th>手机</th>
                         <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {foreach name="companys" item="company" key="k" }
+                      {foreach name="company_users" item="company_user" key="k" }
                         <tr>
-                          <td>{$company.id}</td>
-                          <td>{$company.enterprise_name}</td>
-                          <td>{$company.USCC}</td>
-                          <td>{$company.legal_representative}</td>
-                          <td>{$company.phone}</td>
-                          <td>{$company.registered_capital}</td>
-                          <td>{$company.registered_time}</td>
-                          <td>{$company.username}</td>
+                          <td>{$company_user.id}</td>
+                          <td>{$company_user.enterprise_name}</td>
+                          <td>{$company_user.username}</td>
+                          <td>{$company_user.phone_num}</td>
                           <td>
-                            <a href="{:url('/admin/company/info?id='.$company.id)}" class="">详情</a> | 
-                            <a href="{:url('/admin/company/edit?id='.$company.id)}" class="">编辑</a> | 
-                            <a href="{:url('/admin/company/delete?id='.$company.id)}" class="">删除</a>
+                            <a href="{:url('/admin/company/user/edit?id='.$company_user.id)}" class="">编辑</a> | 
+                            <a href="{:url('/admin/company/user/delete?id='.$company_user.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}

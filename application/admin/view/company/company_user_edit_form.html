@@ -9,51 +9,45 @@
     <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-         编辑分类
+         编辑企业账号
         </h1>
        <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-          <li><a href="#">企业分类</a></li>
-          <li class="active" >添加</li>
+          <li><a href="#">企业</a></li>
+          <li class="active" >编辑账号</li>
         </ol>
       </section>
       <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
-            <form action='{:url("/admin/category/form_submit")}'  method="post" class="form-horizontal">
+            <form action='{:url("/admin/company/form_submit")}'  method="post" class="form-horizontal"  >
               <div class="box-body">
-              <p><a href="{:url('@admin/category/list')}" class="btn btn-primary btn-sm">返回列表</a></p>
                 <div class="form-group">
-                  <label for="category_name" class="">分类名称</label>
-                  <input type="text" name="category_name" class="form-control" id="category_name" value="{$category.name}">
+                  <label for="company_user_name" class="">企业账号名称</label>
+                  <input type="text" name="company_user_name" class="form-control" id="company_user_name" value="{$company_user.username}" disabled="disabled">
                 </div>
-
                 <div class="form-group">
-                  <label for="category_parent" class="">上级分类</label>
-                  <select class="form-control" type="category_parent" id="category_parent" name="category_parent">
-                    <option value="0">选择分类</option>
-                    {if condition=" $categorys neq '' "}
-                      {foreach name="categorys" item="categoryList" key="k" }
-                         <option value="{$categoryList.id}"  {if $categoryList.id eq $category.parent} selected="selected" {/if} >
-                             {$categoryList.name}
-                         </option>
-                      {/foreach}
-                    {/if}
-                  </select>
+                  <label for="company_id" class="">企业名称</label>
+                  <br>
+                  {$company_user.enterprise_name}
                 </div>
-
                 <div class="form-group">
-                  <label for="category_weight" class="">排序</label>
-                  <input type="text" class="form-control" id="category_weight" name="category_weight" value="{$category.weight}">
+                  <label for="company_phone" class="">企业电话</label>
+                  <input type="text" class="form-control" id="company_phone" name="company_phone" value="{$company_user.phone_num}">
                 </div>
-
-              </div>
+                <div class="form-group">
+                  <label for="password" class="">修改密码</label>
+                  <input type="password" class="form-control" id="password" name="password" >
+                </div>
+                <div class="form-group">
+                  <label for="password_repeat" class="">重复密码</label>
+                  <input type="password" class="form-control" id="password_repeat" name="password_repeat" >
+                </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="hidden" name="op" value="edit" >
-                <input type="hidden" name="category_type" value="company" >
-                <input type="hidden" name="category_id" value="{$category.id}" >
+                <input type="hidden" name="op" value="company_user_edit" >
+                <input type="hidden" name="company_user_id" value="{$company_user.id}" >
                 <button type="submit" class="btn btn btn-primary ">提交</button>
               </div>
             </form>
@@ -78,7 +72,6 @@
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
-
 
 </body>
 </html>

@@ -21,11 +21,27 @@
       <div class="row">
       <div class="col-md-12">
       <div class="box">
-            <form action='{:url("/admin/company/form_submit")}'  method="post" class="form-horizontal">
+            <form action='{:url("/admin/company/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data" >
               <div class="box-body">
                 <div class="form-group">
-                  <label for="company_name" class="">企业名称</label>
-                  <input type="text" name="company_name" class="form-control" id="company_name">
+                  <label for="company_user_name" class="">企业名称</label>
+                  <input type="text" name="company_user_name" class="form-control" id="company_user_name">
+                </div>
+                <div class="form-group">
+                  <label for="company_category" class="">企业分类</label>
+                  <select class="form-control" type="company_category" id="company_category" name="company_category">
+                    <option value="0"> - 选择 - </option>
+                    {if condition=" $categorys neq '' "}
+                      {foreach name="categorys" item="category" key="k" }
+                         <option value="{$category.id}" >
+                              {for start="1" end="$category.level"}
+                                  &nbsp;&nbsp;&nbsp;&nbsp; 
+                              {/for}
+                             {$category.name}
+                         </option>
+                      {/foreach}
+                    {/if}
+                  </select>
                 </div>
                 <div class="form-group">
                   <label for="company_uscc" class="">统一社会信用代码</label>
@@ -41,22 +57,7 @@
                   <label for="company_money" class="">注册资本</label>
                   <input type="text" class="form-control" id="company_money" name="company_money" placeholder="0.00">
                 </div>
-                <div class="form-group">
-                  <label for="company_type" class="">企业分类</label>
-                  <select class="form-control" type="company_type" id="company_type" name="company_type">
-                    <option value="0">选择分类</option>
-                    {if condition=" $categorys neq '' "}
-                      {foreach name="categorys" item="category" key="k" }
-                         <option value="{$category.id}" {notempty name="result"} {if $category.id eq $result.id}selected="selected"{/if} {/notempty}>
-                              {for start="0" end="$category.level"}
-                                  &nbsp;&nbsp;&nbsp;&nbsp;
-                              {/for}
-                             {$category.name}
-                         </option>
-                      {/foreach}
-                    {/if}
-                  </select>
-                </div>
+
                 <div class="form-group">
                   <label for="company_url" class="">企业官网</label>
                   <input type="text" class="form-control" id="company_url" name="company_url" placeholder="http://www.example.com">

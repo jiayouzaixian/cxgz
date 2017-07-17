@@ -14,8 +14,20 @@ class Category extends Base
      */
     public function category_list()
     {    
-      $categorys = Db::query('select * from cx_category ORDER BY weight ASC;');
-      $this->assign('categorys', $categorys);
+      $categorys = Db::query('select * from cx_category WHERE level = 1 ORDER BY weight ASC;');
+      if($categorys){
+        foreach($categorys as $category){
+          $sql = "select * from cx_category WHERE parent = {$category['id']} AND level = 2 ORDER BY weight ASC;";
+          $categoryChilds = Db::query($sql);
+          $categoryNew[] = $category;
+          if($categoryChilds){
+            foreach($categoryChilds as $categoryChild){
+             $categoryNew[] = $categoryChild;
+            }
+          }
+        }
+      }
+      $this->assign('categorys', $categoryNew);
       return view('list');
     }
 
@@ -23,21 +35,23 @@ class Category extends Base
      * 分类添加
      */
     public function add_form()
-    {   
-       $this->assign('categorys', array());     
+    { 
+      $categorys = Db::table('cx_category')->where('level', 1)->select();
+      $this->assign('categorys', $categorys); 
       return view('category/add_form');
     }
-
 
     /**
      * 分类编辑
      */
     public function edit_form()
     {   
-      $category_id   = input("id");
-      $category = Db::table('cx_category')->where('id', $category_id)->find();
+      $category_id  = input("id");
+      $category     = Db::table('cx_category')->where('id', $category_id)->find();
+      $categorys    = Db::table('cx_category')->where('level', 1)->select();
       $this->assign('category',      $category);       
-      $this->assign('categorys',     array()); 
+      $this->assign('categorys',     $categorys); 
+
       return view('category/edit_form');
     }
 
@@ -47,7 +61,7 @@ class Category extends Base
     public function category_delete()
     {    
       $company_id   = input("id");
-      Db::table('cx_category')->where('id', $company_id)->delete();
+      // Db::table('cx_category')->where('id', $company_id)->delete();
       $this->success('删除分类成功', '@admin/category/list');      
     }
 

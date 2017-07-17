@@ -42,7 +42,13 @@
                       {foreach name="categorys" item="category" key="k" }
                         <tr>
                           <td>{$category.id}</td>
-                          <td>{$category.name}</td>
+                          <td>
+                          {if condition="$category.level eq 1 "}
+                            {$category.name}
+                          {else}
+                            &nbsp;&nbsp;&nbsp;&nbsp;- {$category.name}
+                          {/if}
+                          </td>
                           <td>{$category.weight}</td>
                           <td>
                             <a href="{:url('/admin/category/edit?id='.$category.id)}" class="">编辑</a> | 

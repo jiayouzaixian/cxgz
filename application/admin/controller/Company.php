@@ -31,10 +31,9 @@ class Company extends Base
 
       $id   = input('id');
       $company = Db::query('select c.*, u.username from cx_company as c LEFT JOIN cx_company_user as u ON c.id = u.enterprise_id WHERE c.id = :id', ['id'=>$id]);
-
+      $company[0]['logo_url'] = $this->imagePathHandle($company[0]['enterprise_logo']);
       $this->assign('company', $company[0]);     
       return view('info');
-
     }
 
     /**
@@ -42,8 +41,21 @@ class Company extends Base
      *
      */
     public function add_form()
-    {   
-       $this->assign('categorys', array());     
+    {  
+      $categorys = Db::query('select * from cx_category WHERE level = 1 ORDER BY weight ASC;');
+      if($categorys){
+        foreach($categorys as $category){
+          $sql = "select * from cx_category WHERE parent = {$category['id']} AND level = 2 ORDER BY weight ASC;";
+          $categoryChilds = Db::query($sql);
+          $categoryNew[] = $category;
+          if($categoryChilds){
+            foreach($categoryChilds as $categoryChild){
+             $categoryNew[] = $categoryChild;
+            }
+          }
+        }
+      } 
+      $this->assign('categorys', $categoryNew);     
       return view('company/add_form');
     }
 
@@ -56,8 +68,23 @@ class Company extends Base
     {   
       $company_id   = input("id");
       $company = Db::table('cx_company')->where('id', $company_id)->find();
+      $categorys = Db::query('select * from cx_category WHERE level = 1 ORDER BY weight ASC;');
+      if($categorys){
+        foreach($categorys as $category){
+          $sql = "select * from cx_category WHERE parent = {$category['id']} AND level = 2 ORDER BY weight ASC;";
+          $categoryChilds = Db::query($sql);
+          $categoryNew[] = $category;
+          if($categoryChilds){
+            foreach($categoryChilds as $categoryChild){
+             $categoryNew[] = $categoryChild;
+            }
+          }
+        }
+      }
+      $company['logo_url'] = $this->imagePathHandle($company['enterprise_logo']);
+      $company['logo_url_thumb'] = $this->imageThumbUrl($company['enterprise_logo']);
       $this->assign('company',      $company);     
-      $this->assign('categorys',    array());    
+      $this->assign('categorys',    $categoryNew);    
       return view('company/edit_form');
     }
 
@@ -116,6 +143,10 @@ class Company extends Base
     public function company_delete()
     {    
       $company_id   = input("id");
+
+      $companyOld = Db::table('cx_company')->where('id', $company_id)->find();
+      $this->delete_image_remote($companyOld['enterprise_logo']);
+
       Db::table('cx_company')->where('id', $company_id)->delete();
       $this->success('删除企业成功', '@admin/company/list');      
     }
@@ -133,6 +164,12 @@ class Company extends Base
         break;
         case 'edit':
           $this->edit_form_submit($post);
+        break;
+        case 'company_user_add':
+          $this->company_user_add_form_submit($post);
+        break;
+        case 'company_user_edit':
+          $this->company_user_edit_form_submit($post);
         break;
         case 'gallery_upload':
           $file = $_FILES;
@@ -160,13 +197,24 @@ class Company extends Base
            'enterprise_url'             => $post['company_url'],
            'registered_time'            => $post['company_created'],
            'registered_address'         => $post['company_address'],
-           'enterprise_logo'            => $post['company_logo'],
+           // 'enterprise_logo'            => $post['company_logo'],
            'business_scope'             => $post['company_business'],
            'phone'                      => $post['company_phone'],
            // 'company_description'        => $post['company_description'],
            'deleted'                    => 0,
            'enterprise_registeraion_number' => '',
+           'category'                   => $post['company_category'],
         );
+        $uploadFiles['name']        = $_FILES['company_logo']['name'];
+        $uploadFiles['type']        = $_FILES['company_logo']['type'];
+        $uploadFiles['tmp_name']    = $_FILES['company_logo']['tmp_name'];
+        $uploadFiles['size']        = $_FILES['company_logo']['size'];
+        $sourcePath = $this->upload_image_remote($uploadFiles, 'cxgz/company/logo');
+        // print_r($sourcePath);die();
+        // $image_name = explode('/', $sourcePath);
+        // $image_name = end($image_name);
+        $data['enterprise_logo'] = $sourcePath;
+
 
         $result = Db::table('cx_company')->insert($data);
 
@@ -191,15 +239,27 @@ class Company extends Base
            'enterprise_url'             => $post['company_url'],
            'registered_time'            => $post['company_created'],
            'registered_address'         => $post['company_address'],
-           'enterprise_logo'            => $post['company_logo'],
+           // 'enterprise_logo'            => $post['company_logo'],
            'business_scope'             => $post['company_business'],
            'phone'                      => $post['company_phone'],
+           'category'                   => $post['company_category'],
            // 'company_description'        => $post['company_description'],
            // 'deleted'                    => 0,
            // 'enterprise_registeraion_number' => '',
         );
-        
         $company_id = $post['company_id'];
+
+        if(is_array($_FILES) && count($_FILES)){
+          $companyOld = Db::table('cx_company')->where('id', $company_id)->find();
+          $this->delete_image_remote($companyOld['enterprise_logo']);
+
+          $uploadFiles['name']        = $_FILES['company_logo']['name'];
+          $uploadFiles['type']        = $_FILES['company_logo']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['company_logo']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['company_logo']['size'];
+          $sourcePath = $this->upload_image_remote($uploadFiles, 'cxgz/company/logo');
+          $data['enterprise_logo'] = $sourcePath;
+        }
 
         $res = Db::table('cx_company')->where('id', $company_id)->update($data);
 
@@ -254,6 +314,7 @@ class Company extends Base
         $this->success('添加商品相册成功', '@goods/gallery_upload?goods_id='.$post['goods_id']);   
     }
 
+
     /**
      * 商品详情提交处理
      */
@@ -297,6 +358,112 @@ class Company extends Base
 
       $this->success('更新商品相册成功', '@goods/gallery_upload?goods_id='.$goods_id);
     }
+
+    /**
+    * 企业账号列表
+    */
+    public function company_user_list(){
+      $companyUsers = Db::query('select u.*, c.enterprise_name from cx_company_user as u LEFT JOIN cx_company as c ON u.enterprise_id = c.id ORDER BY id DESC;');
+      $this->assign('company_users', $companyUsers);
+      return view('company_user_list');
+    }
+
+    /**
+    * 企业账号详情
+    */
+    public function company_user_info(){
+      $id   = input('id');
+      $companyUsers = Db::query('select * from cx_company_user WHERE id = :id', ['id'=>$id]);
+      $this->assign('company_users', $companyUsers[0]);     
+      return view('company_user_info');
+    }
+
+    /**
+    * 企业账号删除
+    */
+    public function company_user_delete(){
+      $id   = input("id");
+
+      Db::table('cx_company_user')->where('id', $id)->delete();
+      $this->success('删除企业会员成功！', '@admin/company/user/list');  
+    }
+
+    /**
+    * 添加企业账号
+    */
+    public function company_user_add_form(){
+      $companys = Db::query('select * from cx_company ;');
+      $company_user_name = 'cxgz'.rand(1000,9999);
+      $this->assign('companys', $companys);     
+      $this->assign('company_user_name', $company_user_name);     
+      return view('company/company_user_add_form');
+    }
+
+    /**
+    * 添加企业账号提交处理
+    */
+    public function company_user_add_form_submit(){
+        $data = array(
+           'username'          => $_POST['company_user_name'].$_POST['company_id'],
+           'phone_num'                => $_POST['company_phone'],
+           'enterprise_id'            => $_POST['company_id'],
+           'password'                 => md5(123456),
+           'deleted'                  => 0,
+           'status'                   => 0,
+        );
+
+        $result = Db::table('cx_company_user')->insert($data);
+
+        if(!$result){
+            $this->error('添加企业会员失败');
+        }
+
+        $this->success('添加企业会员成功', '@admin/company/user/list');   
+    }   
+
+    /**
+    * 编辑企业账号
+    */
+    public function company_user_edit_form(){
+      $company_user_id   = input("id");
+
+      $company_user = Db::query('select u.*, c.enterprise_name from cx_company_user as u LEFT JOIN cx_company as c ON u.enterprise_id = c.id WHERE u.id = :id;', ['id'=>$company_user_id]);
+      $this->assign('company_user', $company_user[0]);   
+      $this->assign('company_user_id', $company_user_id);
+
+      return view('company/company_user_edit_form');
+    }
+
+    /**
+    * 编辑企业账号提交处理
+    */
+    public function company_user_edit_form_submit(){
+      $password        = $_POST['password'];
+      $password_repeat = $_POST['password_repeat'];
+      if(!empty($password) && ($password == $password_repeat)){
+        $data = array(
+           'phone_num'                => $_POST['company_phone'],
+           'password'                 => md5($password),
+           'deleted'                  => 0,
+           'status'                   => 0,
+        );
+      }else{
+        $this->error('两次输入密码不一致！');
+      }
+
+
+
+        $company_user_id = $_POST['company_user_id'];
+
+        $res = Db::table('cx_company_user')->where('id', $company_user_id)->update($data);
+
+        if(!$res){
+            $this->error('编辑企业会员失败！');
+        }
+
+        $this->success('编辑企业会员成功！', '@admin/company/user/list');
+    }   
+
 }
 
 
