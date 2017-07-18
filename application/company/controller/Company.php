@@ -1,7 +1,7 @@
 <?php
-namespace app\admin\controller;
+namespace app\company\controller;
 
-use app\admin\controller\Base; 
+use app\company\controller\Base; 
 
 use \think\Db;
 
@@ -72,26 +72,86 @@ class Company extends Base
       return view('goods/add_form');
     }
 
-
     /**
-     * 商品编辑
+     * 企业基本信息编辑
      *
      */
-    public function edit_form()
+    public function company_edit_form()
     {   
-      $goods_id   = input("goods_id");
-      $goods      = Model('GoodsModel')->getGoods($goods_id);
+      $companyUser = session('company_user');
+      $companyUser = json_decode($companyUser);
 
-      $categorys  = Model('Category')->getCatList();
-      $brands     = Model('Brand')->getBrandses();
-      
-      $this->assign('goods',      $goods);     
-      $this->assign('brands',     $brands);      
-      $this->assign('categorys',  $categorys);
+      $company = Db::table('cx_company')->where('id', $companyUser->enterprise_id)->find();
 
-      return view('goods/edit_form');
+      $categorys = Db::query('select * from cx_category WHERE level = 1 ORDER BY weight ASC;');
+      if($categorys){
+        foreach($categorys as $category){
+          $sql = "select * from cx_category WHERE parent = {$category['id']} AND level = 2 ORDER BY weight ASC;";
+          $categoryChilds = Db::query($sql);
+          $categoryNew[] = $category;
+          if($categoryChilds){
+            foreach($categoryChilds as $categoryChild){
+             $categoryNew[] = $categoryChild;
+            }
+          }
+        }
+      }
+
+      $company['logo_url'] = $this->imagePathHandle($company['enterprise_logo']);
+      $company['logo_url_thumb'] = $this->imageThumbUrl($company['enterprise_logo']);
+      $this->assign('company',      $company);     
+      $this->assign('categorys',    $categoryNew);    
+      return view('company/edit_form');
     }
 
+    /**
+     * 企业编辑提交处理
+     */
+    public function company_edit_form_submit($post)
+    {   
+        $data = array(
+           'enterprise_url'             => $post['company_url'],
+           'registered_address'         => $post['company_address'],
+           'business_scope'             => $post['company_business'],
+           'phone'                      => $post['company_phone'],
+           'company_description'        => $post['company_description'],
+        );
+        $company_id = $post['company_id'];
+
+        if($_FILES['company_logo']['size'] != 0){
+          $companyOld = Db::table('cx_company')->where('id', $company_id)->find();
+          $this->delete_image_remote($companyOld['enterprise_logo']);
+
+          $uploadFiles['name']        = $_FILES['company_logo']['name'];
+          $uploadFiles['type']        = $_FILES['company_logo']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['company_logo']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['company_logo']['size'];
+          $sourcePath = $this->upload_image_remote($uploadFiles, 'cxgz/company/logo');
+          $data['enterprise_logo'] = $sourcePath;
+        }
+
+        $res = Db::table('cx_company')->where('id', $company_id)->update($data);
+
+        if(!$res){
+            $this->error('编辑企业信息失败');
+        }
+
+        $this->success('编辑企业信息成功', '@company/company/edit');
+    }
+
+    /**
+    * 表单提交处理
+    */
+    public function form_submit(){
+      $op = input('post.op');
+      $post = $_POST;
+
+      switch($op){
+        case 'company_edit':
+          $this->company_edit_form_submit($post);
+        break;
+      }
+    }
 
     /**
      *商品相册添加
@@ -150,33 +210,6 @@ class Company extends Base
       $goods_id   = input("goods_id");
       GoodsModel::destroy($goods_id);
       $this->success('删除商品成功', '@goods/list');      
-    }
-
-    /**
-    * 表单提交处理
-    */
-    public function form_submit(){
-      $op = input('post.op');
-      $post = $_POST;
-
-      switch($op){
-        case 'add':
-          $this->add_form_submit($post);
-        break;
-        case 'edit':
-          $this->edit_form_submit($post);
-        break;
-        case 'gallery_upload':
-          $file = $_FILES;
-          $this->gallery_upload_form_submit($post, $file);
-        break;
-        case 'detail_upload':
-          $this->detail_upload_form_submit($post);
-        break;
-        case 'gallery_upload_update':
-          $this->gallery_upload_update_form_submit($post);
-        break;
-      }
     }
 
     /**

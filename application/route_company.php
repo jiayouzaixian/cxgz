@@ -11,3 +11,5 @@ Route::get('company/user/logout', 			'company/Users/user_logout');
 
 //公司
 Route::get('company/company/list', 			'company/company/company_list');
+Route::get('company/company/edit', 			'company/company/company_edit_form');
+Route::post('company/company/form_submit', 	'company/company/form_submit');

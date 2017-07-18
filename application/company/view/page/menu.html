@@ -97,7 +97,7 @@
             <i class="fa fa-dashboard"></i>&nbsp;&nbsp;<span>企业信息</span>
           </div>
           <ul class="treeview-menu" >
-            <li class="{php} if(strpos($request, 'company/add')){echo 'active';} {/php}"><a href="{:url('@company/company/add')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
+            <li class="{php} if(strpos($request, 'company/edit')){echo 'active';} {/php}"><a href="{:url('@company/company/edit')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
             <li class="{php} if(strpos($request, 'company/list')){echo 'active';} {/php}"><a href="{:url('@company/company/list')}"><i class="fa fa-angle-right"></i>知识产权</a></li>
             <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@company/company_user/add')}"><i class="fa fa-angle-right"></i>企业资质</a></li>
             <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@company/company_user/list')}"><i class="fa fa-angle-right"></i>企业荣誉</a></li>
