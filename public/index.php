@@ -15,7 +15,7 @@
 define('APP_PATH', __DIR__ . '/../application/');
 
 //定义后台css,js目录
-$base_path = $_SERVER['SERVER_NAME'];
+$base_path = 'http://'.$_SERVER['SERVER_NAME'].'/';
 
 if(strstr($base_path, 'localhost')){
 	$base_path = 'http://localhost/cxgz/public/';
