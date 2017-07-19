@@ -249,7 +249,7 @@ class Company extends Base
         );
         $company_id = $post['company_id'];
 
-        if(is_array($_FILES) && count($_FILES)){
+        if(!empty($_FILES['company_logo']['size'])){
           $companyOld = Db::table('cx_company')->where('id', $company_id)->find();
           $this->delete_image_remote($companyOld['enterprise_logo']);
 

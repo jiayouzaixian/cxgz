@@ -163,7 +163,7 @@ class Base extends Controller
             break;
         }
 
-        $imageThumbUrl = str_replace('upload', 'thumb/d', $image_path);
+        $imageThumbUrl = str_replace('upload/', 'thumb/d/', $image_path);
 
         if(strstr($imageThumbUrl,'jpeg'))
         {
