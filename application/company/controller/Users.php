@@ -55,7 +55,7 @@ class Users extends Controller
     */
     public function user_logout(){
     	session('company_user', null);
-    	$this->success('退出登录成功！', '@company/user/login');     
+    	$this->success('退出登录成功！', '@user/login');     
     }
 }
 

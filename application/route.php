@@ -22,6 +22,8 @@
 
 use think\Route;
 
+Route::domain('company', 'company');
+
 //首页
 Route::get('/', 					'index/index');
 

@@ -34,7 +34,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">企业用戶</p>
  
-    <form action="{:url('company/user/login_submit')}" method="POST" onsubmit="return login();">
+    <form action="{:url('@user/login_submit')}" method="POST" onsubmit="return login();">
       <div class="form-group has-feedback">
         <input type="user_name" name="user_name" id="user_name" class="form-control" placeholder="cxgz6654" value="cxgz6654">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -91,7 +91,7 @@
   });
 
   function login(){
-     var url = "{:url('@company/user/login_submit')}";
+     var url = "{:url('@user/login_submit')}";
      var user_name = $('#user_name').val();
      var password = $('#password').val();
      $.ajax({

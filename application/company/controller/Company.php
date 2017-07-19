@@ -9,70 +9,6 @@ class Company extends Base
 {
     
     /**
-     * 商品列表
-     *
-     */
-    public function company_list()
-    {    
-      $companys = Db::table('cx_company')->select();
-
-      $this->assign('companys', $companys);
-      return view('list');
-    }
-
-    /**
-     *待售商品列表
-     *
-     */
-    public function stay()
-    {    
-         return 'stay';
-
-    	 return view('stay_list');
-    }
-    
-
-
-    /**
-     *商品详情
-     *
-     */
-    public function info()
-    { 
-
-      $act   = input('act');
-      $goods = '';
-      if($act == 'edit'){
-          $goods_id = input("goods_id");
-          $goods = Model('GoodsModel')->getGoods($goods_id);
-      }
-      $brandList = Model('Brand')->getBrandses();
-      $catList = Model('Category')->getCatList();
-
-      $this->assign('result',$goods);     
-      $this->assign('act',$act);
-      $this->assign('brandList',$brandList);      
-      $this->assign('catList',$catList);
-      return view('info');
-
-    }
-
-    /**
-     *商品添加
-     *
-     */
-    public function add_form()
-    {   
-      $categorys  = Model('Category')->getCatList();
-      $brands     = Model('Brand')->getBrandses();
-      
-      $this->assign('brands',     $brands);      
-      $this->assign('categorys',  $categorys);
-
-      return view('goods/add_form');
-    }
-
-    /**
      * 企业基本信息编辑
      *
      */
@@ -152,6 +88,72 @@ class Company extends Base
         break;
       }
     }
+
+    /**
+     * 企业列表
+     *
+     */
+    public function company_qualification_list()
+    {    
+      $companys = Db::table('cx_company')->select();
+
+      $this->assign('companys', $companys);
+      return view('list');
+    }
+
+    /**
+     *待售商品列表
+     *
+     */
+    public function stay()
+    {    
+         return 'stay';
+
+    	 return view('stay_list');
+    }
+    
+
+
+    /**
+     *商品详情
+     *
+     */
+    public function info()
+    { 
+
+      $act   = input('act');
+      $goods = '';
+      if($act == 'edit'){
+          $goods_id = input("goods_id");
+          $goods = Model('GoodsModel')->getGoods($goods_id);
+      }
+      $brandList = Model('Brand')->getBrandses();
+      $catList = Model('Category')->getCatList();
+
+      $this->assign('result',$goods);     
+      $this->assign('act',$act);
+      $this->assign('brandList',$brandList);      
+      $this->assign('catList',$catList);
+      return view('info');
+
+    }
+
+    /**
+     *商品添加
+     *
+     */
+    public function add_form()
+    {   
+      $categorys  = Model('Category')->getCatList();
+      $brands     = Model('Brand')->getBrandses();
+      
+      $this->assign('brands',     $brands);      
+      $this->assign('categorys',  $categorys);
+
+      return view('goods/add_form');
+    }
+
+
 
     /**
      *商品相册添加
