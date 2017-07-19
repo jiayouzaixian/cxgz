@@ -1,19 +1,19 @@
 <?php
 namespace app\company\controller;
 
-use app\company\controller\Base; 
+use app\company\controller\Base;
 
 use \think\Db;
 
 class Company extends Base
 {
-    
+
     /**
      * 企业基本信息编辑
      *
      */
     public function company_edit_form()
-    {   
+    {
       $companyUser = session('company_user');
       $companyUser = json_decode($companyUser);
 
@@ -35,8 +35,8 @@ class Company extends Base
 
       $company['logo_url'] = $this->imagePathHandle($company['enterprise_logo']);
       $company['logo_url_thumb'] = $this->imageThumbUrl($company['enterprise_logo']);
-      $this->assign('company',      $company);     
-      $this->assign('categorys',    $categoryNew);    
+      $this->assign('company',      $company);
+      $this->assign('categorys',    $categoryNew);
       return view('company/edit_form');
     }
 
@@ -44,7 +44,7 @@ class Company extends Base
      * 企业编辑提交处理
      */
     public function company_edit_form_submit($post)
-    {   
+    {
         $data = array(
            'enterprise_url'             => $post['company_url'],
            'registered_address'         => $post['company_address'],
@@ -94,7 +94,7 @@ class Company extends Base
      *
      */
     public function company_qualification_list()
-    {    
+    {
       $companys = Db::table('cx_company')->select();
 
       $this->assign('companys', $companys);
@@ -106,12 +106,12 @@ class Company extends Base
      *
      */
     public function stay()
-    {    
+    {
          return 'stay';
 
     	 return view('stay_list');
     }
-    
+
 
 
     /**
@@ -119,7 +119,7 @@ class Company extends Base
      *
      */
     public function info()
-    { 
+    {
 
       $act   = input('act');
       $goods = '';
@@ -130,9 +130,9 @@ class Company extends Base
       $brandList = Model('Brand')->getBrandses();
       $catList = Model('Category')->getCatList();
 
-      $this->assign('result',$goods);     
+      $this->assign('result',$goods);
       $this->assign('act',$act);
-      $this->assign('brandList',$brandList);      
+      $this->assign('brandList',$brandList);
       $this->assign('catList',$catList);
       return view('info');
 
@@ -146,8 +146,8 @@ class Company extends Base
     {   
       $categorys  = Model('Category')->getCatList();
       $brands     = Model('Brand')->getBrandses();
-      
-      $this->assign('brands',     $brands);      
+
+      $this->assign('brands',     $brands);
       $this->assign('categorys',  $categorys);
 
       return view('goods/add_form');
@@ -160,17 +160,17 @@ class Company extends Base
      *
      */
     public function gallery_upload_form()
-    {   
+    {
       $goods_id       = input("goods_id");
       $delete         = input("delete");
       if($delete){
         $gallery_id   = input("gallery_id");
 
-        //删除图片 
+        //删除图片
         $source_path = Db::query('SELECT source_path FROM `goods_gallery` WHERE id=?',[$gallery_id]);
         if($source_path){
           $this->delete_image_remote($source_path[0]['source_path']);
-          Db::execute('delete from goods_gallery where id = :id',['id'=>$gallery_id]);          
+          Db::execute('delete from goods_gallery where id = :id',['id'=>$gallery_id]);
         }
       }
       $goods          = Model('GoodsModel')->getGoods($goods_id);
@@ -184,13 +184,13 @@ class Company extends Base
           $gallery['id']      = $value['id'];
           $gallery['delete_url']      = url('@goods/gallery_upload', 'goods_id='.$goods_id.'&delete=1&gallery_id='.$value['id']);
           $gallerys[] = $gallery;
-        }        
-        $this->assign('gallerys',    $gallerys);   
+        }
+        $this->assign('gallerys',    $gallerys);
       }
 
 
-      $this->assign('goods',       $goods);   
-      
+      $this->assign('goods',       $goods);
+
       return view('goods/gallery_upload_form');
     }
 
@@ -199,7 +199,7 @@ class Company extends Base
      *
      */
     public function detail_upload_form()
-    {   
+    {
       return view('goods/detail_upload_form');
     }
 
@@ -208,10 +208,10 @@ class Company extends Base
      *
      */
     public function goods_delete()
-    {    
+    {
       $goods_id   = input("goods_id");
       GoodsModel::destroy($goods_id);
-      $this->success('删除商品成功', '@goods/list');      
+      $this->success('删除商品成功', '@goods/list');
     }
 
     /**
@@ -232,7 +232,7 @@ class Company extends Base
            'created'              => time(),
            'updated'              => time(),
         );
-        
+
         $goods_id                  =  input('goods_id');
 
         $res = Model('GoodsModel')->addGoods($param,$goods_id);
@@ -241,14 +241,14 @@ class Company extends Base
             $this->error('添加商品失败');
         }
 
-        $this->success('添加商品成功', '@goods/add');      
+        $this->success('添加商品成功', '@goods/add');
     }
 
     /**
      * 商品编辑提交处理
      */
     public function edit_form_submit($post)
-    {   
+    {
         $param = array(
            'goods_name'           => $post['goods_name'],
            'goods_sn'             => $post['goods_sn'],
@@ -263,7 +263,7 @@ class Company extends Base
            'created'              => time(),
            'updated'              => time(),
         );
-        
+
         $goods_id = $post['goods_id'];
 
         $res = Model('GoodsModel')->editGoods($param, $goods_id);
@@ -280,7 +280,7 @@ class Company extends Base
      * 商品相册提交处理
      */
     public function gallery_upload_form_submit($post=null, $files=null)
-    {   
+    {
         if(empty($post)){
           $post = $_POST;
         }
@@ -308,7 +308,7 @@ class Company extends Base
            'weight'             => 1,
            'created'            => time(),
         );
-        
+
 
         $res = Model('GoodsGalleryModel')->addGoodsGallery($param);
 
@@ -316,14 +316,14 @@ class Company extends Base
             $this->error('添加商品相册失败');
         }
 
-        $this->success('添加商品相册成功', '@goods/gallery_upload?goods_id='.$post['goods_id']);   
+        $this->success('添加商品相册成功', '@goods/gallery_upload?goods_id='.$post['goods_id']);
     }
 
     /**
      * 商品详情提交处理
      */
     public function detail_upload_form_submit($post)
-    {   
+    {
         $param = array(
            'goods_name'           => $post['goods_name'],
            'goods_sn'             => $post['goods_sn'],
@@ -338,7 +338,7 @@ class Company extends Base
            'created'              => time(),
            'updated'              => time(),
         );
-        
+
         $goods_id = $post['goods_id'];
 
         $res = Model('GoodsModel')->editGoods($param, $goods_id);

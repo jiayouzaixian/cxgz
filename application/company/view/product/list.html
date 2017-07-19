@@ -1,13 +1,13 @@
-{include file="../page/header" /}
+{include file="page/header" /}
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-    {include file="../page/menu" /}
+    {include file="page/menu" /}
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        商品列表 
+        产品列表
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
@@ -23,7 +23,7 @@
           <div class="box">
 
             <div class="box-header">
-              
+
             </div>
 
             <div class="box-body">
@@ -34,32 +34,33 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>公司名称</th>
-                        <th>信用代码</th>
-                        <th>法人代表</th>
-                        <th>公司电话</th>
-                        <th>公司网址</th>
-                        <th>注册资本</th>
-                        <th>成立日期</th>
+                        <th>产品名称</th>
+                        <th>产品编号</th>
+
+                        <th>产品售价</th>
+                        <th>产品市场价格</th>
+                        <th>产品关键字</th>
+                        <th>产品描述</th>
+                        <th>产品创建时间</th>
                         <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {foreach name="companys" item="company" key="k" }
+                      {foreach name="lists" item="company" key="k" }
                         <tr>
-                          <td>{$company.id}</td>
-                          <td>{$company.enterprise_name}</td>
-                          <td>{$company.USCC}</td>
-                          <td>{$company.legal_representative}</td>
-                          <td>{$company.phone}</td>
-                          <td>{$company.enterprise_url}</td>
-                          <td>{$company.registered_capital}</td>
-                          <td>{$company.registered_time}</td>
+                          <td>{$company.goods_id}</td>
+                          <td>{$company.goods_name}</td>
+                          <td>{$company.goods_sn}</td>
+                          <td>{$company.sale_price}</td>
+                          <td>{$company.market_price}</td>
+                          <td>{$company.keywords}</td>
+                          <td>{$company.goods_desc}</td>
+                          <td>{$company.created}</td>
                           <td>
-                            <a href="{:url('/goods/edit', 'goods_id='.$goods.goods_id)}" class="">编辑</a> | 
-                            <a href="{:url('/goods/gallery_upload', 'goods_id='.$goods.goods_id)}" class="">相册图片</a> | 
-                            <a href="{:url('/goods/detail_upload', 'goods_id='.$goods.goods_id)}" class="">详情图片</a> | 
-                            <a href="{:url('/goods/delete', 'goods_id='.$goods.goods_id)}" class="">删除</a>
+                            <a href="edit?goods_id={$company.goods_id}" class="">编辑</a> |
+                            <a href="gallery_upload?goods_id={$company.goods_id}" class="">相册图片</a> |
+                            <a href="detail_upload?goods_id={$company.goods_id}" class="">详情图片</a> |
+                            <a href="delete?goods_id={$company.goods_id}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}
@@ -81,7 +82,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-    {include file="../page/footer" /}
+    {include file="page/footer" /}
 
   <div class="control-sidebar-bg"></div>
 </div>
@@ -105,7 +106,7 @@
 <!-- page script -->
 <script>
   $(function () {
-    
+
     $('#example1').DataTable({
       "paging": true,
       "lengthChange": true,

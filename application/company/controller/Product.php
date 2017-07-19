@@ -7,7 +7,7 @@ use \think\Db;
 
 class Product extends Base
 {
-    public $customTable        = 'cx_product';
+    public $customTable        = 'cx_product_goods';
     public $customUploadPath   = 'cxgz/product';
     public $customTitle        = '产品';
     public $customPathList     = 'product/list';
@@ -19,11 +19,11 @@ class Product extends Base
      * 列表
      */
     public function lists()
-    {    
+    {
       $lists = Db::table($this->customTable)->select();
 
       $this->assign('lists', $lists);
-      return view('/company/qualification/list');
+      return view('list');
     }
 
     /**
@@ -82,25 +82,34 @@ class Product extends Base
      */
     public function edit_form()
     {   
-      $qualification_id = input['qualification_id'];
+      $goods_id = input('goods_id');
 
-      $item = Db::table($this->customTable)->where('id', $qualification_id)->find();
-      $item['pic_url'] = $this->imagePathHandle($item['quali_pic']);
-      $this->assign('item',      $item);       
-      return view('company/edit_form');
+      $item = Db::table($this->customTable)->where('goods_id', $goods_id)->find();
+      //$item['pic_url'] = $this->imagePathHandle($item['quali_pic']);
+      $this->assign('company',      $item);
+      return view('edit_form');
     }
 
     /**
      * 编辑提交处理
      */
     public function edit_form_submit($post)
-    {   
+    {
+       // print_r($post);exit;
         $data = array(
-           'quali_name'           => $post['qualification_name'],
+           'goods_name'           => $post['goods_name'],
+            'goods_sn'           => $post['goods_sn'],
+            'sale_price'           => $post['sale_price'],
+            'market_price'           => $post['market_price'],
+            'keywords'           => $post['keywords'],
+            'goods_desc'           => $post['goods_desc'],
+            'created'           => $post['created'],
         );
-        $qualification_id = $post['qualification_id'];
+       $goods_id = $post['goods_id'];
 
-        if(is_array($_FILES) && count($_FILES)){
+
+
+        /*if(is_array($_FILES) && count($_FILES)){
           $qualificationOld = Db::table($this->customTable)->where('id', $qualification_id)->find();
           $this->delete_image_remote($qualificationOld['quali_pic']);
 
@@ -111,9 +120,9 @@ class Product extends Base
 
           $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
           $data['quali_pic'] = $sourcePath;
-        }
+        }*/
 
-        $res = Db::table($this->customTable)->where('id', $qualification_id)->update($data);
+        $res = Db::table($this->customTable)->where('goods_id', $goods_id)->update($data);
 
         if(!$res){
             $this->error("编辑{$this->customTitle}失败");
@@ -147,6 +156,27 @@ class Product extends Base
           $this->edit_form_submit($post);
         break;
       }
+    }
+
+
+    /**
+     * 删除
+     */
+    public function delete()
+    {
+        $goods_id   = input("goods_id");
+
+       /* $qualificationOld = Db::table($this->customTable)->where('goods_id', $goods_id)->find();
+        if(strpos($qualificationOld['quali_pic'], 'uploads')){
+            $quali_pic = 'upload/cxgz'.$qualificationOld['quali_pic'];
+        }else{
+            $quali_pic = $qualificationOld['quali_pic'];
+        }
+
+        $this->delete_image_remote($quali_pic);*/
+
+        Db::table($this->customTable)->where('goods_id', $goods_id)->delete();
+        $this->success("删除{$this->customTitle}成功!", '@'.$this->customPathList);
     }
 
 }
