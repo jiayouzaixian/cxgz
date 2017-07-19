@@ -22,6 +22,15 @@ class CompanyQualification extends Base
     {    
       $lists = Db::table($this->customTable)->select();
 
+      foreach($lists as $key => $value){
+        if(strpos($value['quali_pic'], 'uploads')){
+          $quali_pic = 'upload/cxgz'.$value['quali_pic'];
+        }else{
+          $quali_pic = $value['quali_pic'];
+        }
+        $lists[$key]['picture_url'] = $this->imagePathHandle($quali_pic);
+        $lists[$key]['thumb_url'] = $this->imageThumbUrl($quali_pic);
+      }
       $this->assign('lists', $lists);
       return view('/company/qualification/list');
     }
@@ -78,16 +87,19 @@ class CompanyQualification extends Base
 
     /**
      * 编辑
-     *
      */
     public function edit_form()
     {   
-      $qualification_id = input['qualification_id'];
+      $qualification_id = input('qualification_id');
 
       $item = Db::table($this->customTable)->where('id', $qualification_id)->find();
-      $item['pic_url'] = $this->imagePathHandle($item['quali_pic']);
+
+      $item['picture_url'] = $this->imagePathHandle($item['quali_pic']);
+      $item['thumb_url'] = $this->imageThumbUrl($item['quali_pic']);
+
+      $this->assign('customTitle',      $this->customTitle); 
       $this->assign('item',      $item);       
-      return view('company/edit_form');
+      return view($this->customTemplateEdit);
     }
 
     /**
@@ -100,7 +112,7 @@ class CompanyQualification extends Base
         );
         $qualification_id = $post['qualification_id'];
 
-        if(is_array($_FILES) && count($_FILES)){
+        if(!empty($_FILES['qualification_picture']['size'])){
           $qualificationOld = Db::table($this->customTable)->where('id', $qualification_id)->find();
           $this->delete_image_remote($qualificationOld['quali_pic']);
 
@@ -125,10 +137,20 @@ class CompanyQualification extends Base
     /**
      * 删除
      */
-    public function company_qualification_delete()
+    public function delete()
     {    
-      $goods_id   = input("goods_id");
-      GoodsModel::destroy($goods_id);
+      $qualification_id   = input("qualification_id");
+
+      $qualificationOld = Db::table($this->customTable)->where('id', $qualification_id)->find();
+      if(strpos($qualificationOld['quali_pic'], 'uploads')){
+        $quali_pic = 'upload/cxgz'.$qualificationOld['quali_pic'];
+      }else{
+        $quali_pic = $qualificationOld['quali_pic'];
+      }
+
+      $this->delete_image_remote($quali_pic);
+
+      Db::table($this->customTable)->where('id', $qualification_id)->delete();
       $this->success("删除{$this->customTitle}成功!", '@'.$this->customPathList);      
     }
 
