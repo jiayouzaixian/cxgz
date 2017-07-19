@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        企业资质列表 
+        企业荣誉列表 
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-        <li><a href="#">企业资质</a></li>
+        <li><a href="#">企业荣誉</a></li>
         <li class="active">列表</li>
       </ol>
     </section>
@@ -34,8 +34,8 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>资质图片</th>
-                        <th>资质名称</th>
+                        <th>荣誉图片</th>
+                        <th>荣誉名称</th>
                         <th>操作</th>
                       </tr>
                     </thead>
@@ -44,10 +44,10 @@
                         <tr>
                           <td>{$list.id}</td>
                           <td><a href="{$list.picture_url}" target="_blank"><img src="{$list.thumb_url}" ></a></td>
-                          <td>{$list.quali_name}</td>
+                          <td>{$list.honor_name}</td>
                           <td>
-                            <a href="{:url('/qualification/edit?qualification_id='.$list.id)}" class="">编辑</a> | 
-                            <a href="{:url('/qualification/delete?qualification_id='.$list.id)}" class="">删除</a>
+                            <a href="{:url('/honor/edit?honor_id='.$list.id)}" class="">编辑</a> | 
+                            <a href="{:url('/honor/delete?honor_id='.$list.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}

@@ -1,0 +1,77 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="page/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+         企业标签
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 录入系统</a></li>
+          <li><a href="#">企业标签</a></li>
+          <li class="active" >编辑</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+        <div class="box-body">
+            <form action='{:url("/tag/edit_form_submit")}'  method="post" class="form-horizontal" >
+              <div class="box-body">
+
+                <div class="form-group">
+                  <label for="goods_number" class="">选择标签</label>
+                    <ul style="list-style: none; ">
+                    {foreach name="tags" item="tag" key="k" }
+                      <li style="float: left;width: 300px; margin: 5px 0 20px 0;">
+                          {if condition = " count($companyTags) != 0"}
+                            <input type="checkbox" value="{$tag.id}" name="tag_id[]" {foreach name="companyTags" item="companyTag"}{if condition=" $companyTag.tag_id == $tag.id "}checked="checked" {/if}{/foreach}>
+                            {$tag.name}
+                          {else}
+                            <input type="checkbox" value="{$tag.id}" name="tag_id[]">
+                            {$tag.name}
+                          {/if}
+                      </li>
+                    {/foreach}
+                  </ul>
+                </div>
+            
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="enterprise_id" value="{$enterprise_id}" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+
+</body>
+</html>

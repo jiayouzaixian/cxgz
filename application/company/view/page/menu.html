@@ -3,7 +3,7 @@
     <a href="{:url('@company')}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">企业后台</span>
+      <span class="logo-lg">企业录入系统</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -23,11 +23,16 @@
               echo '<a>'.$companyUser->username.'</a>';
             {/php}
           </li> 
-           <li class="messages-menu">
-            <a href="http://www.guizhou.xin" target="_blank">
-              网站首页
+          <li class="messages-menu">
+            <a href="http://cxgz.jiayou9.com" target="_blank">
+              网站首页新版
             </a>
-          </li>         
+          </li>  
+          <li class="messages-menu">
+            <a href="http://www.guizhou.xin" target="_blank">
+              网站首页旧版
+            </a>
+          </li>      
           <li class="messages-menu">
             <a href="{:url('@user/logout')}" class="">  
               登出
@@ -103,12 +108,13 @@
             <i class="fa fa-dashboard"></i>&nbsp;&nbsp;<span>企业信息</span>
           </div>
           <ul class="treeview-menu" >
-            <li class="{php} if(strpos($request, 'company/edit')){echo 'active';} {/php}"><a href="{:url('@company/edit')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
+            <li class="{php} if(strpos($request, 'basic/edit')){echo 'active';} {/php}"><a href="{:url('@basic/edit')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
             <li class="{php} if(strpos($request, 'qualification/add')){echo 'active';} {/php}"><a href="{:url('@qualification/add')}"><i class="fa fa-angle-right"></i>企业资质添加</a></li>
             <li class="{php} if(strpos($request, 'qualification/list')){echo 'active';} {/php}"><a href="{:url('@qualification/list')}"><i class="fa fa-angle-right"></i>企业资质列表</a></li>
-            <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@company_user/list')}"><i class="fa fa-angle-right"></i>企业荣誉</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业相册</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
+            <li class="{php} if(strpos($request, 'honor/add')){echo 'active';} {/php}"><a href="{:url('@honor/add')}"><i class="fa fa-angle-right"></i>企业荣誉添加</a></li>
+            <li class="{php} if(strpos($request, 'honor/list')){echo 'active';} {/php}"><a href="{:url('@honor/list')}"><i class="fa fa-angle-right"></i>企业荣誉列表</a></li>
+            <li ><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业相册</a></li>
+            <li class="{php} if(strpos($request, 'tag/edit')){echo 'active';} {/php}"><a href="{:url('@tag/edit')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
             <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>宣传视频</a></li>
           </ul>
         </li>

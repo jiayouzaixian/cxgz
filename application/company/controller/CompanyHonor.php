@@ -5,15 +5,15 @@ use app\company\controller\Base;
 
 use \think\Db;
 
-class CompanyQualification extends Base
+class CompanyHonor extends Base
 {
-    public $customTable        = 'cx_company_qualification';
-    public $customUploadPath   = 'cxgz/company/qualification';
-    public $customTitle        = '企业资质';
-    public $customPathList     = 'qualification/list';
-    public $customTemplateList = '/company/qualification/list';
-    public $customTemplateAdd  = '/company/qualification/add_form';
-    public $customTemplateEdit = '/company/qualification/edit_form';
+    public $customTable        = 'cx_company_honor';
+    public $customUploadPath   = 'cxgz/company/honor';
+    public $customTitle        = '企业荣誉';
+    public $customPathList     = 'honor/list';
+    public $customTemplateList = '/company/honor/list';
+    public $customTemplateAdd  = '/company/honor/add_form';
+    public $customTemplateEdit = '/company/honor/edit_form';
 
     /**
      * 列表
@@ -26,17 +26,17 @@ class CompanyQualification extends Base
       $lists = Db::table($this->customTable)->where('enterprise_id',$enterprise_id)->select();
 
       foreach($lists as $key => $value){
-        if(strpos($value['quali_pic'], 'uploads')){
-          $quali_pic = 'upload/cxgz'.$value['quali_pic'];
+        if(strpos($value['honor_pic'], 'uploads')){
+          $honor_pic = 'upload/cxgz'.$value['honor_pic'];
         }else{
-          $quali_pic = $value['quali_pic'];
+          $honor_pic = $value['honor_pic'];
         }
-        $lists[$key]['picture_url'] = $this->imagePathHandle($quali_pic);
-        $lists[$key]['thumb_url'] = $this->imageThumbUrl($quali_pic);
+        $lists[$key]['picture_url'] = $this->imagePathHandle($honor_pic);
+        $lists[$key]['thumb_url'] = $this->imageThumbUrl($honor_pic);
         $lists[$key]['thumb_url'] = str_replace('cxgz/thumb/ds', 'cxgz/uploads', $lists[$key]['thumb_url']);
       }
       $this->assign('lists', $lists);
-      return view('/company/qualification/list');
+      return view($this->customTemplateList);
     }
 
     /**
@@ -67,18 +67,18 @@ class CompanyQualification extends Base
     */
     public function add_form_submit($post){
         $data = array(
-           'quali_name'           => $post['qualification_name'],
+           'honor_name'           => $post['honor_name'],
            'deleted'              => 0,
            'status'               => 1,
            'enterprise_id'        => $post['enterprise_id'],
         );
-        $uploadFiles['name']        = $_FILES['qualification_picture']['name'];
-        $uploadFiles['type']        = $_FILES['qualification_picture']['type'];
-        $uploadFiles['tmp_name']    = $_FILES['qualification_picture']['tmp_name'];
-        $uploadFiles['size']        = $_FILES['qualification_picture']['size'];
+        $uploadFiles['name']        = $_FILES['honor_picture']['name'];
+        $uploadFiles['type']        = $_FILES['honor_picture']['type'];
+        $uploadFiles['tmp_name']    = $_FILES['honor_picture']['tmp_name'];
+        $uploadFiles['size']        = $_FILES['honor_picture']['size'];
 
         $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
-        $data['quali_pic'] = $sourcePath;
+        $data['honor_pic'] = $sourcePath;
 
         $result = Db::table($this->customTable)->insert($data);
 
@@ -94,12 +94,12 @@ class CompanyQualification extends Base
      */
     public function edit_form()
     {   
-      $qualification_id = input('qualification_id');
+      $honor_id = input('honor_id');
 
-      $item = Db::table($this->customTable)->where('id', $qualification_id)->find();
+      $item = Db::table($this->customTable)->where('id', $honor_id)->find();
 
-      $item['picture_url'] = $this->imagePathHandle($item['quali_pic']);
-      $item['thumb_url'] = $this->imageThumbUrl($item['quali_pic']);
+      $item['picture_url'] = $this->imagePathHandle($item['honor_pic']);
+      $item['thumb_url'] = $this->imageThumbUrl($item['honor_pic']);
 
       $this->assign('customTitle',      $this->customTitle); 
       $this->assign('item',      $item);       
@@ -112,24 +112,24 @@ class CompanyQualification extends Base
     public function edit_form_submit($post)
     {   
         $data = array(
-           'quali_name'           => $post['qualification_name'],
+           'honor_name'           => $post['honor_name'],
         );
-        $qualification_id = $post['qualification_id'];
+        $honor_id = $post['honor_id'];
 
-        if(!empty($_FILES['qualification_picture']['size'])){
-          $qualificationOld = Db::table($this->customTable)->where('id', $qualification_id)->find();
-          $this->delete_image_remote($qualificationOld['quali_pic']);
+        if(!empty($_FILES['honor_picture']['size'])){
+          $honorOld = Db::table($this->customTable)->where('id', $honor_id)->find();
+          $this->delete_image_remote($honorOld['honor_pic']);
 
-          $uploadFiles['name']        = $_FILES['qualification_picture']['name'];
-          $uploadFiles['type']        = $_FILES['qualification_picture']['type'];
-          $uploadFiles['tmp_name']    = $_FILES['qualification_picture']['tmp_name'];
-          $uploadFiles['size']        = $_FILES['qualification_picture']['size'];
+          $uploadFiles['name']        = $_FILES['honor_picture']['name'];
+          $uploadFiles['type']        = $_FILES['honor_picture']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['honor_picture']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['honor_picture']['size'];
 
           $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
-          $data['quali_pic'] = $sourcePath;
+          $data['honor_pic'] = $sourcePath;
         }
 
-        $res = Db::table($this->customTable)->where('id', $qualification_id)->update($data);
+        $res = Db::table($this->customTable)->where('id', $honor_id)->update($data);
 
         if(!$res){
             $this->error("编辑{$this->customTitle}失败");
@@ -143,18 +143,18 @@ class CompanyQualification extends Base
      */
     public function delete()
     {    
-      $qualification_id   = input("qualification_id");
+      $honor_id   = input("honor_id");
 
-      $qualificationOld = Db::table($this->customTable)->where('id', $qualification_id)->find();
-      if(strpos($qualificationOld['quali_pic'], 'uploads')){
-        $quali_pic = 'upload/cxgz'.$qualificationOld['quali_pic'];
+      $honorOld = Db::table($this->customTable)->where('id', $honor_id)->find();
+      if(strpos($honorOld['honor_pic'], 'uploads')){
+        $honor_pic = 'upload/cxgz'.$honorOld['honor_pic'];
       }else{
-        $quali_pic = $qualificationOld['quali_pic'];
+        $honor_pic = $honorOld['honor_pic'];
       }
 
-      $this->delete_image_remote($quali_pic);
+      $this->delete_image_remote($honor_pic);
 
-      Db::table($this->customTable)->where('id', $qualification_id)->delete();
+      Db::table($this->customTable)->where('id', $honor_id)->delete();
       $this->success("删除{$this->customTitle}成功!", '@'.$this->customPathList);      
     }
 

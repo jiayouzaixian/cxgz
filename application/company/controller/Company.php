@@ -72,7 +72,7 @@ class Company extends Base
             $this->error('编辑企业信息失败');
         }
 
-        $this->success('编辑企业信息成功', '@company/company/edit');
+        $this->success('编辑企业信息成功', '@basic/edit');
     }
 
     /**
