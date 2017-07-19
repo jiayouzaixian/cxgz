@@ -14,8 +14,18 @@ Route::get('company/edit', 			'company/company/company_edit_form');
 Route::post('company/form_submit', 	'company/company/form_submit');
 
 //企业资质
-Route::get('qualification/list', 			'company/CompanyQualification/company_qualification_list');
-Route::get('qualification/info', 			'company/CompanyQualification/company_qualification_info');
-Route::get('qualification/add', 			'company/CompanyQualification/company_qualification_add_form');
-Route::get('qualification/edit', 			'company/CompanyQualification/company_qualification_edit_form');
-Route::get('qualification/delete', 			'company/CompanyQualification/company_qualification_delete');
+Route::get('qualification/list', 			'company/CompanyQualification/lists');
+Route::get('qualification/info', 			'company/CompanyQualification/info');
+Route::get('qualification/add', 			'company/CompanyQualification/add_form');
+Route::get('qualification/edit', 			'company/CompanyQualification/edit_form');
+Route::get('qualification/delete', 			'company/CompanyQualification/delete');
+Route::post('qualification/form_submit', 	'company/CompanyQualification/form_submit');
+
+//产品
+Route::get('product/list', 			'company/Product/lists');
+Route::get('product/info', 			'company/Product/info');
+Route::get('product/add', 			'company/Product/add_form');
+Route::get('product/edit', 			'company/Product/edit_form');
+Route::get('product/delete', 		'company/Product/delete');
+Route::post('product/form_submit', 	'company/Product/form_submit');
+

@@ -104,7 +104,8 @@
           </div>
           <ul class="treeview-menu" >
             <li class="{php} if(strpos($request, 'company/edit')){echo 'active';} {/php}"><a href="{:url('@company/edit')}"><i class="fa fa-angle-right"></i>基本信息</a></li>
-            <li class="{php} if(strpos($request, 'company_user/add')){echo 'active';} {/php}"><a href="{:url('@company_user/add')}"><i class="fa fa-angle-right"></i>企业资质</a></li>
+            <li class="{php} if(strpos($request, 'qualification/add')){echo 'active';} {/php}"><a href="{:url('@qualification/add')}"><i class="fa fa-angle-right"></i>企业资质添加</a></li>
+            <li class="{php} if(strpos($request, 'qualification/list')){echo 'active';} {/php}"><a href="{:url('@qualification/list')}"><i class="fa fa-angle-right"></i>企业资质列表</a></li>
             <li class="{php} if(strpos($request, 'company_user/list')){echo 'active';} {/php}"><a href="{:url('@company_user/list')}"><i class="fa fa-angle-right"></i>企业荣誉</a></li>
             <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业相册</a></li>
             <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
@@ -130,8 +131,8 @@
             <span>产品管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加产品</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>产品列表</a></li>
+            <li><a href="{:url('@product/add')}"><i class="fa fa-angle-right"></i>添加产品</a></li>
+            <li><a href="{:url('@product/list')}"><i class="fa fa-angle-right"></i>产品列表</a></li>
           </ul>  
         </li>
 

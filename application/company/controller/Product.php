@@ -5,15 +5,15 @@ use app\company\controller\Base;
 
 use \think\Db;
 
-class CompanyQualification extends Base
+class Product extends Base
 {
-    public $customTable        = 'cx_company_qualification';
-    public $customUploadPath   = 'cxgz/company/qualification';
-    public $customTitle        = '企业资质';
-    public $customPathList     = 'qualification/list';
-    public $customTemplateList = '/company/qualification/list';
-    public $customTemplateAdd  = '/company/qualification/add_form';
-    public $customTemplateEdit = '/company/qualification/edit_form';
+    public $customTable        = 'cx_product';
+    public $customUploadPath   = 'cxgz/product';
+    public $customTitle        = '产品';
+    public $customPathList     = 'product/list';
+    public $customTemplateList = '/product/list';
+    public $customTemplateAdd  = '/product/add_form';
+    public $customTemplateEdit = '/product/edit_form';
 
     /**
      * 列表
