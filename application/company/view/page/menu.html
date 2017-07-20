@@ -116,7 +116,7 @@
             <li class="{php} if(strpos($request, 'gallery/add')){echo 'active';} {/php}"><a href="{:url('@gallery/add')}"><i class="fa fa-angle-right"></i>企业相册添加</a></li>
             <li class="{php} if(strpos($request, 'gallery/list')){echo 'active';} {/php}"><a href="{:url('@gallery/list')}"><i class="fa fa-angle-right"></i>企业相册列表</a></li>
             <li class="{php} if(strpos($request, 'tag/edit')){echo 'active';} {/php}"><a href="{:url('@tag/edit')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>宣传视频</a></li>
+           <!-- <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>宣传视频</a></li> -->
           </ul>
         </li>
         
@@ -163,12 +163,12 @@
             <span>知识产权管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加专利</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>专利列表</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加软件著作权</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>软件著作权列表</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加作品著作权</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>作品著作权列表</a></li>
+            <li class="{php} if(strpos($request, 'patent/add')){echo 'active';} {/php}"><a href="{:url('@patent/add')}"><i class="fa fa-angle-right"></i>专利添加</a></li>
+            <li class="{php} if(strpos($request, 'patent/list')){echo 'active';} {/php}"><a href="{:url('@patent/list')}"><i class="fa fa-angle-right"></i>专利列表</a></li>
+            <li class="{php} if(strpos($request, 'software/add')){echo 'active';} {/php}"><a href="{:url('@software/add')}"><i class="fa fa-angle-right"></i>软件著作权添加</a></li>
+            <li class="{php} if(strpos($request, 'software/list')){echo 'active';} {/php}"><a href="{:url('@software/list')}"><i class="fa fa-angle-right"></i>软件著作权列表</a></li>
+            <li class="{php} if(strpos($request, 'opus/add')){echo 'active';} {/php}"><a href="{:url('@opus/add')}"><i class="fa fa-angle-right"></i>作品著作权添加</a></li>
+            <li class="{php} if(strpos($request, 'opus/list')){echo 'active';} {/php}"><a href="{:url('@opus/list')}"><i class="fa fa-angle-right"></i>作品著作权列表</a></li>
           </ul>  
         </li>
 

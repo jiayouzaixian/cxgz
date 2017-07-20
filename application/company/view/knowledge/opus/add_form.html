@@ -1,0 +1,73 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="page/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+         添加{$customTitle}
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="#">{$customTitle}</a></li>
+          <li class="active" >添加</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+            <form action='{:url("/opus/form_submit")}'  method="post" class="form-horizontal" >
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="name" class="">作品名称</label>
+                  <input type="text" name="name" class="form-control" id="name" style="width: 30%;">
+                </div>
+                <div class="form-group">
+                  <label for="number" class="">登记号</label>
+                  <input type="text" name="number" class="form-control" id="number" style="width: 30%;" >
+                </div>
+                <div class="form-group">
+                  <label for="type" class="">类别</label>
+                  <input type="text" name="type" class="form-control" id="type" style="width: 30%;">
+                </div>
+                <div class="form-group">
+                  <label for="register_date" class="">登记日期</label>
+                  <input type="text" name="register_date" class="form-control" id="register_date" style="width: 30%;" >
+                </div>
+
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="enterprise_id" value="{$enterprise_id}" >
+                <input type="hidden" name="op" value="add" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+</body>
+</html>
