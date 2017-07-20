@@ -113,7 +113,8 @@
             <li class="{php} if(strpos($request, 'qualification/list')){echo 'active';} {/php}"><a href="{:url('@qualification/list')}"><i class="fa fa-angle-right"></i>企业资质列表</a></li>
             <li class="{php} if(strpos($request, 'honor/add')){echo 'active';} {/php}"><a href="{:url('@honor/add')}"><i class="fa fa-angle-right"></i>企业荣誉添加</a></li>
             <li class="{php} if(strpos($request, 'honor/list')){echo 'active';} {/php}"><a href="{:url('@honor/list')}"><i class="fa fa-angle-right"></i>企业荣誉列表</a></li>
-            <li ><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>企业相册</a></li>
+            <li class="{php} if(strpos($request, 'gallery/add')){echo 'active';} {/php}"><a href="{:url('@gallery/add')}"><i class="fa fa-angle-right"></i>企业相册添加</a></li>
+            <li class="{php} if(strpos($request, 'gallery/list')){echo 'active';} {/php}"><a href="{:url('@gallery/list')}"><i class="fa fa-angle-right"></i>企业相册列表</a></li>
             <li class="{php} if(strpos($request, 'tag/edit')){echo 'active';} {/php}"><a href="{:url('@tag/edit')}"><i class="fa fa-angle-right"></i>企业标签</a></li>
             <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>宣传视频</a></li>
           </ul>
@@ -150,8 +151,8 @@
             <span>商标管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加商标</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
+            <li class="{php} if(strpos($request, 'brand/add')){echo 'active';} {/php}"><a href="{:url('@brand/add')}"><i class="fa fa-angle-right"></i>商标添加</a></li>
+            <li class="{php} if(strpos($request, 'brand/list')){echo 'active';} {/php}"><a href="{:url('@brand/list')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
           </ul>  
         </li>
 

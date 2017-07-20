@@ -33,6 +33,14 @@ Route::post('honor/form_submit', 			'company/CompanyHonor/form_submit');
 Route::get('tag/edit', 						'company/CompanyTag/edit_form');
 Route::post('tag/edit_form_submit', 		'company/CompanyTag/edit_form_submit');
 
+//企业荣誉
+Route::get('gallery/list', 					'company/CompanyGallery/lists');
+Route::get('gallery/info', 					'company/CompanyGallery/info');
+Route::get('gallery/add', 					'company/CompanyGallery/add_form');
+Route::get('gallery/edit', 					'company/CompanyGallery/edit_form');
+Route::get('gallery/delete', 				'company/CompanyGallery/delete');
+Route::post('gallery/form_submit', 			'company/CompanyGallery/form_submit');
+
 //产品
 Route::get('product/list', 					'company/Product/lists');
 Route::get('product/info', 					'company/Product/info');
@@ -41,3 +49,10 @@ Route::get('product/edit', 					'company/Product/edit_form');
 Route::get('product/delete', 				'company/Product/delete');
 Route::post('product/form_submit', 			'company/Product/form_submit');
 
+//商标
+Route::get('brand/list', 					'company/CompanyBrand/lists');
+Route::get('brand/info', 					'company/CompanyBrand/info');
+Route::get('brand/add', 					'company/CompanyBrand/add_form');
+Route::get('brand/edit', 					'company/CompanyBrand/edit_form');
+Route::get('brand/delete', 					'company/CompanyBrand/delete');
+Route::post('brand/form_submit', 			'company/CompanyBrand/form_submit');
