@@ -1,4 +1,4 @@
-{include file="page/header" /}
+{include file="page/header" /} 
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -9,67 +9,86 @@
     <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-         企业基本信息
+         编辑{$customTitle}
         </h1>
        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> 录入系统</a></li>
-          <li><a href="#">企业</a></li>
-          <li class="active" >基本信息</li>
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="#">{$customTitle}</a></li>
+          <li class="active" >编辑</li>
         </ol>
       </section>
       <section class="content">
       <div class="row">
       <div class="col-md-12">
       <div class="box">
-        <div class="box-body">
-            <form action='{:url("/product/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data" >
-
-              <td>{$company.goods_id}</td>
-
+            <form action='{:url("/product/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="company_name" class="">产品名称</label>
-                  <input type="text" class="form-control" id="company_url" name="goods_name" value="{$company.goods_name}">
+                  <label for="name" class="">产品名称</label>
+                  <input type="text" name="name" class="form-control" id="name" style="width: 30%;" value="{$item.name}">
                 </div>
 
-                <div class="form-group">
-                  <label for="company_uscc" class="">产品编号</label>
-                  <input type="text" class="form-control" id="company_url" name="goods_sn" value="{$company.goods_sn}">
-                </div>
-
-                <div class="form-group">
-                  <label for="company_uscc" class="">产品售价</label>
-                  <input type="text" class="form-control" id="company_url" name="sale_price" value="{$company.sale_price}">
-                </div>
-
-                <div class="form-group">
-                  <label for="company_leader" class="">产品市场价格</label>
-                  <input type="text" class="form-control" id="company_url" name="market_price" value="{$company.market_price}">
-                </div>
-
-                <div class="form-group">
-                  <label for="company_money" class="">产品关键字</label>
-                  <input type="text" class="form-control" id="company_url" name="keywords" value="{$company.keywords}">
-                </div>
-
-
-                <div class="form-group">
-                  <label>产品描述</label>
-                  <input type="text" class="form-control" id="company_url" name="goods_desc" value="{$company.goods_desc}">
+               <div class="form-group">
+                  <label for="picture" class="">产品图片</label>
+                  <p><a href="{$item.picture_source_url}"><img src="{$item.picture_thumb_url}"></a></p>
+                  <input type="file" id="picture" name="picture" >
                 </div>
                 <div class="form-group">
-                  <label for="company_url" class="">产品创建时间</label>
-                  <input type="text" class="form-control" id="company_url" name="created" value="{$company.created}">
+                  <label for="price" class="">报价</label>
+                  <input type="text" name="price" class="form-control" id="price" style="width: 20%;" value="{$item.price}">
                 </div>
-
+                <div class="form-group">
+                  <label for="brand" class="">所属品牌</label>
+                  <select class="form-control" type="brand" id="brand" name="brand" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {if condition = "count($brands) > 0"}
+                      {foreach name="brands" item="brand" key="k" }
+                         <option value="{$brand.id}" {if condition = "$brand.id == $item.brand_id"} selected="selected" {/if} >
+                            {$brand.name}
+                         </option>
+                      {/foreach}
+                    {/if}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="category" class="">所属行业</label>
+                  <select class="form-control" type="category" id="category" name="category" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {foreach name="categorys" item="category" key="k" }
+                       <option value="{$k}" {if condition = "$k == $item.category_id"} selected="selected" {/if} >
+                          {$category}
+                       </option>
+                    {/foreach}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="region" class="">所在地区</label>
+                  <select class="form-control" id="region" name="region" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {foreach name="regions" item="region" key="k" }
+                       <option value="{$k}" {if condition = "$k == $item.region_id"} selected="selected" {/if} >
+                          {$region}
+                       </option>
+                    {/foreach}
+                  </select>
+                </div>
+               <div class="form-group">
+                  <label for="description_picture" class="">简介图片</label>
+                  <p><a href="{$item.description_picture_source_url}"><img src="{$item.description_picture_thumb_url}"></a></p>
+                  <input type="file" id="description_picture" name="description_picture" >
+                </div>
+                <div class="form-group">
+                 <label for="description" class="">简介内容</label>
+                  <textarea  class="textarea"  name="description" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">value="{$item.description}"</textarea>   
+                </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="hidden" name="goods_id" value="{$company.goods_id}" >
+                <input type="hidden" name="enterprise_id" value="{$enterprise_id}" >
+                <input type="hidden" name="product_id" value="{$item.id}" >
                 <input type="hidden" name="op" value="edit" >
                 <button type="submit" class="btn btn btn-primary ">提交</button>
               </div>
             </form>
-            </div>
             </div>
           </div>
         </div>
@@ -78,7 +97,7 @@
   </div>
   <!-- /.content-wrapper -->
 {include file="page/footer" /}
-
+ 
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
@@ -97,18 +116,7 @@
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/datepicker/bootstrap-datepicker.js"></script>
-<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
-
 <script type="text/javascript">
-  $('#datepicker').datepicker({
-    format: 'yyyy-mm-dd',
-  });
-
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.

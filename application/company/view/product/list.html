@@ -7,11 +7,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        产品列表
+        {$customTitle}列表 
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-        <li><a href="#">商品</a></li>
+        <li><a href="#">{$customTitle}</a></li>
         <li class="active">列表</li>
       </ol>
     </section>
@@ -23,7 +23,7 @@
           <div class="box">
 
             <div class="box-header">
-
+              
             </div>
 
             <div class="box-body">
@@ -35,32 +35,28 @@
                       <tr role="row">
                         <th>Id</th>
                         <th>产品名称</th>
-                        <th>产品编号</th>
-
-                        <th>产品售价</th>
-                        <th>产品市场价格</th>
-                        <th>产品关键字</th>
-                        <th>产品描述</th>
-                        <th>产品创建时间</th>
+                        <th>产品图片</th>
+                        <th>所属品牌</th>
+                        <th>所属行业</th>
+                        <th>所属地区</th>
+                        <th>添加时间</th>
                         <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {foreach name="lists" item="company" key="k" }
+                      {foreach name="lists" item="list" key="k" }
                         <tr>
-                          <td>{$company.goods_id}</td>
-                          <td>{$company.goods_name}</td>
-                          <td>{$company.goods_sn}</td>
-                          <td>{$company.sale_price}</td>
-                          <td>{$company.market_price}</td>
-                          <td>{$company.keywords}</td>
-                          <td>{$company.goods_desc}</td>
-                          <td>{$company.created}</td>
+                          <td>{$list.id}</td>
+                          <td>{$list.name}</td>
+                          <td><a href="{$list.picture_source_url}" target="_blank"><img src="{$list.picture_thumb_url}"></a></td>
+                          <td>{$list.brand}</td>
+                          <td>{$list.category}</td>
+                          <td>{$list.region}</td>
+                          <td>{$list.created}</td>
                           <td>
-                            <a href="edit?goods_id={$company.goods_id}" class="">编辑</a> |
-                            <a href="gallery_upload?goods_id={$company.goods_id}" class="">相册图片</a> |
-                            <a href="detail_upload?goods_id={$company.goods_id}" class="">详情图片</a> |
-                            <a href="delete?goods_id={$company.goods_id}" class="">删除</a>
+                            <a href="{:url('/product/info?product_id='.$list.id)}" class="">详情</a> | 
+                            <a href="{:url('/product/edit?product_id='.$list.id)}" class="">编辑</a> | 
+                            <a href="{:url('/product/delete?product_id='.$list.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}
@@ -106,14 +102,16 @@
 <!-- page script -->
 <script>
   $(function () {
-
+    
     $('#example1').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": true
+      "autoWidth": true,
+      "pageLength": 25,
+      "order": [ 0, 'desc' ],
     });
   });
 </script>

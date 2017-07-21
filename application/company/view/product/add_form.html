@@ -13,7 +13,7 @@
         </h1>
        <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
-          <li><a href="#">商品</a></li>
+          <li><a href="#">{$customTitle}</a></li>
           <li class="active" >添加</li>
         </ol>
       </section>
@@ -21,17 +21,64 @@
       <div class="row">
       <div class="col-md-12">
       <div class="box">
-            <form action='{:url("/qualification/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data">
+            <form action='{:url("/product/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="qualification_name" class="">资质名称</label>
-                  <input type="text" name="qualification_name" class="form-control" id="qualification_name" style="width: 30%;">
+                  <label for="name" class="">产品名称</label>
+                  <input type="text" name="name" class="form-control" id="name" style="width: 30%;">
+                </div>
+
+               <div class="form-group">
+                  <label for="picture" class="">产品图片</label>
+                  <input type="file" id="picture" name="picture" >
+                </div>
+                <div class="form-group">
+                  <label for="price" class="">报价</label>
+                  <input type="text" name="price" class="form-control" id="price" style="width: 20%;" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                  <label for="brand" class="">所属品牌</label>
+                  <select class="form-control" type="brand" id="brand" name="brand" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {if condition = "count($brands) > 0"}
+                      {foreach name="brands" item="brand" key="k" }
+                         <option value="{$brand.id}" >
+                            {$brand.name}
+                         </option>
+                      {/foreach}
+                    {/if}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="category" class="">所属行业</label>
+                  <select class="form-control" type="category" id="category" name="category" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {foreach name="categorys" item="category" key="k" }
+                       <option value="{$k}" >
+                          {$category}
+                       </option>
+                    {/foreach}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="region" class="">所在地区</label>
+                  <select class="form-control" id="region" name="region" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {foreach name="regions" item="region" key="k" }
+                       <option value="{$k}" >
+                          {$region}
+                       </option>
+                    {/foreach}
+                  </select>
                 </div>
                <div class="form-group">
-                  <label for="qualification_picture" class="">资质图片</label>
-                  <input type="file" id="qualification_picture" name="qualification_picture" >
+                  <label for="description_picture" class="">简介图片</label>
+                  <input type="file" id="description_picture" name="description_picture" >
                 </div>
-              </div>
+                <div class="form-group">
+                 <label for="description" class="">简介内容</label>
+                  <textarea  class="textarea"  name="description" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>   
+                </div>
               <!-- /.box-body -->
               <div class="box-footer">
                 <input type="hidden" name="enterprise_id" value="{$enterprise_id}" >
@@ -61,5 +108,21 @@
 <!-- AdminLTE App -->
 <script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
 
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<script type="text/javascript">
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5({
+
+    });
+  });
+</script>
 </body>
 </html>

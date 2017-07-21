@@ -111,23 +111,26 @@ class Brand extends Base
            'enterprise_id'        => $post['enterprise_id'],
            'created'              => time(),
         );
+        if(!empty($_FILES['logo']['size'])){
+          $uploadFiles['name']        = $_FILES['logo']['name'];
+          $uploadFiles['type']        = $_FILES['logo']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['logo']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['logo']['size'];
 
-        $uploadFiles['name']        = $_FILES['logo']['name'];
-        $uploadFiles['type']        = $_FILES['logo']['type'];
-        $uploadFiles['tmp_name']    = $_FILES['logo']['tmp_name'];
-        $uploadFiles['size']        = $_FILES['logo']['size'];
+          $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
+          $data['logo'] = $sourcePath;
+        }
 
-        $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
-        $data['logo'] = $sourcePath;
+        if(!empty($_FILES['logo']['size'])){
+          $uploadFiles['name']        = $_FILES['description_picture']['name'];
+          $uploadFiles['type']        = $_FILES['description_picture']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['description_picture']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['description_picture']['size'];
 
-        $uploadFiles['name']        = $_FILES['description_picture']['name'];
-        $uploadFiles['type']        = $_FILES['description_picture']['type'];
-        $uploadFiles['tmp_name']    = $_FILES['description_picture']['tmp_name'];
-        $uploadFiles['size']        = $_FILES['description_picture']['size'];
-
-        $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
-        $data['description_picture'] = $sourcePath;
-
+          $sourcePath = $this->upload_image_remote($uploadFiles, $this->customUploadPath);
+          $data['description_picture'] = $sourcePath;
+        }
+        
         $result = Db::table($this->customTable)->insert($data);
 
         if(!$result){
