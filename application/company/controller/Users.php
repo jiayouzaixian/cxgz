@@ -42,9 +42,13 @@ class Users extends Controller
       }else if(md5(trim($password)) != $adminUserModel['password']){
             $res = array('result'=>false,'code'=>1,'message'=>'密码错误');
       }else{
-            $adminUserModel =  json_encode($adminUserModel);
-            session('company_user', $adminUserModel);  // 设置session
-            $res = array('result'=>true,'code'=>0,'message'=>'登录成功');
+        $enterprise_id = $adminUserModel['enterprise_id'];
+        $company = Db::table('cx_company')->where('id', $enterprise_id)->find();
+        $company_name = $company['enterprise_name'];
+        session('company_name', $company_name);
+        $adminUserModel =  json_encode($adminUserModel);
+        session('company_user', $adminUserModel);  // 设置session
+        $res = array('result'=>true,'code'=>0,'message'=>'登录成功');
       }
       return $res;
     }
@@ -55,6 +59,7 @@ class Users extends Controller
     */
     public function user_logout(){
     	session('company_user', null);
+      session('company_name', null);
     	$this->success('退出登录成功！', '@user/login');     
     }
 
