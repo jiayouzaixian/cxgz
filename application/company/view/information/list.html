@@ -34,23 +34,21 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>商标图片</th>
-                        <th>商标名称</th>
-                        <th>类型</th>
-                        <th>分类</th>
+                        <th>标题</th>
+                        <th>发布时间</th>
+                        <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
                       {foreach name="lists" item="list" key="k" }
                         <tr>
                           <td>{$list.id}</td>
-                          <td><a href="{$list.picture_url}" target="_blank"><img src="{$list.thumb_url}" ></a></td>
-                          <td>{$list.name}</td>
-                          <td>{$list.type}</td>
-                          <td>{$list.category}</td>
+                          <td>{$list.title}</td>
+                          <td>{$list.created}</td>
                           <td>
-                            <a href="{:url('/trademark/edit?brand_id='.$list.id)}" class="">编辑</a> | 
-                            <a href="{:url('/trademark/delete?brand_id='.$list.id)}" class="">删除</a>
+                            <a href="{:url('/information/info?information_id='.$list.id)}" class="">详情</a> | 
+                            <a href="{:url('/information/edit?information_id='.$list.id)}" class="">编辑</a> | 
+                            <a href="{:url('/information/delete?information_id='.$list.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}

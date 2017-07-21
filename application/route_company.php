@@ -50,12 +50,12 @@ Route::get('product/delete', 				'company/Product/delete');
 Route::post('product/form_submit', 			'company/Product/form_submit');
 
 //商标
-Route::get('brand/list', 					'company/CompanyBrand/lists');
-Route::get('brand/info', 					'company/CompanyBrand/info');
-Route::get('brand/add', 					'company/CompanyBrand/add_form');
-Route::get('brand/edit', 					'company/CompanyBrand/edit_form');
-Route::get('brand/delete', 					'company/CompanyBrand/delete');
-Route::post('brand/form_submit', 			'company/CompanyBrand/form_submit');
+Route::get('trademark/list', 					'company/CompanyBrand/lists');
+Route::get('trademark/info', 					'company/CompanyBrand/info');
+Route::get('trademark/add', 					'company/CompanyBrand/add_form');
+Route::get('trademark/edit', 					'company/CompanyBrand/edit_form');
+Route::get('trademark/delete', 					'company/CompanyBrand/delete');
+Route::post('trademark/form_submit', 			'company/CompanyBrand/form_submit');
 
 //专利
 Route::get('patent/list', 					'company/KnowledgePatent/lists');
@@ -80,3 +80,19 @@ Route::get('opus/add', 						'company/KnowledgeOpus/add_form');
 Route::get('opus/edit', 					'company/KnowledgeOpus/edit_form');
 Route::get('opus/delete', 					'company/KnowledgeOpus/delete');
 Route::post('opus/form_submit', 			'company/KnowledgeOpus/form_submit');
+
+//信息
+Route::get('information/list', 					'company/Information/lists');
+Route::get('information/info', 					'company/Information/info');
+Route::get('information/add', 					'company/Information/add_form');
+Route::get('information/edit', 					'company/Information/edit_form');
+Route::get('information/delete', 				'company/Information/delete');
+Route::post('information/form_submit', 			'company/Information/form_submit');
+
+//品牌
+Route::get('brand/list', 					'company/Brand/lists');
+Route::get('brand/info', 					'company/Brand/info');
+Route::get('brand/add', 					'company/Brand/add_form');
+Route::get('brand/edit', 					'company/Brand/edit_form');
+Route::get('brand/delete', 					'company/Brand/delete');
+Route::post('brand/form_submit', 			'company/Brand/form_submit');

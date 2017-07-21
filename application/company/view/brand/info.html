@@ -1,0 +1,87 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  {include file="page/menu" /}
+
+  <div class="content-wrapper">
+
+    <section class="content-header">
+      <h1>
+        {$customTitle}详情
+      </h1>
+     <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+        <li><a href="#">{$customTitle}</a></li>
+        <li class="active">详情</li>
+      </ol>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-body">
+              <p><a href="{:url('@brand/list')}" class="btn btn-primary btn-sm">返回</a></p>
+              <table class="table table-bordered">
+              
+                <tr>
+                  <td width="200" align="right"><b>品牌名称</b></td>
+                  <td>{$item.name}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>品牌logo</b></td>
+                  <td><a href="{$item.logo_picture_url}"><img src="{$item.logo_thumb_url}"></a></td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>网址</b></td>
+                  <td>{$item.website}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>所属行业</b></td>
+                  <td>{$item.category}</td>
+                </tr>                <tr>
+                <td width="200" align="right"><b>一句话描述</b></td>
+                  <td>{$item.brief}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>简介图片</b></td>
+                  <td><a href="{$item.description_picture_picture_url}"><img src="{$item.description_picture_thumb_url}"></a></td>
+                </tr>
+                <td width="200" align="right"><b>简介内容</b></td>
+                  <td>{$item.description}</td>
+                </tr>
+                <tr>
+                  <td width="200" align="right"><b>标签</b></td>
+                  <td>{$item.tag}</td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/demo.js"></script>
+
+
+</body>
+</html>

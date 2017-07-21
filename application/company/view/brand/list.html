@@ -34,23 +34,25 @@
                     <thead>
                       <tr role="row">
                         <th>Id</th>
-                        <th>商标图片</th>
-                        <th>商标名称</th>
-                        <th>类型</th>
-                        <th>分类</th>
+                        <th>品牌名称</th>
+                        <th>Logo</th>
+                        <th>所属行业</th>
+                        <th>添加时间</th>
+                        <th>操作</th>
                       </tr>
                     </thead>
                     <tbody>
                       {foreach name="lists" item="list" key="k" }
                         <tr>
                           <td>{$list.id}</td>
-                          <td><a href="{$list.picture_url}" target="_blank"><img src="{$list.thumb_url}" ></a></td>
                           <td>{$list.name}</td>
-                          <td>{$list.type}</td>
+                          <td><a href="{$list.logo_picture_url}" target="_blank"><img src="{$list.logo_thumb_url}"></a></td>
                           <td>{$list.category}</td>
+                          <td>{$list.created}</td>
                           <td>
-                            <a href="{:url('/trademark/edit?brand_id='.$list.id)}" class="">编辑</a> | 
-                            <a href="{:url('/trademark/delete?brand_id='.$list.id)}" class="">删除</a>
+                            <a href="{:url('/brand/info?brand_id='.$list.id)}" class="">详情</a> | 
+                            <a href="{:url('/brand/edit?brand_id='.$list.id)}" class="">编辑</a> | 
+                            <a href="{:url('/brand/delete?brand_id='.$list.id)}" class="">删除</a>
                           </td>
                         </tr>
                       {/foreach}

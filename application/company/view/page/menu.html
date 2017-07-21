@@ -3,7 +3,7 @@
     <a href="{:url('@company')}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">企业录入系统</span>
+      <span class="logo-lg">诚信贵州录入系统</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -126,8 +126,8 @@
             <span>品牌管理</span>
           </div>
           <ul class="treeview-menu">
-            <li class="{php} if(strpos($request, 'goods/add')){echo 'active';} {/php}"><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>添加品牌</a></li>
-            <li class="{php} if(strpos($request, 'goods/list')){echo 'active';} {/php}"><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>品牌列表</a></li>
+            <li class="{php} if(strpos($request, 'brand/add')){echo 'active';} {/php}"><a href="{:url('@brand/add')}"><i class="fa fa-angle-right"></i>添加品牌</a></li>
+            <li class="{php} if(strpos($request, 'brand/list')){echo 'active';} {/php}"><a href="{:url('@brand/list')}"><i class="fa fa-angle-right"></i>品牌列表</a></li>
           </ul>
         </li>
         
@@ -151,8 +151,8 @@
             <span>商标管理</span>
           </div>
           <ul class="treeview-menu">
-            <li class="{php} if(strpos($request, 'brand/add')){echo 'active';} {/php}"><a href="{:url('@brand/add')}"><i class="fa fa-angle-right"></i>商标添加</a></li>
-            <li class="{php} if(strpos($request, 'brand/list')){echo 'active';} {/php}"><a href="{:url('@brand/list')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
+            <li class="{php} if(strpos($request, 'trademark/add')){echo 'active';} {/php}"><a href="{:url('@trademark/add')}"><i class="fa fa-angle-right"></i>商标添加</a></li>
+            <li class="{php} if(strpos($request, 'trademark/list')){echo 'active';} {/php}"><a href="{:url('@trademark/list')}"><i class="fa fa-angle-right"></i>商标列表</a></li>
           </ul>  
         </li>
 
@@ -179,8 +179,8 @@
             <span>发布管理</span>
           </div>
           <ul class="treeview-menu">
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>发布信息</a></li>
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>信息列表</a></li>
+            <li class="{php} if(strpos($request, 'information/add')){echo 'active';} {/php}"><a href="{:url('@information/add')}"><i class="fa fa-angle-right"></i>信息发布</a></li>
+            <li class="{php} if(strpos($request, 'information/list')){echo 'active';} {/php}"><a href="{:url('@information/list')}"><i class="fa fa-angle-right"></i>信息列表</a></li>
           </ul>  
         </li>
 

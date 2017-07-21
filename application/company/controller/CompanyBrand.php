@@ -10,7 +10,7 @@ class CompanyBrand extends Base
     public $customTable        = 'cx_company_brand';
     public $customUploadPath   = 'cxgz/company/brand';
     public $customTitle        = '企业商标';
-    public $customPathList     = 'brand/list';
+    public $customPathList     = 'trademark/list';
     public $customTemplateList = '/company/brand/list';
     public $customTemplateAdd  = '/company/brand/add_form';
     public $customTemplateEdit = '/company/brand/edit_form';

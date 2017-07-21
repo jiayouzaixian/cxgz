@@ -1,0 +1,117 @@
+{include file="page/header" /} 
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+     {include file="page/menu" /}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+         添加{$customTitle}
+        </h1>
+       <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> 后台</a></li>
+          <li><a href="#">{$customTitle}</a></li>
+          <li class="active" >添加</li>
+        </ol>
+      </section>
+      <section class="content">
+      <div class="row">
+      <div class="col-md-12">
+      <div class="box">
+            <form action='{:url("/brand/form_submit")}'  method="post" class="form-horizontal" enctype="multipart/form-data">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="name" class="">品牌名称</label>
+                  <input type="text" name="name" class="form-control" id="name" style="width: 30%;">
+                </div>
+
+               <div class="form-group">
+                  <label for="logo" class="">品牌Logo</label>
+                  <input type="file" id="logo" name="logo" >
+                </div>
+                <div class="form-group">
+                  <label for="website" class="">网址</label>
+                  <input type="text" name="website" class="form-control" id="website" style="width: 30%;">
+                </div>
+                <div class="form-group">
+                  <label for="category" class="">行业</label>
+                  <select class="form-control" type="category" id="category" name="category" style="width: 20%;" >
+                    <option value="0">选择</option>
+                    {foreach name="categorys" item="category" key="k" }
+                       <option value="{$category.id}" {if condition = "$category.level == 1"} disabled="disabled" {/if}>
+                          {if condition = "$category.level == 1"}
+                            {$category.name}
+                          {else}
+                           &nbsp;&nbsp; - {$category.name}
+                          {/if}
+                       </option>
+                    {/foreach}
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="brief" class="">一句话描述</label>
+                  <input type="text" name="brief" class="form-control" id="brief" style="width: 50%;">
+                </div>
+               <div class="form-group">
+                  <label for="description_picture" class="">简介图片</label>
+                  <input type="file" id="description_picture" name="description_picture" >
+                </div>
+                <div class="form-group">
+                 <label for="description" class="">简介内容</label>
+                  <textarea  class="textarea"  name="description" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>   
+                </div>
+                <div class="form-group">
+                  <label for="tag" class="">标签</label>
+                  <input type="text" name="tag" class="form-control" id="tag" style="width: 30%;">
+                  <div class="form-item-description" >相关品牌使用标签划分, 多个标签使用 ' , ' 分开</div>
+                </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <input type="hidden" name="enterprise_id" value="{$enterprise_id}" >
+                <input type="hidden" name="op" value="add" >
+                <button type="submit" class="btn btn btn-primary ">提交</button>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{include file="page/footer" /}
+ 
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}dist/js/app.min.js"></script>
+
+<!-- CK Editor -->
+<script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{$Think.APP_ADMIN_BOOTSTRAP}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+<script type="text/javascript">
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5({
+
+    });
+  });
+</script>
+</body>
+</html>
