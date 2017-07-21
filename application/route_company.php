@@ -8,6 +8,8 @@ Route::get('company', 						'company/index/index');
 Route::get('user/login', 					'company/Users/user_login_form');
 Route::post('user/login_submit', 			'company/Users/user_login_form_submit');
 Route::get('user/logout', 					'company/Users/user_logout');
+Route::get('user/password', 				'company/Users/user_password_form');
+Route::post('user/password_submit', 		'company/Users/user_password_form_submit');
 
 //公司	
 Route::get('basic/edit', 					'company/company/company_edit_form');

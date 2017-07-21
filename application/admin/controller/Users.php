@@ -49,7 +49,6 @@ class Users extends Controller
       }
       return $res;
     }
-     
 
     /**
     *	用户登出

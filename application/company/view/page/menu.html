@@ -192,7 +192,7 @@
           </div>
           <ul class="treeview-menu">
             <!-- <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>系统设置</a></li> -->
-            <li><a href="{:url('@company')}"><i class="fa fa-angle-right"></i>修改密码</a></li>
+            <li class="{php} if(strpos($request, 'information/list')){echo 'active';} {/php}" ><a href="{:url('@user/password')}"><i class="fa fa-angle-right"></i>修改密码</a></li>
           </ul>  
         </li>
 
