@@ -1,3 +1,20 @@
 .menu-title{
 	height: 40px; line-height: 40px; color:#b8c7ce; padding: 0 0 0 15px;
 }
+
+/*首页2*/
+.index2-headerBox {height: 587px;position: relative;}
+.index2-headerBox .index2-header-bg {position: absolute;width: 100%;height: 587px;}
+.index2-headerBox .index2-header-bg li {position: absolute;width: 100%;height: 587px;}
+.index2-headerBox .index2-header {width: 1200px;margin: 0 auto;height: 587px;position: relative;z-index: 10;}
+.index2-headerBox .header-tit {overflow: hidden;padding-top: 58px;}
+.index2-headerBox .header-tit .logo {width: 350px;padding-left: 26px;height: 63px;}
+.index2-headerBox .header-tit .index-login {color: #FFF;margin-top: 11px;font: normal 14px "微软雅黑";}
+.index2-headerBox .header-tit .index-login i {width: 18px;height: 18px;display: inline-block;vertical-align: middle;margin: 0 10px;background: url(../images/icon/enter_login_icon.png) no-repeat center center;}
+.index2-headerBox .title {margin-top: 170px;height: 110px;text-align: center;}
+.index2-headerBox .index2-header-search {width: 690px;border: 1px solid #686164;border-radius: 5px;margin: 0 auto;overflow: hidden;}
+.index2-headerBox .index2-header-search .index-search-input {width: 594px;height: 61px;float: left;background: #FFF;border-bottom-left-radius: 5px ;border-top-left-radius: 5px;color: #000000;font: normal 18px/34px "微软雅黑";text-indent: 10px;}
+.index2-headerBox .index2-header-search .index-search-input:-ms-input-placeholder {color: #000000;text-indent: 10px;letter-spacing: 8px;font: normal 13px/34px "微软雅黑";}
+.index2-headerBox .index2-header-search .index-search-input::-webkit-input-placeholder {color: #000000;text-indent: 10px;letter-spacing: 8px;font: normal 13px/34px "微软雅黑";}
+.index2-headerBox .index2-header-search .index-search-input::-moz-placeholder {/* Mozilla Firefox 19+ */color: #000000;text-indent: 10px;letter-spacing: 8px;font: normal 13px/34px "微软雅黑";}
+.index2-headerBox .index2-header-search .index-search-submit {float: left;width: 96px;height: 61px;background: #2863c8 url(../images/icon/index2_search_icon.png) no-repeat center center;border-bottom-right-radius: 5px ;border-top-right-radius: 5px;cursor: pointer;}

@@ -1,5 +1,6 @@
 {include file="page/header" /} 
 	<body>
+	<!--
 		<header id="big-header">
 			<div class="left">
 				<img src="{$Think.STATIC_SOURCE_PATH}images/bigDta-LOGO.png"/>
@@ -20,12 +21,42 @@
 				  	<img src="http://www.guizhou.xin/pc/images/index2_header_img3.jpg" class="swiper-slide"/>
 			  	</div>
 			  	<div class="swiper-pagination"></div>
-			  	<article>
-		            <!--<div class="swiper-button-prev nextBtn"></div>
-		            <div class="swiper-button-next nextBtn"></div>-->
-		        </article>
+
 			</div>
 		</div>
+-->
+<!--头部-->
+<div class="index2-headerBox">
+    <ul class="index2-header-bg">
+        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_1.jpg) no-repeat center top;"></li>
+        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_2.jpg) no-repeat center top;"></li>
+        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_3.jpg) no-repeat center top;"></li>
+    </ul>
+    <div class="index2-header">
+        <div class="header-tit">
+            <h1 class="logo fl"><a href="/index.html"><img src="{$Think.STATIC_SOURCE_PATH}/images/index2_logo.png" alt="诚信贵州好品logo"/></a></h1>
+            
+                
+                
+                    <a class="index-login fr" href="/login.html?uri=/index.html" title="登录/注册"><i></i>登录　/　注册</a>
+                
+            
+        </div>
+        <p class="title"><img src="{$Think.STATIC_SOURCE_PATH}/images/index2_title_img.png"/></p>
+        <div class="index2-header-search">
+            <form action="/search.html" method="post" target="_blank">
+                <div id="box">
+                    <input type="text" id="keyword"  name = "keyword" placeholder="-输入您想要查询的商标/企业/景区名-" autocomplete="off" class="index-search-input" autofocus="autofocus"/>
+                    <input type="submit" name="" id="" value="" class="index-search-submit" />
+                    <br>
+                    <span style="color: red;" id="txtSearchError"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--/头部-->
+
 		<div id="big-nav">
 			<ul class="nav-box">
 				<li class="one-nav"><a href="###">首页</a></li>
