@@ -1,76 +1,23 @@
-{include file="page/header" /} 
+{include file="page/header" /}
 	<body>
-	<!--
-		<header id="big-header">
-			<div class="left">
-				<img src="{$Think.STATIC_SOURCE_PATH}images/bigDta-LOGO.png"/>
-				<span class="big-title">诚信贵州好品大数据平台</span>
-			</div>
-			<div class="center">
-				<input type="text" />
-				<button>搜索</button>
-			</div>
-			<p class="right"><span class="denglu">登录</span> /  <span class="zhuce">注册</span></p>
-			<div class="clearfloat"></div>
-		</header>
 		<div id="big-banner">
 			<div class="swiper-container">
 			  	<div class="swiper-wrapper">
-				  	<img src="http://www.guizhou.xin/pc/images/index2_header_img1.jpg" class="swiper-slide"/>
-				  	<img src="http://www.guizhou.xin/pc/images/index2_header_img2.jpg" class="swiper-slide"/>
-				  	<img src="http://www.guizhou.xin/pc/images/index2_header_img3.jpg" class="swiper-slide"/>
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_1.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_2.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_3.jpg" class="swiper-slide" />
 			  	</div>
-			  	<div class="swiper-pagination"></div>
-
+			  	<article>
+		            <!--<div class="swiper-button-prev nextBtn"></div>
+		            <div class="swiper-button-next nextBtn"></div>-->
+		        </article>
 			</div>
-		</div>
--->
-<!--头部-->
-<div class="index2-headerBox">
-    <ul class="index2-header-bg">
-        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_1.jpg) no-repeat center top;"></li>
-        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_2.jpg) no-repeat center top;"></li>
-        <li style="background:url({$Think.STATIC_SOURCE_PATH}images/index_banner_3.jpg) no-repeat center top;"></li>
-    </ul>
-    <div class="index2-header">
-        <div class="header-tit">
-            <h1 class="logo fl"><a href="/index.html"><img src="{$Think.STATIC_SOURCE_PATH}/images/index2_logo.png" alt="诚信贵州好品logo"/></a></h1>
-            
-                
-                
-                    <a class="index-login fr" href="/login.html?uri=/index.html" title="登录/注册"><i></i>登录　/　注册</a>
-                
-            
-        </div>
-        <p class="title"><img src="{$Think.STATIC_SOURCE_PATH}/images/index2_title_img.png"/></p>
-        <div class="index2-header-search">
-            <form action="/search.html" method="post" target="_blank">
-                <div id="box">
-                    <input type="text" id="keyword"  name = "keyword" placeholder="-输入您想要查询的商标/企业/景区名-" autocomplete="off" class="index-search-input" autofocus="autofocus"/>
-                    <input type="submit" name="" id="" value="" class="index-search-submit" />
-                    <br>
-                    <span style="color: red;" id="txtSearchError"></span>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!--/头部-->
-
-		<div id="big-nav">
-			<ul class="nav-box">
-				<li class="one-nav"><a href="###">首页</a></li>
-				<li><a href="###">品牌产品馆</a></li>
-				<li><a href="###">贵州省著名景区</a></li>
-				<li><a href="###">企业查询</a></li>
-				<li><a href="###">商标查询</a></li>
-			</ul>
 		</div>
 		<main id="big-main">
 			<article class="main-sincerity sincerity-lndustry">
 				<div class="sincerity-left">
 					<div class="left-title">
-						<h2>诚信品牌     工业</h2>
+						<h2><i class="jy-iconfont icon-shezhi"></i>诚信品牌     工业<span></span></h2>
 						<ul class="lndustry-name">
 							<li><a href="###">食品</a></li>
 							<li><a href="###">装备</a></li>
@@ -81,318 +28,325 @@
 							<li><a href="###">电力</a></li>
 							<li><a href="###">冶金</a></li>
 						</ul>
+						<span class="title-more">更多  ></span>
 					</div>
 					<div class="xianshi-content sincerity-content content-show">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
+							<img src="{$Think.PAGE_PATH}img/gongye-left (1).png" alt="" />
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (1).png" alt="" />
-								<p>这里是商品介绍22</p>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (1).png" alt="" /></div>
+								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (3).png" alt="" /></div>
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (1).png" alt="" />
-								<p>这里是商品介绍22</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (4).png" alt="" /></div>
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (5).png" alt="" /></div>
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (6).png" alt="" /></div>
 								<p>这里是商品介绍6</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (9).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (9).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (8).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (1).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (15).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (1).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (4).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (12).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (15).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (1).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (9).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (13).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (11).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (1).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (17).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (12).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (1).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (9).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (9).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (4).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (12).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/gongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/gongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (8).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/gongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/gongye (11).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="sincerity-right">
-					<h2 class="right-title">排行榜</h2>
-					<ul class="right-content">
-						<li>
-							<span>1</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>2</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>3</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>4</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>5</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-												<li>
-							<span>1</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>2</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>3</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>4</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
-						<li>
-							<span>5</span>
-							<p>贵州茅台酒厂有限公司</p>
-						</li>
+					<div class="right-title">
+						<h2>排行榜</h2>
+					</div>
+					<ul class="right-content right-show">
+						<li><span>1</span>贵州关岭阿依苗生态农业发展有限公司</li>
+						<li><span>2</span>铜仁沃土生态农业科技开发有限公司</li>
+						<li><span>3</span>安龙县农业开发服务公司</li>
+						<li><span>4</span>贵州中烟工业公司贵定卷烟厂</li>
+						<li><span>5</span>贵阳恒昌生态农业有限公司</li>
+						<li><span>6</span>水城县鸿源农业开发有限责任公司</li>
+						<li><span>7</span>贵州都匀市黔昌畜牧发展有限责任公司</li>
 					</ul>
 				</div>
 			</article>
 			<article class="main-sincerity sincerity-agriculture">
 				<div class="sincerity-left">
 					<div class="left-title">
-						<h2>诚信品牌     农业</h2>
+						<h2><i class="jy-iconfont icon-faya"></i>诚信品牌     农业<span></span></h2>
 						<ul class="lndustry-name">
 							<li><a href="###">种植</a></li>
 							<li><a href="###">农资</a></li>
@@ -401,521 +355,567 @@
 							<li><a href="###">渔业</a></li>
 							<li><a href="###">农户加工</a></li>
 						</ul>
+						<span class="title-more">更多  ></span>
 					</div>
 					<div class="xianshi-content sincerity-content content-show">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/nongye-left (1).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (4).png" alt="" /></div>
+								
+								<p>这里是商品介绍4</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/nongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (9).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (8).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (6).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (8).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (15).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
+							</li>
+							<li>
+						</ul>
+					</div>
+					<div class="xianshi-content sincerity-content">
+						<div class="left-img">
+							<img src="{$Think.PAGE_PATH}img/nongye-left (1).png" alt="" />
+							<p>这里是商品介绍1</p>
+						</div>
+						<ul>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (6).png" alt="" /></div>
+								
+								<p>这里是商品介绍2</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (3).png" alt="" /></div>
+								
+								<p>这里是商品介绍3</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (4).png" alt="" /></div>
+								
+								<p>这里是商品介绍4</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (7).png" alt="" /></div>
+								
+								<p>这里是商品介绍5</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (1).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
+							</li>
+							<li>
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (12).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/nongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (9).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (15).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (2).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/nongye-left (1).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (1).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (3).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (7).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (5).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (13).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (11).png" alt="" /></div>
+								
+								<p>这里是商品介绍6</p>
 							</li>
 						</ul>
 					</div>
 					<div class="xianshi-content sincerity-content">
 						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (1).png" alt="" />
+							<img src="{$Think.PAGE_PATH}img/nongye-left (2).png" alt="" />
 							<p>这里是商品介绍1</p>
 						</div>
 						<ul>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (1).png" alt="" /></div>
+								
 								<p>这里是商品介绍2</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (9).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (2).png" alt="" /></div>
+								
 								<p>这里是商品介绍3</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (4).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (3).png" alt="" /></div>
+								
 								<p>这里是商品介绍4</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (2).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (5).png" alt="" /></div>
+								
 								<p>这里是商品介绍5</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (6).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (17).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
 							</li>
 							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content sincerity-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/nongye-left (2).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (6).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (2).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (8).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (5).png" alt="" />
-								<p>这里是商品介绍5</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/nongye (7).png" alt="" />
+								<div class="img"><img src="{$Think.PAGE_PATH}img/nongye (12).png" alt="" /></div>
+								
 								<p>这里是商品介绍6</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more.png" alt="" />
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="sincerity-right">
-					<h2 class="right-title">排行榜</h2>
-					<ul class="right-content">
-						<li>
-							<span>1</span>
-							<p>贵州中烟工业公司贵定卷烟厂</p>
-						</li>
-						<li>
-							<span>2</span>
-							<p>贵州中烟工业公司贵定卷烟厂</p>
-						</li>
-						<li>
-							<span>3</span>
-							<p>贵州中烟工业公司贵定卷烟厂</p>
-						</li>
-						<li>
-							<span>4</span>
-							<p>贵州中烟工业公司贵定卷烟厂</p>
-						</li>
-						<li>
-							<span>5</span>
-							<p>贵州中烟工业公司贵定卷烟厂</p>
-						</li>
+					<div class="right-title">
+						<h2>排行榜</h2>
+					</div>
+					<ul class="right-content right-show">
+						<li><span>1</span>贵州关岭阿依苗生态农业发展有限公司</li>
+						<li><span>2</span>铜仁沃土生态农业科技开发有限公司</li>
+						<li><span>3</span>安龙县农业开发服务公司</li>
+						<li><span>4</span>贵州中烟工业公司贵定卷烟厂</li>
+						<li><span>5</span>贵阳恒昌生态农业有限公司</li>
+						<li><span>6</span>水城县鸿源农业开发有限责任公司</li>
+						<li><span>7</span>贵州都匀市黔昌畜牧发展有限责任公司</li>
 					</ul>
 				</div>
 			</article>
 			<article class="main-sincerity sincerity-tourism">
 				<div class="sincerity-left tourism-left">
 					<div class="left-title">
-						<h2>诚信品牌     旅游业</h2>
+						<h2><i class="jy-iconfont icon-feiji"></i>诚信品牌     旅游业<span></span></h2>
 						<ul class="lndustry-name">
 							<li><a href="###">贵阳</a></li>
 							<li><a href="###">安顺</a></li>
 							<li><a href="###">毕节 </a></li>
 							<li><a href="###">六盘水</a></li>
 							<li><a href="###">黔东南</a></li>
-							<li><a href="###">黔西南</a></li>
-							<li><a href="###">黔南</a></li>
-							<li><a href="###">铜仁</a></li>
-							<li><a href="###">遵义</a></li>
 						</ul>
+						<span class="title-more">更多  ></span>
 					</div>
-					<div class="xianshi-content tourism-content content-show">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
+					<div class="box">
+						<div class="swiper-container2">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (1).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (2).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (3).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (2).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (1).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (2).png" /></li>
+								<li class="swiper-slide"><img src="{$Think.PAGE_PATH}img/lvyou (3).png" /></li>
+							</ul>
+						    <div class="swiper-button-prev"><</i></div>
+						    <div class="swiper-button-next">></div>
 						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (3).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (5).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (2).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (4).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (3).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (2).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (1).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (5).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (2).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (5).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (2).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (1).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (2).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (4).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (2).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (1).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (2).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (3).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (1).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (2).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (5).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (3).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
-					</div>
-					<div class="xianshi-content tourism-content">
-						<div class="left-img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou-left (1).png" alt="" />
-							<p>这里是商品介绍1</p>
-						</div>
-						<ul>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (3).png" alt="" />
-								<p>这里是商品介绍2</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (4).png" alt="" />
-								<p>这里是商品介绍3</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/lvyou (6).png" alt="" />
-								<p>这里是商品介绍4</p>
-							</li>
-							<li>
-								<img src="{$Think.STATIC_SOURCE_PATH}images/more2.png" alt="" />
-							</li>
-						</ul>
 					</div>
 				</div>
 				<div class="sincerity-right">
-					<h2 class="right-title">排行榜</h2>
-					<ul class="right-content">
+					<div class="right-title">
+						<h2>排行榜</h2>
+					</div>
+					<ul class="right-content right-show">
+						<li><span>1</span>贵州关岭阿依苗生态农业发展有限公司</li>
+						<li><span>2</span>铜仁沃土生态农业科技开发有限公司</li>
+						<li><span>3</span>安龙县农业开发服务公司</li>
+						<li><span>4</span>贵州中烟工业公司贵定卷烟厂</li>
+						<li><span>5</span>贵阳恒昌生态农业有限公司</li>
+						<li><span>6</span>水城县鸿源农业开发有限责任公司</li>
+						<li><span>7</span>贵州都匀市黔昌畜牧发展有限责任公司</li>
+					</ul>
+				</div>
+			</article>
+			<div class="shujuimg"><img src="{$Think.PAGE_PATH}img/shuju_banner.png"/></div>
+			<article class="main-shuju">
+				<div class="shuju-title">
+					<span class="now-shuju">实时数据</span>
+					<span class="old-shuju">历史数据</span>
+				</div>
+				<div class="cnt-top">
+					<p class="left">工业数据</p>
+					<p class="center">农业数据</p>
+					<p class="right">旅游业数据</p>
+				</div>
+				<div class="shuju-content">
+					<img src="{$Think.PAGE_PATH}img/shuju_1.png"/>
+				</div>
+			</article>
+			<article class="main-chaxun sincerity-tourism">
+				<div class="sincerity-left tourism-left">
+					<div class="left-title">
+						<h2><i class="jy-iconfont icon-zhexiantu"></i>数据查询<span></span></h2>
+						<span class="title-more">更多  ></span>
+					</div>
+					<div class="left_main">
+						<section class="left_main1">
+							<div class="img"><img src="{$Think.PAGE_PATH}img/chaxun_1.png"/></div>
+							<ul>
+								<li>
+									<div class="title">累计查询</div>
+									<div class="content"><span>3842</span>次</div>
+								</li>
+								<li>
+									<div class="title">今日查询品牌次数</div>
+									<div class="content"><span>5</span>次</div>
+								</li>
+								<li>
+									<div class="title">累计投诉</div>
+									<div class="content"><span>8</span>次</div>
+								</li>
+							</ul>
+						</section>
+						<section class="left_main2">
+							<div class="img"><img src="{$Think.PAGE_PATH}img/chaxun_2.png"/></div>
+							<ul>
+								<li>ID：游客　查询：黔亿宝</li>
+								<li>ID：游客　查询：盘江</li>
+								<li>ID：游客　查询：HL</li>
+								<li>ID：游客　查询：双井</li>
+								<li>ID：游客　查询：永青</li>
+							</ul>
+						</section>
+						<section class="left_main3">
+							<div class="img"><img src="{$Think.PAGE_PATH}img/chaxun_3.png"/></div>
+							<div id="chaxun_address" style="width: 240px; height: 260px;"></div>
+						</section>
+					</div>
+				</div>
+				<div class="sincerity-right">
+					<div class="right-title">
+						<h2>排行榜</h2>
+					</div>
+					<ul class="right-content right-show">
 						<li>
 							<span>1</span>
-							<p>黔灵山</p>
+							<p>贵控　　436次</p>
 						</li>
 						<li>
 							<span>2</span>
-							<p>遵义馆</p>
+							<p>贵州茅台酒　　228次</p>
 						</li>
 						<li>
 							<span>3</span>
-							<p>铜仁馆</p>
+							<p>双井　　223次</p>
 						</li>
 						<li>
 							<span>4</span>
-							<p>贵阳馆</p>
+							<p>图形　　173次</p>
 						</li>
 						<li>
 							<span>5</span>
-							<p>黔西南</p>
+							<p>盘江　　165次</p>
+						</li>
+						<li>
+							<span>6</span>
+							<p>金福禄　　163次</p>
 						</li>
 					</ul>
 				</div>
 			</article>
-			<!--资讯-->
+			<article class="main-tongji">
+				<div class="tongji-title">
+					<h2><i class="jy-iconfont icon-zhuzhuangtu"></i>商标统计<span></span></h2>
+				</div>
+				<main class="tongji_left">
+					<ul>
+						<li class="center1">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">六盘水市</p>
+							<div class="small">
+								<p>六盘水著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center2">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">毕节地区</p>
+							<div class="small">
+								<p>毕节著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center3">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">遵义市</p>
+							<div class="small">
+								<p>遵义著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center4">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">铜仁地区</p>
+							<div class="small">
+								<p>铜仁著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center5">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">安顺市</p>
+							<div class="small">
+								<p>安顺著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center6">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">贵阳市</p>
+							<div class="small">
+								<p>贵阳著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center7">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">黔西南布依族苗族自治州</p>
+							<div class="small">
+								<p>黔西南著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center8">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">黔南布依族苗族自治州</p>
+							<div class="small">
+								<p>黔南著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+						<li class="center9">
+							<h5><i class="jy-iconfont icon-dingwei"></i></h5>
+							<p class="name">黔东南苗族侗族自治州</p>
+							<div class="small">
+								<p>黔东南著名商标　45</p>
+								<p>中国驰名商标　5</p>
+							</div>
+						</li>
+					</ul>
+				</main>
+				<main class="tongji_right">
+					<div class="img"><img src="{$Think.PAGE_PATH}img/tongji_right.png" /></div>
+				</main>
+			</article>
 			<article class="main-zixun">
-				<h2 class="zixun-title">资讯</h2>
 				<div class="zixun-content">
 					<div class="content-left content-gonggong">
-						<h2 class="content-title">中央资讯</h2>
-						<div class="img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/zuxun (1).png" alt="" />
-							<p class="jiehsao">	行业年收入跨一亿门槛</p>
+						<div class="zixun-title">
+							<h2><i class="jy-iconfont icon-huo"></i>热门<span></span></h2>
+							<p class="guizhou">
+								<span class="guizhou-zixun">贵州资讯</span>
+								<span class="guizhou-zhuanli">贵州专利</span>
+							</p>
 						</div>
-						<ul class="content-ul">
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-						</ul>
-						<p class="content-btm">更多资讯  ></p>
+						<div class="cnt-zixun">
+							<a href="###" class="one-img">
+								<img src="{$Think.PAGE_PATH}img/zuxun.png" alt="" />
+							</a>
+							<ul class="content-ul">
+								<li><a href="###">陈建斌忆与蒋勤勤结婚:就领了个证</a><span>2017-02-06</span></li>
+								<li><a href="###">她过世9年死因曝光 慢性自杀行为</a><span>2017-02-06</span></li>
+								<li><a href="###">是否怀疑老公爱上别人？小S答:有湾不回归的气人问题</a><span>2017-02-06</span></li>
+								<li><a href="###">最神秘星二代!张学友女</a><span>2017-02-06</span></li>
+								<li><a href="###">曹格收藏20辆古董车 </a><span>2017-02-06</span></li>
+							</ul>
+						</div>
+						<div class="cnt-zhuanli">
+							<div class="one-img">
+								<img src="{$Think.PAGE_PATH}img/zixun2.png" alt="" />
+							</div>
+							<ul class="content-ul">
+								<li><a href="###">朱茵陈法蓉同台 女神</a><span>2017-02-06</span></li>
+								<li><a href="###">杨幂久违晒自拍 大眼睛水汪汪超动人？台湾不回归的气人问题</a><span>2017-02-06</span></li>
+								<li><a href="###">早起空腹喝淡盐水比温水更利于</a><span>2017-02-06</span></li>
+								<li><a href="###">流言揭秘：拔牙真的可以瘦脸</a><span>2017-02-06</span></li>
+								<li><a href="###">张昌平回见国家主席 并深</a><span>2017-02-06</span></li>
+							</ul>
+						</div>
+						<p class="content-btm">更多</p>
 					</div>
 					<div class="content-center content-gonggong ">
-						<h2 class="content-title">贵州资讯</h2>
-						<div class="img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/zuxun (2).png" alt="" />
-							<p class="jiehsao">	过节送温暖活动</p>
+						<div class="zixun-title">
+							<h2><i class="jy-iconfont icon-gaizhang"></i>法律法规<span></span></h2>
 						</div>
+						<a href="###" class="two-img">
+							<div class="img">
+								<img src="{$Think.PAGE_PATH}img/fagui (2).png" alt="" />
+							</div>
+							<p class="jiehsao">	立足华人娱乐制高点，放眼世界，将全球娱乐盛事尽收眼底。</p>
+						</a>
 						<ul class="content-ul">
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
-							<li><a href="###">张昌平回见国家主席 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">金晨不慎落马脑袋先着地仍坚持录制回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">贾静雯大女儿正脸照流出引网友担忧讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">曾志伟为成龙落泪 他们关系竟这么铁 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
 						</ul>
-						<p class="content-btm">更多资讯  ></p>
+						<a href="###" class="two-img two-img2">
+							<div class="img">
+								<img src="{$Think.PAGE_PATH}img/fagui (1).png" alt="" />
+							</div>
+							<p class="jiehsao">	盘点新鲜娱乐大事，评点天下娱乐人物。强调娱乐事件的点评和分析，</p>
+						</a>
+						<p class="content-btm">更多</p>
 					</div>
 					<div class="content-right content-gonggong">
-						<h2 class="content-title">食品安全法规</h2>
-						<p class="neirong">
-							强化刑事责任追究。新法对违法行为的查处上做了一个很大改革，即首先要求执法部门对违法行为进行一个判断，如果构成犯罪，就直接由公安部门进行侦查，追究刑事责任;如果不构成刑事犯罪，才是由行政执法部门进行行政处罚。此外还规定，行为人因食品安全犯罪被判处有期徒刑以上刑罚，则终身不得从事食品生产经营的管理工作。
-						</p>
-						<p class="content-btm">更多法规  ></p>
+						<div class="zixun-title">
+							<h2><i class="jy-iconfont icon-baogao"></i>行业报告<span></span></h2>
+						</div>
+						<div class="cnt-top">
+							<ul>
+								<li>
+									<a href="###">
+										<img src="{$Think.PAGE_PATH}img/hangye (1).png" alt="" />
+										<p>他们背着半吨重的货物上山他们背着半吨重的货物上山</p>
+									</a>
+								</li>
+								<li class="fl-right">
+									<a href="###">
+										<img src="{$Think.PAGE_PATH}img/hangye (2).png" alt="" />
+										<p>他们背着半吨重的货物上山他们背着半吨重的货物上山</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<ul class="content-ul">
+							<li><a href="###">女子野外发现山上奇怪洞口 查看后吓一跳</a><span>2017-02-06</span></li>
+							<li><a href="###">女子扔了一团纸被警察围住 真相让人傻眼</a><span>2017-02-06</span></li>
+							<li><a href="###">男子海边捡到一些蛋 却引来牢狱之灾 他们关系竟这么铁 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">辽宁舰改建:15人牺牲有人未见妻子一面吞纸 并深入探讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">社保断缴后果很严重 不知道的赶紧看! 讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+							<li><a href="###">杭州豪宅纵火案:女主人曾借10万给保姆 讨台湾不回归的气人问题</a><span>2017-02-06</span></li>
+						</ul>
+						<p class="content-btm">更多</p>
 					</div>
 				</div>
 			</article>
 			<!--知识产权-->
-			<article class="main-zixun">
+			<!--<article class="main-zixun">
 				<h2 class="zixun-title">知识产权</h2>
 				<div class="zixun-content">
 					<div class="content-left content-gonggong">
 						<h2 class="content-title">国家专利</h2>
 						<div class="img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/zhishi (1).png" alt="" />
+							<img src="img/zhishi (1).png" alt="" />
 							<p class="jiehsao">	先查询再申请</p>
 						</div>
 						<ul class="content-ul">
@@ -930,7 +930,7 @@
 					<div class="content-center content-gonggong ">
 						<h2 class="content-title">贵州专利</h2>
 						<div class="img">
-							<img src="{$Think.STATIC_SOURCE_PATH}images/zhishi (2).png" alt="" />
+							<img src="img/zhishi (2).png" alt="" />
 							<p class="jiehsao">	贵州中心酿酒集团有限公司</p>
 						</div>
 						<ul class="content-ul">
@@ -950,53 +950,20 @@
 						<p class="content-btm">更多法规  ></p>
 					</div>
 				</div>
-			</article>
-			<article class="main-shuju">
-				<div class="shuju-title">
-					<h2>数据中心</h2>
-					<span class="now-shuju">实时数据</span>
-					<span class="old-shuju">历史数据</span>
-				</div>
-				<div class="cnt-top">
-					<p class="left">工业数据</p>
-					<p class="center">农业数据</p>
-					<p class="right">旅游业数据</p>
-				</div>
-				<div class="shuju-content">
-					<div class="tubiao left-cnt">
-						<img src="{$Think.STATIC_SOURCE_PATH}images/zhexian.png" class="one"/>
-						<img src="{$Think.STATIC_SOURCE_PATH}images/zhexian1.png" class="two"/>
-					</div>
-					<div class="tubiao center-cnt">
-						<img src="{$Think.STATIC_SOURCE_PATH}images/zhuzhuang1.png" class="one"/>
-						<img src="{$Think.STATIC_SOURCE_PATH}images/zhuzhuang2.png" class="two"/>
-					</div>
-					<div class="tubiao right-cnt">
-						<img src="{$Think.STATIC_SOURCE_PATH}images/bingtu1.png" class="one"/>
-						<img src="{$Think.STATIC_SOURCE_PATH}images/bingtu2.png" class="two"/>
-					</div>
-				</div>
-			</article>
+			</article>-->
+			
 		</main>
 		<div id="returnTop">
-			<i class="jy-iconfont footerTop"></i>
-			<a href="#big-header">返回顶部</a>
-			
+			<a href="#header"><i class="jy-iconfont icon-top"></a></i>
 		</div>
-		<footer id="big-footer">
-			<div class="img">
-				<img src="{$Think.STATIC_SOURCE_PATH}images/footer.png"/>
-			</div>
-		</footer>
+		{include file="page/footer" /}
 	</body>
-	<script src="{$Think.STATIC_SOURCE_PATH}js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{$Think.STATIC_SOURCE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{$Think.STATIC_SOURCE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="{$Think.STATIC_SOURCE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
-			
-//			轮播图的滚动
 			var mySwiper = new Swiper('.swiper-container', {
 				autoplay: 2000,//可选选项，自动滑动
 				loop : true,//环路
@@ -1004,59 +971,149 @@
 				nextButton:'.swiper-button-next',
 				pagination : '.swiper-pagination',//分页器
 				autoplayDisableOnInteraction : false,//点击后继续播放
-			})
+			});
 			$('.swiper-container').mouseenter(function(){
-				mySwiper.stopAutoplay()
+				mySwiper.stopAutoplay();
 			}).mouseleave(function(){
-				mySwiper.startAutoplay()
-			})
+				mySwiper.startAutoplay();
+			});
 			$("#big-nav .nav-box li").hover(function(){
-				$(this).css("background","#fff").find("a").css({'color': '#428ac1','font-weight': 500})
-				$(this).siblings("li").css("background","#428ac1").find("a").css({'color': '#fff','font-weight': 200})
+				$(this).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$(this).siblings("li").find("a").css({'background': '#2863c8'});
 			},function(){
-				$("#big-nav .nav-box li").eq(0).css("background","#fff").find("a").css({'color': '#428ac1','font-weight': 500})
-				$("#big-nav .nav-box li").eq(0).siblings("li").css("background","#428ac1").find("a").css({'color': '#fff','font-weight': 200})
-			})
+				$("#big-nav .nav-box li").eq(0).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$("#big-nav .nav-box li").eq(0).siblings("li").find("a").css({'background': '#2863c8'});
+			});
+			var mySwiper2 = new Swiper('.swiper-container2', {
+				pagination: 'null',
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				freeMode: true,
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			});
 			
-//			主体中的菜单滑过的效果
-			$("#big-main .main-sincerity .lndustry-name").find("li:eq(0) a").css("color","#4089c0")
-
+			$("#big-main .main-sincerity .lndustry-name").find("li:eq(0) a").css("border-top","4px solid #0459aa");
 			$("#big-main .main-sincerity .left-title .lndustry-name li").hover(function(){
-				
-				$(this).find("a").css("color","#4089c0")
-				$(this).siblings("li").find("a").css("color","#333")
+				$(this).find("a").css("border-top","4px solid #0459aa");
+				$(this).siblings("li").find("a").css("border-top","none");
 				var idx = $(this).index();
-				console.log(idx)
-				$(this).parents(".sincerity-left").find(".xianshi-content").eq(idx).show().siblings(".xianshi-content").hide()
+				$(this).parents(".sincerity-left").find(".xianshi-content").eq(idx).show().siblings(".xianshi-content").hide();
+			},function(){
+				$(this).find("a").css("border-top","4px solid #0459aa");
+			});
+			
+//			$("#big-main .main-sincerity .sincerity-right .right-title p span").click(function(){
+//				$(this).css("color","#82d1fa").siblings("span").css("color","#333");
+//				var idx = $(this).index();
+//				if(idx == 0){
+//					$(this).parents(".sincerity-right").find(".right-show").show().siblings(".right-hide").hide();
+//				}else{
+//					$(this).parents(".sincerity-right").find(".right-hide").show().siblings(".right-show").hide();
+//				}
+//			});
+//			$("#big-main .main-chaxun .sincerity-right .right-title p span").click(function(){
+//				$(this).css("color","#82d1fa").siblings("span").css("color","#333");
+//				var idx = $(this).index();
+//				if(idx == 0){
+//					$(this).parents(".sincerity-right").find(".right-show").show().siblings(".right-hide").hide();
+//				}else{
+//					$(this).parents(".sincerity-right").find(".right-hide").show().siblings(".right-show").hide();
+//				}
+//			});
+			
+				var myChart = echarts.init(document.getElementById("chaxun_address"));
 				
-			},function(){
-				$(this).find("a").css("color","#4089c0")
-			})
+				var option = {
+					title: {
+						text: ""
+					},
+					tooltip: {},
+					legend: {
+						data: [""]
+					},
+					xAxis: {
+						data: ["北京","贵州","浙江","上海","广东"],
+						axisTick: {
+					        show: false,
+					    },
+					    axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: '#194667',
+                            	fontSize: 12,
+                            },
+                       	},
+                       	splitLine:{  
+							show: false,
+						},
+					},
+					yAxis: {
+						splitLine:{  
+							show: false,
+						},
+						show:false,
+					},
+					series: [{
+						name: "province",
+						type: "bar",
+						data: [100, 80, 82, 30, 5],
+						barWidth: 10,
+						itemStyle:{  
+		                    normal:{  
+		                    	color:'#f30421',
+		                    }  
+		                },  
+					}]
+				};
+				
+				myChart.setOption(option);
 			
 			
+//      	$("#big-main .main-shuju .shuju-title span").click(function(){
+//      		$(this).css({"color":"#055aaa","border-top":"4px solid #055aaa"}).siblings("span").css({"color":"#b6b6b6","border-top":"4px solid #b6b6b6"});
+//      		var idx = $(this).index();
+//      	});
+//      	$("#big-main .main-shuju .cnt-top p").click(function(){
+//      		$(this).css({"color":"#fff","background":"#338edf","border":"none"}).siblings("p").css({"color":"#055aaa","border":"2px solid #338edf","background":"none"});
+//      	});
+//      	$("#big-main .main-zixun .zixun-content .zixun-title .guizhou span").click(function(){
+//      		$(this).css("color","#035aaa").siblings("span").css("color","#333")
+//      		var idx = $(this).index();
+//      		if(idx !== 1){
+//      			$("#big-main .main-zixun .zixun-content .content-gonggong .cnt-zixun").show().siblings(".cnt-zhuanli").hide();
+//      		}else{
+//      			$("#big-main .main-zixun .zixun-content .content-gonggong .cnt-zixun").hide().siblings(".cnt-zhuanli").show();
+//      		}
+//      	});
+        	
+//			$("#returnTop").hover(function(){
+//				$(this).find("a").slideDown();
+//			},function(){
+//				$(this).find("a").slideUp();
+//			});
 
-        	$("#big-main .main-shuju .shuju-title span").click(function(){
-        		var idx = $(this).index();
-        		if(idx !== 1){
-        			$("#big-main .main-shuju .shuju-content .tubiao .two").show().siblings(".one").hide()
-        		}else{
-        			$("#big-main .main-shuju .shuju-content .tubiao .one").show().siblings(".two").hide()
-        		}
-        	})
-			$("#returnTop").hover(function(){
-				$(this).find("a").slideDown()
-			},function(){
-				$(this).find("a").slideUp()
-			})
+//			$("#big-main .main-tongji .tongji_left ul li").click(function(){
+//				$(this).children("h5").children("i").css({
+//					"fontSize": "51px",
+//				});
+//				$(this).siblings("li").children("h5").children("i").css({
+//					"fontSize": "28px",
+//				});
+//				$(this).children(".name").css({"display":"inline-block","margin-top":"0"});
+//				$(this).siblings("li").children(".name").css({"display":"none","margin-top":"0"});
+//				$(this).children(".small").css("display", "block");
+//				$(this).siblings("li").children(".small").css("display", "none");
+//			})
 			
 			$(window).scroll(function(){
 				var top = ($(document).scrollTop());
 				if(top > 840){
-					$("#returnTop").show()
+					$("#returnTop").show();
 				}else if(top <= 600){
-					$("#returnTop").hide()
+					$("#returnTop").hide();
 				}
-			})
+			});
 		})
 	</script>
 </html>

@@ -1,16 +1,65 @@
+<!-- 页脚 -->
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>家有在线</title>
+		<title>诚信贵州</title>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Cache-Control" content="no-cache">
-		<meta http-equiv="Expires" content="0">
 	    <link rel="icon" href="http://pc.t.jiayou9.com/img/logo1.png" mce_href="http://pc.t.jiayou9.com/img/logo1.png" type="image/x-icon" />
-    	<link rel="stylesheet" href="{$Think.STATIC_SOURCE_PATH}css/quanju.css" />
-		<link rel="stylesheet" type="text/css" href="{$Think.STATIC_SOURCE_PATH}js/swiper-3.3.1.min.css"/>
-		<link rel="stylesheet" type="text/css" href="{$Think.STATIC_SOURCE_PATH}css/bigData.css"/>
-		<link rel="stylesheet" type="text/css" href="{$Think.STATIC_SOURCE_PATH}css/style.css"/>
-	</head><!--http://www.guizhou.xin/pc/images/index2_header_img2.jpg-->
+    	<link rel="stylesheet" href="{$Think.PAGE_PATH}css/quanju.css" />
+    	<link rel="stylesheet" type="text/css" href="{$Think.PAGE_PATH}css/header2.css" />
+		<link rel="stylesheet" type="text/css" href="{$Think.PAGE_PATH}css/swiper-3.3.1.min.css"/>
+		<link rel="stylesheet" type="text/css" href="{$Think.PAGE_PATH}css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="{$Think.PAGE_PATH}css/footer.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<div id="content">
+				<ul>
+					<li class="header1">
+						<img src="{$Think.PAGE_PATH}img/bigDta-LOGO.png" />
+					</li>
+					<li class="header2">
+						<ul id="header2">
+							<li class="nav1"><a href="###">首页</a></li>
+							<li class="nav1"><a href="###">品牌馆</a></li>
+							<li class="nav1"><a href="###">产品馆</a></li>
+							<li class="nav1"><a href="###">贵州省著名景区</a></li>
+							<li class="nav1"><a href="###">企业查询</a></li>
+							<li class="nav1"><a href="###">商标馆</a></li>
+						</ul>
+					</li>
+					<li class="header3">
+						<select>
+							<option value="pinpai">品牌</option>
+							<option value="pinpai">品牌1</option>
+							<option value="pinpai">品牌2</option>
+						</select>
+						<input type="text" id="search" placeholder="中国茅台酒厂有限责任公司" />
+						<button><i class="jy-iconfont icon-search"></i></button>
+					</li>
+					<li class="header4">
+						<span class="land"><i class="jy-iconfont icon-denglu"></i> 登陆</span>　<span class="register"><i class="jy-iconfont icon-zhuce"></i> 注册</span>
+					</li>
+				</ul>
+			</div>
+		</header>
+	</body>
+	<script src="{$Think.PAGE_PATH}js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// 导航条点击事件
+			$("#header2 li").click(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").find("a").css("color","#055aaa");
+			})
+			// 导航条划过事件
+			$("#header2 li").hover(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").css({"background": "#fff","border-bottom": "none"}).find("a").css("color","#055aaa");
+			})
+			
+		})
+	</script>
+</html>

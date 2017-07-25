@@ -1,0 +1,23 @@
+#footer {
+  height: 237px;
+  background: #055aaa;
+  color: #fff;
+  line-height: 35px;
+  font-size: 12px;
+}
+#footer ul {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+#footer ul li span i {
+  margin-right: 20px;
+  font-size: 25px;
+  vertical-align: middle;
+}
+#footer ul li img {
+  margin: 0 20px;
+  vertical-align: middle;
+  width: 108px;
+  height: 35px;
+}
