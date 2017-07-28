@@ -3,106 +3,104 @@ body {
 }
 #header {
   width: 100%;
-  height: 150px;
+  height: 117px;
   background: #fff;
 }
 #header #content {
-  padding: 40px 0;
-  margin: 0 auto;
   width: 1200px;
+  margin: 0 auto;
+  height: 117px;
 }
 #header #content ul {
   overflow: hidden;
-  height: 70px;
+  height: 117px;
 }
 #header #content ul li {
   float: left;
+  height: 117px;
+  line-height: 117px;
 }
 #header #content ul .header1 {
-  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
 }
-#header #content ul .header1 div {
-  float: left;
-  line-height: 70px;
-}
-#header #content ul .header1 .img {
-  width: 70px;
-  height: 70px;
-  margin-right: 13px;
-}
-#header #content ul .header1 .img img {
+#header #content ul .header1 img {
   width: 100%;
   height: 100%;
 }
-#header #content ul .header1 .title {
-  width: 125px;
-  height: 70px;
-  line-height: 23px;
-  font-size: 17px;
-  color: #333333;
-  text-align: center;
-  padding-left: 13px;
-  padding-top: 9px;
-  border-left: 1px solid #e5e5e5;
-}
-#header #content ul .header2 {
-  margin-left: 40px;
-}
 #header #content ul .header2 ul {
   overflow: hidden;
-  line-height: 70px;
-  font-size: 13px;
-  color: #7a7a7a;
+  line-height: 117px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #055aaa;
 }
 #header #content ul .header2 ul li {
-  margin: 0 11px;
   float: left;
 }
 #header #content ul .header2 ul li a {
-  color: #7a7a7a;
+  color: #055aaa;
+  margin-left: 17px;
+  margin-right: 18px;
 }
-#header #content ul .header2 ul li a i {
-  margin-left: 5px;
-  font-size: 7px;
-  color: #7a7a7a;
+#header #content ul .header2 ul li:first-of-type {
+  background: #055aaa;
+  border-bottom: 5px solid #de0122;
+}
+#header #content ul .header2 ul li:first-of-type a {
+  color: #fff;
 }
 #header #content ul .header3 {
   width: 310px;
   height: 32px;
-  margin-top: 18px;
   font-size: 0;
-  margin-left: 50px;
+  margin-left: 15px;
 }
 #header #content ul .header3 select {
+  background: #eaeaea;
   width: 59px;
   height: 32px;
-  border: 1px solid #2863c8;
-  font-size: 11px;
-  color: #2863c8;
+  border: none;
+  font-size: 12px;
+  color: #5b5b5b;
   padding-left: 7px;
   vertical-align: middle;
 }
 #header #content ul .header3 input {
   width: 190px;
   height: 32px;
-  border: 1px solid #2863c8;
-  border-left: none;
+  border: none;
   vertical-align: middle;
+  background: #eaeaea;
+}
+#header #content ul .header3 input::-webkit-input-placeholder {
+  color: #c7c7c7;
+  font-size: 12px;
+}
+#header #content ul .header3 input::-moz-placeholder {
+  color: #c7c7c7;
+  font-size: 12px;
+}
+#header #content ul .header3 input:-ms-input-placeholder {
+  color: #c7c7c7;
+  font-size: 12px;
 }
 #header #content ul .header3 button {
   width: 61px;
   height: 32px;
   border: none;
-  background: #2863c8;
+  background: #055aaa;
   color: #fff;
   font-size: 16px;
   vertical-align: middle;
 }
 #header #content ul .header4 {
-  line-height: 70px;
-  font-size: 16px;
-  color: #7a7a7a;
-  margin-left: 60px;
+  line-height: 117px;
+  font-size: 13px;
+  color: #045bab;
+  margin-left: 21px;
+  font-weight: bold;
 }
 #big_main {
   width: 1200px;
@@ -238,7 +236,7 @@ body {
 #returnTop {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  right: 90px;
   width: 50px;
   height: 70px;
   line-height: 30px;
@@ -246,37 +244,13 @@ body {
   border-radius: 5px;
   overflow: hidden;
   display: none;
+  border: 1px solid #d3331d;
 }
-#returnTop i {
-  background: #89a64c;
+#returnTop a i {
   display: inline-block;
   width: 50px;
   height: 70px;
   font-size: 50px;
   line-height: 70px;
-}
-#returnTop a {
-  width: 50px;
-  height: 70px;
-  padding: 8px;
-  display: none;
-  position: absolute;
-  top: 0;
-  background: #89a64c;
-  color: #fff;
-}
-#big-footer {
-  width: 100%;
-  height: 360px;
-  background: #000000;
-  margin-top: 40px;
-}
-#big-footer .img {
-  width: 1200px;
-  height: 360px;
-  margin: 0 auto;
-}
-#big-footer .img img {
-  width: 100%;
-  height: 100%;
+  color: #d3331d;
 }

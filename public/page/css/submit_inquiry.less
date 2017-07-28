@@ -3,62 +3,49 @@ body{
 }
 #header{
     width: 100%;
-    height: 150px;
+    height: 117px;
     background: #fff;
     #content{
-        padding: 40px 0;
-        margin: 0 auto;
         width: 1200px;
+        margin: 0 auto;
+        height: 117px;
         ul{
             overflow: hidden;
-            height: 70px;
+            height: 117px;
             li{
                 float: left;
+                height: 117px;
+                line-height: 117px;
             }
             .header1{
-                overflow: hidden;
-                div{
-                    float: left;
-                    line-height: 70px;
-                }
-                .img{
-                    width: 70px;
-                    height: 70px;
-                    margin-right: 13px;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                .title{
-                    width: 125px;
-                    height: 70px;
-                    line-height: 23px;
-                    font-size: 17px;
-                    color: #333333;
-                    text-align: center;
-                    padding-left: 13px;
-                    padding-top: 9px;
-                    border-left: 1px solid #e5e5e5;
+                width: 100px;
+                height: 100px;
+                margin-right: 10px;
+                img{
+                    width: 100%;
+                    height: 100%;
                 }
             }
             .header2{
-                margin-left: 40px;
                 ul{
                     overflow: hidden;
-                    line-height: 70px;
-                    font-size: 13px;
-                    color: #7a7a7a;
+                    line-height: 117px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #055aaa;
                     li{
-                        margin: 0 11px;
                         float: left;
                         a{
-                            color: #7a7a7a;
-                            i{
-                                margin-left: 5px;
-                                font-size: 7px;
-                                color: #7a7a7a;
-                            }
+                            color: #055aaa;
+                            margin-left: 17px;
+                            margin-right: 18px;
+                        }
+                    }
+                    li:first-of-type{
+                        background: #055aaa;
+                        border-bottom: 5px solid #de0122;
+                        a{
+                            color: #fff;
                         }
                     }
                 }
@@ -66,40 +53,54 @@ body{
             .header3{
                 width: 310px;
                 height: 32px;
-                margin-top: 18px;
                 font-size: 0;
-                margin-left: 50px;
+                margin-left: 15px;
                 select{
+                    background: #eaeaea;
                     width: 59px;
                     height: 32px;
-                    border: 1px solid #2863c8;
-                    font-size: 11px;
-                    color: #2863c8;
+                    border: none;
+                    font-size: 12px;
+                    color: #5b5b5b;
                     padding-left: 7px;
                     vertical-align: middle;
                 }
                 input{
                     width: 190px;
                     height: 32px;
-                    border: 1px solid #2863c8;
-                    border-left: none;
+                    border: none;
                     vertical-align: middle;
+                    background: #eaeaea;
+                }
+                // placeholder 改变颜色
+                input::-webkit-input-placeholder{
+                    color: #c7c7c7;
+                    font-size: 12px;
+                }
+                input::-moz-placeholder{
+                    color: #c7c7c7;      
+                    font-size: 12px;  
+                }
+                input:-ms-input-placeholder{
+                    color: #c7c7c7;   
+                    font-size: 12px;     
                 }
                 button{
                     width: 61px;
                     height: 32px;
                     border: none;
-                    background: #2863c8;
+                    background: #055aaa;
                     color: #fff;
                     font-size: 16px;
                     vertical-align: middle;
                 }
             }
             .header4{
-                line-height: 70px;
-                font-size: 16px;
-                color: #7a7a7a;
-                margin-left: 60px;
+                line-height: 117px;
+                font-size: 13px;
+                color: #045bab;
+                margin-left: 21px;
+                font-weight: bold;
             }
         }
     }
@@ -153,13 +154,10 @@ body{
         }
     }
 }
-
-
-
 #returnTop{
     position: fixed;
     bottom: 24px;
-    right: 24px;
+    right: 90px;
     width: 50px;
     height: 70px;
     line-height: 30px;
@@ -167,25 +165,16 @@ body{
     border-radius: 5px;
     overflow: hidden;
     display: none;
-    i{
-//      display: none;
-        background: #89a64c;
-        display: inline-block;
-        width: 50px;
-        height: 70px;
-        font-size: 50px;
-        line-height: 70px;
-    }
+    border: 1px solid #d3331d;
     a{
-//      display: inline-block;
-        width: 50px;
-        height: 70px;
-        padding: 8px;
-        display: none;
-        position: absolute;
-        top: 0;        
-        background: #89a64c;
-        color: #fff;
+        i{
+            display: inline-block;
+            width: 50px;
+            height: 70px;
+            font-size: 50px;
+            line-height: 70px;
+            color: #d3331d;
+        }
     }
 }
 

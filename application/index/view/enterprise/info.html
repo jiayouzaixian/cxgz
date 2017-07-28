@@ -1,0 +1,235 @@
+{include file="page/header" /}
+	<body>
+		<div id="big-banner">
+			<div class="swiper-container">
+			  	<div class="swiper-wrapper">
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_1.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_2.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_3.jpg" class="swiper-slide" />
+			  	</div>
+			  	<article>
+		            <!--<div class="swiper-button-prev nextBtn"></div>
+		            <div class="swiper-button-next nextBtn"></div>-->
+		        </article>
+			</div>
+		</div>
+
+		<div class="company_info_wrapper"> 
+			<div class="breadcrumbs">
+		        您所在的位置：<a href="{:url('/')}" class="f-16 c-464">首页</a>
+		        › <a href="{:url('/enterprise')}" class="f-16 c-464">企业列表 </a>
+		        › 企业详情
+		    </div>
+		    <div class="company_content">
+		    	<div class="company_basic_info_wrapper">
+		    		<div class="company_logo">
+		    			<a href="{$company.enterprise_logo}" target="_blank"><img src="{$company.enterprise_logo}" width=""></a>
+		    			<br>
+		    			<div style="font-weight: 700;margin: 20px 0 0 0;">{$company.enterprise_name}</div>
+		    		</div>
+		    		<div class="company_basic_info">
+		    			<table>
+		    				<tr><td align="right">法定代表人：</td><td> &nbsp;&nbsp;{$company.legal_representative}</td></tr>
+		    				<tr><td align="right">统一社会信用代码：</td><td> &nbsp;&nbsp;{$company.USCC}</td></tr>
+		    				<tr><td align="right">成立日期：</td><td> &nbsp;&nbsp;{$company.registered_time}</td></tr>
+		    				<tr><td align="right">注册地址：</td><td> &nbsp;&nbsp;{$company.registered_address}</td></tr>
+		    				<tr><td align="right">注册号：</td><td> &nbsp;&nbsp;(空)</td></tr>
+		    				<tr><td align="right">注册资本：</td><td> &nbsp;&nbsp;{$company.registered_capital}</td></tr>
+		    				<tr><td align="right">公司类型：</td><td> </td></tr>
+		    				<tr><td align="right">法经营期限：</td><td> </td></tr>
+		    			</table>
+		    		</div>
+		    	</div>
+		    	<div class="clear"></div>
+
+	    		<div class="company_tag_wrapper">
+	                <div class="company_tag_title"> <span ></span><b>品牌建设</b> </div>
+	                <div class="row_content">
+	                	<ul>
+		                	{if condition=" !empty($tags) "}
+			                	{foreach name="tags" item="tag" key="k" }
+					                <li>
+					                    <a href="{$tag.pic_path}" target="_blank"><img src="{$tag.pic_path_thumb}" width=""></a>
+					                </li>
+				                {/foreach}
+				            {else}
+				            	<li>暂无内容</li>
+			                {/if}
+		                </ul>
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+	    		<div class="company_description_wrapper">
+	                <div class="company_description_title"> <span ></span><b>企业介绍</b> </div>
+	                <div class="row_content">
+                		{if condition=" !empty($company.company_description) "}
+			               {$company.company_description}
+			            {else}
+			            	暂无内容
+		                {/if}
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+	    		<div class="company_qualification_wrapper">
+	                <div class="company_qualification_title"> <span ></span><b>企业资质</b> </div>
+	                <div class="row_content">
+	                   	<ul>
+		                	{if condition=" !empty($qualifications) "}
+			                	{foreach name="qualifications" item="qualification" }
+					                <li>
+					                    <a href="{$qualification.quali_pic}" target="_blank"><img src="{$qualification.quali_pic_thumb}" width="100%"></a>
+					                    <br>
+					                    {$qualification.quali_name}
+					                </li>
+				                {/foreach}
+				            {else}
+				            	<li>暂无内容</li>
+			                {/if}
+		                </ul>
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+	    		<div class="company_honor_wrapper">
+	                <div class="company_honor_title"> <span></span><b>企业荣耀</b> </div>
+	                <div class="row_content">
+	                   	<ul>
+		                	{if condition=" !empty($honors) "}
+			                	{foreach name="honors" item="honor" }
+					                <li>
+					                    <a href="{$honor.honor_pic}" target="_blank"><img src="{$honor.honor_pic_thumb}" width="100%"></a>
+					                    <br>
+					                    {$honor.honor_name}
+					                </li>
+				                {/foreach}
+				            {else}
+				            	<li>暂无内容</li>
+			                {/if}
+		                </ul>
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+	    		<div class="company_trademark_wrapper">
+	                <div class="company_trademark_title"> <span></span><b>商标</b> </div>
+	                <div class="row_content">
+	                   	<table>
+		                   	<tr class="bg-e3e">
+		                        <td width="81px">序号</td>
+		                        <td width="30%">商标图片</td>
+		                        <td width="15%">商标名</td>
+		                        <td width="30%">分类</td>
+		                        <td width="15%">注册号</td>
+	                    	</tr>
+		                	{if condition=" !empty($brands) "}
+			                	{foreach name="brands" item="brand" }
+					                <tr>
+					                    <td>{$brand.id}</td>
+					                    <td><a href="{$brand.brand_pic}" target="_blank"><img src="{$brand.brand_pic_thumb}" width="100%"></a></td>
+					                    <td>{$brand.name}</td>
+					                    <td>{$brand.type}</td>
+					                    <td>{$brand.number}</td>
+					                </tr>
+				                {/foreach}
+				            {else}
+				            	<tr><td colspan="5">暂无内容</td></tr>
+			                {/if}
+		                </table>
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+	    		<div class="company_patent_wrapper">
+	                <div class="company_patent_title"> <span ></span><b>专利</b></div>
+	                <div class="row_content">
+	                   	<table>
+		                   	<tr class="bg-e3e">
+		                        <td width="81px">序号</td>
+		                        <td width="30%">专利名称</td>
+		                        <td width="15%">专利类型</td>
+		                        <td width="30%">申请号</td>
+		                        <td width="15%">授权日期</td>
+	                    	</tr>
+		                	{if condition=" !empty($patents) "}
+			                	{foreach name="patents" item="patent" }
+					                <tr>
+					                    <td>{$patent.id}</td>
+					                    <td>{$patent.patent_name}</td>
+					                    <td>{$patent.patent_type}</td>
+					                    <td>{$patent.apply_code}</td>
+					                    <td>{$patent.auth_date}</td>
+					                </tr>
+				                {/foreach}
+				            {else}
+				            	<tr><td colspan="5">暂无内容</td></tr>
+			                {/if}
+		                </table>
+	                </div>
+	            </div>
+	            <div class="clear"></div>
+
+		    </div>
+		</div>
+		<div class="clear"></div>
+		{include file="page/footer" /}
+	</body>
+	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 2000,//可选选项，自动滑动
+				loop : true,//环路
+				prevButton:'.swiper-button-prev',//左右按钮
+				nextButton:'.swiper-button-next',
+				pagination : '.swiper-pagination',//分页器
+				autoplayDisableOnInteraction : false,//点击后继续播放
+			});
+			$('.swiper-container').mouseenter(function(){
+				mySwiper.stopAutoplay();
+			}).mouseleave(function(){
+				mySwiper.startAutoplay();
+			});
+			$("#big-nav .nav-box li").hover(function(){
+				$(this).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$(this).siblings("li").find("a").css({'background': '#2863c8'});
+			},function(){
+				$("#big-nav .nav-box li").eq(0).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$("#big-nav .nav-box li").eq(0).siblings("li").find("a").css({'background': '#2863c8'});
+			});
+			$("#big_main .main2 .main2_center ul li").click(function(){
+				$(this).children("h5").children("i").css({
+					"fontSize": "51px",
+				});
+				$(this).siblings("li").children("h5").children("i").css({
+					"fontSize": "28px",
+				});
+				$(this).children(".name").css({"display":"inline-block","margin-top":"0"});
+				$(this).siblings("li").children(".name").css({"display":"none","margin-top":"0"});
+				$(this).children(".small").css("display", "block");
+				$(this).siblings("li").children(".small").css("display", "none");
+			})
+			$("#returnTop").hover(function(){
+				$(this).find("a").slideDown();
+			},function(){
+				$(this).find("a").slideUp();
+			});
+			$(window).scroll(function(){
+				var top = ($(document).scrollTop());
+				if(top > 840){
+					$("#returnTop").show();
+				}else if(top <= 600){
+					$("#returnTop").hide();
+				}
+			});
+			$("#header2 li:eq(1)").click(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").find("a").css("color","#055aaa");
+			})
+			
+		})
+	</script>
+</html>

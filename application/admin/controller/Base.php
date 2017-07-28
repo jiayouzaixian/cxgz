@@ -156,8 +156,11 @@ class Base extends Controller
             $width = ',p_20';
             break;
           case 2:
-            $width = ',w_150';
+            $width = ',p_10';
             break;    
+          case 8:
+            $width = ',p_80';
+            break; 
           default:
             $width = ',p_20';
             break;

@@ -226,13 +226,12 @@ input, select, textarea,button{
 }
 @font-face {
   font-family: 'jyzx-h5';  /* project id 210635 */
-  src: url('https://at.alicdn.com/t/font_qhozkv8wmb249529.eot');
-  src: url('https://at.alicdn.com/t/font_qhozkv8wmb249529.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_qhozkv8wmb249529.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_qhozkv8wmb249529.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_qhozkv8wmb249529.svg#jyzx-h5') format('svg');
+  src: url('https://at.alicdn.com/t/font_f8mws1g2mx0cc8fr.eot');
+  src: url('https://at.alicdn.com/t/font_f8mws1g2mx0cc8fr.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_f8mws1g2mx0cc8fr.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_f8mws1g2mx0cc8fr.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_f8mws1g2mx0cc8fr.svg#jyzx-h5') format('svg');
 }
-/*主页的样式*/
 .jy-iconfont{
 	font-family: 'jyzx-h5';
 }
@@ -264,7 +263,6 @@ input, select, textarea,button{
 	font-size: 40px;
 }
 
-/*侧栏的样式*/
 .floor-top::before{
 	content: "\e623";
 	font-size: 30px;
@@ -320,7 +318,6 @@ input, select, textarea,button{
 	font-size: 30px;
 	color: #ededed;
 }
-/*页脚中的*/
 .icon-baozheng::before{
 	content: "\e640";
 	color: #d32e1a;
@@ -350,7 +347,6 @@ input, select, textarea,button{
 	color: #ededed;
 }
 
-/*集彩页的登录*/
 .icon-one::before{
 	content: "\e66d";
 }
@@ -374,7 +370,6 @@ input, select, textarea,button{
 	content: "\e636";
 }
 
-/*个人中心*/
 .icon-lingdang::before{
 	content: "\e685";
 }
@@ -388,7 +383,6 @@ input, select, textarea,button{
 	content: "\e66c";
 }
 
-/* 我的订单 */
 .icon-search::before{
 	content: "\e618";
 }
@@ -408,7 +402,6 @@ input, select, textarea,button{
 	content: "\e790";
 }
 
-/*我的优惠券*/
 .icon-quan1::before{
 	content: "\e64b";
 }
@@ -421,7 +414,6 @@ input, select, textarea,button{
 	content: "\e820";
 }
 
-/*账号绑定*/
 .icon-qq::before{
 	content: "\e75e";
 }
@@ -433,7 +425,6 @@ input, select, textarea,button{
 }
 
 
-/*大数据字体*/
 .icon-gongye::before{
 	content: "\e676";
 	color: #1296db;
@@ -465,14 +456,6 @@ input, select, textarea,button{
 	content: "\e655";
 	color: #048fd4;
 }
-.icon-zhiming::before{
-	content: "\e656";
-	color: #7ecffc;
-}
-.icon-tuijian::before{
-	content: "\e658";
-	color: #f785b8;
-}
 .icon-dingwei::before{
 	content: "\e659";
 }
@@ -495,7 +478,7 @@ input, select, textarea,button{
 	content: "\e6ef";
 }
 .icon-zhuda::before{
-	content: "\e671";
+	content: "\e678";
 }
 .icon-pinpai::before{
 	content: "\e6a4";
@@ -570,29 +553,40 @@ input, select, textarea,button{
 .icon-baogao::before{
 	content: "\e673";
 }
+.icon-zhiming::before{
+	content: "\e675";
+}
+.icon-tuijian::before{
+	content: "\e674";
+}
+.icon-xiangce::before{
+	content: "\e679";
+}
+.icon-laba::before{
+	content: "\e6e5";
+}
+.icon-xiangguan::before{
+	content: "\e67a";
+}
+.icon-index::before{
+	content: "\e600";
+}
 
-
-/*我的关注--订单状态*/
 .icon-shengyushijian::before{
 	content: "\e64e";
 }
-/*订单*/
 .icon-dingdan::before{
 	content: "\e60d";
 }
-/*付款*/
 .icon-pay::before{
 	content: "\e64f";
 }
-/*出库*/
 .icon-chuku::before{
 	content: "\e650";
 }
-/*收货*/
 .icon-shouhuo::before{
 	content: "\e651";
 }
-/*完成*/
 .icon-finish::before{
 	content: "\e652";
 }

@@ -1,0 +1,143 @@
+{include file="page/header" /}
+	<body>
+		<div id="big-banner">
+			<div class="swiper-container">
+			  	<div class="swiper-wrapper">
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_1.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_2.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_3.jpg" class="swiper-slide" />
+			  	</div>
+			  	<article>
+		            <!--<div class="swiper-button-prev nextBtn"></div>
+		            <div class="swiper-button-next nextBtn"></div>-->
+		        </article>
+			</div>
+		</div>
+	
+		<div class="trademarkquery">
+		    <!--查询功能-->
+		    <div class="index-header-search">
+		        <form action="/enterprise/list.html" id="enterpriseForm" method="post">
+		            <input type="text" name="keyword" placeholder="-输入您想要查询的企业,如“茅台”-" class="index-search-input" >
+		            <input type="submit" name="" value="搜　索" class="index-search-submit">
+		        </form>
+		    </div>
+		    <div class="clear"></div>
+
+	    <!--商标分类-->
+	    <div class="clear"></div>
+
+	    <div class="middle">
+	        <!--商品循环-->
+	        <ul class="trademarkquery-item dis-inline f-left ">
+	            <!--列表循环-->
+                {foreach name="companys" item="company" key="k" }
+	                <li class="f-left">
+	                    <a href="{:url('/enterprise/info/?id='.$company.id)}" target="_blank">
+	                    	<img src="{$company.enterprise_logo}" alt="">
+	                    </a>
+	                    <p>{$company.enterprise_name}</p>
+	                    <a href="{:url('/enterprise/info?id='.$company.id)}" class="dis-inline trademarkquery-item-detail " target="_blank">查看详情</a>
+	                </li>
+                {/foreach}
+	        </ul>
+
+	        <!--热度排行-->
+	        <div class="dis-inline f-right text-left" style="margin-top: 23px;">
+	            <div class="new_10">
+	                <h3>企业查询排行</h3>
+	                <ul>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=2096" target="_blank">中国贵州茅台酒厂（集团）有限责任公司<br><span>2017-05-06</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=2058" target="_blank">贵州盘江投资控股（集团）有限公司<br><span>2017-05-10</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=2202" target="_blank">贵州威门药业股份有限公司<br><span>2017-05-24</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1768" target="_blank">贵阳南明老干妈风味食品有限责任公司<br><span>2017-05-07</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1620" target="_blank">贵州老干爹食品有限公司<br><span>2017-05-06</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1879" target="_blank">贵州红林机械有限公司<br><span>2017-05-06</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1629" target="_blank">中国振华电子集团宇光电工有限公司（国营第七七一厂）<br><span>2017-05-09</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=2297" target="_blank">国药集团老来福（贵州）药业有限公司<br><span>2017-05-10</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1853" target="_blank">贵州多彩民族民间文化艺术发展有限公司<br><span>2017-05-10</span></a></li>
+	                    
+	                        <li><a href="/enterprise/detail.html?id=1840" target="_blank">贵阳济仁堂药业有限公司<br><span>2017-05-09</span></a></li>
+	                    
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clear"></div>
+
+	    <!--分页-->
+	    {$page}
+	  <!--  <div class="member_pagelist fr"><span class="page-num"><a href="javascript:void(0)" class="page-prev btn-disabled">上一页</a> <a href="" class="page-cur">1</a><a href="/enterprise/list.html?page=2" onclick="return toPage(this)">2</a><a href="/enterprise/list.html?page=3" onclick="return toPage(this)">3</a><a href="/enterprise/list.html?page=4" onclick="return toPage(this)">4</a><a href="/enterprise/list.html?page=2" class="page-next" onclick="return linkPage(this)">下一页</a> </span><span class="page-skip"><em>共<b>4</b>页&nbsp;&nbsp;到第</em><input type="tel" id="toPage" class="" value="1" onblur="this.value=this.value.replace(/[^\d]*/g, '')"> <em>页</em><a href="javascript:void(0)" class="page-btn" onclick="goPage()">确定</a></span></div><script type="text/javascript">function goPage(){ if($("#toPage").val()>4){alert("输入的页数不能大于总页数");return;}$("#enterpriseForm").attr("action", "/enterprise/list.html?page=" + $("#toPage").val()).submit();}function linkPage(obj){$("#enterpriseForm").attr("action", $(obj).attr("href")).submit();return false;}function toPage(obj){$("#enterpriseForm").attr("action", $(obj).attr("href")).submit();return false;}</script>
+	    <div class="clear"></div> -->
+		 <div class="clear"></div>
+		</div>
+
+		{include file="page/footer" /}
+	</body>
+	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 2000,//可选选项，自动滑动
+				loop : true,//环路
+				prevButton:'.swiper-button-prev',//左右按钮
+				nextButton:'.swiper-button-next',
+				pagination : '.swiper-pagination',//分页器
+				autoplayDisableOnInteraction : false,//点击后继续播放
+			});
+			$('.swiper-container').mouseenter(function(){
+				mySwiper.stopAutoplay();
+			}).mouseleave(function(){
+				mySwiper.startAutoplay();
+			});
+			$("#big-nav .nav-box li").hover(function(){
+				$(this).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$(this).siblings("li").find("a").css({'background': '#2863c8'});
+			},function(){
+				$("#big-nav .nav-box li").eq(0).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$("#big-nav .nav-box li").eq(0).siblings("li").find("a").css({'background': '#2863c8'});
+			});
+			$("#big_main .main2 .main2_center ul li").click(function(){
+				$(this).children("h5").children("i").css({
+					"fontSize": "51px",
+				});
+				$(this).siblings("li").children("h5").children("i").css({
+					"fontSize": "28px",
+				});
+				$(this).children(".name").css({"display":"inline-block","margin-top":"0"});
+				$(this).siblings("li").children(".name").css({"display":"none","margin-top":"0"});
+				$(this).children(".small").css("display", "block");
+				$(this).siblings("li").children(".small").css("display", "none");
+			})
+			$("#returnTop").hover(function(){
+				$(this).find("a").slideDown();
+			},function(){
+				$(this).find("a").slideUp();
+			});
+			$(window).scroll(function(){
+				var top = ($(document).scrollTop());
+				if(top > 840){
+					$("#returnTop").show();
+				}else if(top <= 600){
+					$("#returnTop").hide();
+				}
+			});
+			$("#header2 li:eq(1)").click(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").find("a").css("color","#055aaa");
+			})
+			
+		})
+	</script>
+</html>
