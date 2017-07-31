@@ -38,7 +38,7 @@ Route::get('product_info', 		'index/product/info');
 Route::get('region', 			'index/region/index');
 
 //企业查询
-Route::get('enterprise', 		'index/enterprise/index');
+Route::rule('enterprise', 		'index/enterprise/index');
 Route::get('enterprise/info', 	'index/enterprise/info');
 
 //商标馆

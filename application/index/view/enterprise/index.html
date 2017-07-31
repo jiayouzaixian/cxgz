@@ -17,8 +17,8 @@
 		<div class="trademarkquery">
 		    <!--查询功能-->
 		    <div class="index-header-search">
-		        <form action="/enterprise/list.html" id="enterpriseForm" method="post">
-		            <input type="text" name="keyword" placeholder="-输入您想要查询的企业,如“茅台”-" class="index-search-input" >
+		        <form action="{:url('/enterprise')}" id="enterpriseForm" method="post">
+		            <input type="text" name="keyword" placeholder="-输入您想要查询的企业,如“茅台”-" class="index-search-input" value="{$keyword}">
 		            <input type="submit" name="" value="搜　索" class="index-search-submit">
 		        </form>
 		    </div>
@@ -45,28 +45,28 @@
 	        <!--热度排行-->
 	        <div class="dis-inline f-right text-left" style="margin-top: 23px;">
 	            <div class="new_10">
-	                <h3>企业查询排行</h3>
+	                <h3>热门企业排行</h3>
 	                <ul>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=2096" target="_blank">中国贵州茅台酒厂（集团）有限责任公司<br><span>2017-05-06</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=2096')}" target="_blank">中国贵州茅台酒厂（集团）有限责任公司<br><span>2017-05-06</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=2058" target="_blank">贵州盘江投资控股（集团）有限公司<br><span>2017-05-10</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=2058')}" target="_blank">贵州盘江投资控股（集团）有限公司<br><span>2017-05-10</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=2202" target="_blank">贵州威门药业股份有限公司<br><span>2017-05-24</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=2202')}" target="_blank">贵州威门药业股份有限公司<br><span>2017-05-24</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1768" target="_blank">贵阳南明老干妈风味食品有限责任公司<br><span>2017-05-07</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1768')}" target="_blank">贵阳南明老干妈风味食品有限责任公司<br><span>2017-05-07</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1620" target="_blank">贵州老干爹食品有限公司<br><span>2017-05-06</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1620')}" target="_blank">贵州老干爹食品有限公司<br><span>2017-05-06</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1879" target="_blank">贵州红林机械有限公司<br><span>2017-05-06</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1879')}" target="_blank">贵州红林机械有限公司<br><span>2017-05-06</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1629" target="_blank">中国振华电子集团宇光电工有限公司（国营第七七一厂）<br><span>2017-05-09</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1629')}" target="_blank">中国振华电子集团宇光电工有限公司（国营第七七一厂）<br><span>2017-05-09</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=2297" target="_blank">国药集团老来福（贵州）药业有限公司<br><span>2017-05-10</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=2297')}" target="_blank">国药集团老来福（贵州）药业有限公司<br><span>2017-05-10</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1853" target="_blank">贵州多彩民族民间文化艺术发展有限公司<br><span>2017-05-10</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1853')}" target="_blank">贵州多彩民族民间文化艺术发展有限公司<br><span>2017-05-10</span></a></li>
 	                    
-	                        <li><a href="/enterprise/detail.html?id=1840" target="_blank">贵阳济仁堂药业有限公司<br><span>2017-05-09</span></a></li>
+	                        <li><a href="{:url('/enterprise/info/?id=1840')}" target="_blank">贵阳济仁堂药业有限公司<br><span>2017-05-09</span></a></li>
 	                    
 	                </ul>
 	            </div>

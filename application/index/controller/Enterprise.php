@@ -9,7 +9,14 @@ class Enterprise extends Base
     public function index()
     {
     	// $companys = Db::query('select * from cx_company  ORDER BY id DESC;');
-    	$companys = Db::table('cx_company')->paginate(20);
+        $name = input('keyword');
+        if(!empty($name)){
+            $companys = Db::table('cx_company')->where('enterprise_name', 'like', "%$name%")->paginate(20);
+            $keyword = $name;
+        }else{
+            $companys = Db::table('cx_company')->paginate(20);
+            $keyword = '';
+        }
 
         foreach($companys as $key => $value){
         	if($value['enterprise_logo']){
@@ -20,6 +27,7 @@ class Enterprise extends Base
         	$companysNew[$key] = $value;
       	}
       	$page = $companys->render();
+        $this->assign('keyword', $keyword);
       	$this->assign('companys', $companysNew);
       	$this->assign('page', $page);
 
