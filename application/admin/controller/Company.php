@@ -205,15 +205,20 @@ class Company extends Base
            'enterprise_registeraion_number' => '',
            'category'                   => $post['company_category'],
         );
-        $uploadFiles['name']        = $_FILES['company_logo']['name'];
-        $uploadFiles['type']        = $_FILES['company_logo']['type'];
-        $uploadFiles['tmp_name']    = $_FILES['company_logo']['tmp_name'];
-        $uploadFiles['size']        = $_FILES['company_logo']['size'];
-        $sourcePath = $this->upload_image_remote($uploadFiles, 'cxgz/company/logo');
-        // print_r($sourcePath);die();
-        // $image_name = explode('/', $sourcePath);
-        // $image_name = end($image_name);
-        $data['enterprise_logo'] = $sourcePath;
+        if($_FILES['company_logo']['size'] > 0 ){
+          $uploadFiles['name']        = $_FILES['company_logo']['name'];
+          $uploadFiles['type']        = $_FILES['company_logo']['type'];
+          $uploadFiles['tmp_name']    = $_FILES['company_logo']['tmp_name'];
+          $uploadFiles['size']        = $_FILES['company_logo']['size'];
+          $sourcePath = $this->upload_image_remote($uploadFiles, 'cxgz/company/logo');
+          // print_r($sourcePath);die();
+          // $image_name = explode('/', $sourcePath);
+          // $image_name = end($image_name);
+          $data['enterprise_logo'] = $sourcePath;          
+        }else{
+           $data['enterprise_logo'] = '';
+        }
+
 
 
         $result = Db::table('cx_company')->insert($data);

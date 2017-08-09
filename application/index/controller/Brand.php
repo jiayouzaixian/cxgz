@@ -7,4 +7,9 @@ class Brand
     {
         return view('index');
     }
+
+    public function info()
+    {
+        return view('info');
+    }    
 }

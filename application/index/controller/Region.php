@@ -7,4 +7,14 @@ class Region
     {
         return view('index');
     }
+
+    public function lists()
+    {
+        return view('list');
+    }
+
+    public function info()
+    {
+        return view('info');
+    }
 }

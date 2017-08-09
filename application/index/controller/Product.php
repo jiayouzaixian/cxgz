@@ -12,4 +12,9 @@ class Product
     {
         return view('info');
     }
+
+    public function ask()
+    {
+        return view('ask');
+    }
 }

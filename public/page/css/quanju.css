@@ -207,22 +207,58 @@ input, select, textarea,button{
   color: #fff;
 }
 .fenye{
-	width: 100%;
+	width: 580px;
 	overflow: hidden;
+	margin: 0 auto;
 	margin-bottom: 20px;
 }
 .fenye .pagination{
     overflow: hidden;
-    float: right;
+    font-size: 12px;
 }
 .fenye .pagination li{
 	float: left;
 	border: 1px solid #ccc;
-	margin:10px;
-	width: 20px;
-	height: 20px;
+	width: 37px;
+	height: 37px;
 	text-align: center;
-	line-height: 20px;
+	line-height: 37px;
+}
+.fenye .pagination li:first-of-type,.fenye .pagination li:last-of-type{
+	width: 72px;
+	margin: 0 5px;
+}
+.fenye .pagination li:nth-of-type(2){
+	border: none;
+	background: #e00024;
+}
+.fenye .pagination li:nth-of-type(2) a{
+	color: #fff;
+}
+.fenye .pagination .shenglue{
+	border: none;
+}
+.fenye .pagination p{
+	float: left;
+	height: 37px;
+	line-height: 37px;
+	font-size: 11px;
+	color: #b3afae;
+}
+.fenye .pagination p button{
+	border: 1px solid #b3afae;
+	background: none;
+	width: 45px;
+	height: 23px;
+	font-size: 11px;
+	color: #5d5240;
+}
+.fenye .pagination p select{
+	margin: 0 5px;
+	font-size: 9px;
+	color: #b3afae;
+	width: 37px;
+	height: 23px;
 }
 @font-face {
   font-family: 'jyzx-h5';  /* project id 210635 */

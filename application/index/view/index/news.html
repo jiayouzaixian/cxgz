@@ -1,0 +1,11 @@
+{include file="page/header" /}
+	<body style="background-color: #fff">
+
+		<div class="img" style="width: 100%; text-align: center;">
+	        {foreach name="imgs" item="img" }
+                <img src="{$Think.PAGE_PATH}img/news/{$img}" />
+            {/foreach}
+		</div>
+{include file="page/footer" /}
+	</body>
+</html>

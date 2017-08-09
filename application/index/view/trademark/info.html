@@ -1,0 +1,222 @@
+{include file="page/header" /}
+	<body>
+		<div id="big-banner">
+			<div class="swiper-container">
+			  	<div class="swiper-wrapper">
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_1.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_2.jpg" class="swiper-slide" />
+				  	<img src="{$Think.PAGE_PATH}/img/index_banner_3.jpg" class="swiper-slide" />
+			  	</div>
+			  	<article>
+		            <!--<div class="swiper-button-prev nextBtn"></div>
+		            <div class="swiper-button-next nextBtn"></div>-->
+		        </article>
+			</div>
+		</div>
+
+		<div class="company_info_wrapper"> 
+			<div class="breadcrumbs">
+		        您所在的位置：<a href="{:url('/')}" class="f-16 c-464">首页</a>
+		        › <a href="{:url('/trademark')}" class="f-16 c-464">商标馆 </a>
+		        › 商标详情
+		    </div>
+
+		    <div class="trademarkdetails-introduce">
+		        <a href="#1">
+		            <div class="trademarkdetails-base trademarkdetails-active">商标基本详情</div>
+		        </a>
+		        <a href="#2">
+		            <div class="trademarkdetails-base">商品/服务项目</div>
+		        </a>
+		        <a href="#3">
+		            <div class="trademarkdetails-base">品牌解读</div>
+		        </a>
+		        <a href="#4">
+		            <div class="trademarkdetails-base">评价列表</div>
+		        </a>
+		        <a href="#5">
+		            <div class="trademarkdetails-base">我要评价</div>
+		        </a>
+		    </div>
+
+		    <div class="trademarkdetails-middle">
+		        <!--content-left-->
+		        <div class="trademarkdetails-left f-left">
+		            <!-- 商标基本详情-->
+		            <div id="1" class="trademarkdetails-title text-left">
+		                <span class="c-206 m-r-15 dis-inline "></span>
+		                <span>商标基本详情</span>
+		            </div>
+		            <div class="trademarkdetails-basic ">
+		                <img src="{$trademark.trademark_pic}" class="" alt="" width="130">
+		                <table width="80%" class="m-l-30 dis-inline trademarkdetails-basic-information">
+		                    <tbody><tr class="text-left ">
+		                        <td class="p-8">商标名称：{$trademark.trademark_name}</td>
+		                        <td  class="p-8">初审公告日期：</td>
+		                    </tr>
+		                    <tr class="text-left ">
+		                        <td class="p-8">国际分类：科学仪器</td>
+		                        <td class="p-8">注册公告日期：</td>
+		                    </tr>
+		                    <tr class="text-left ">
+		                        <td class="p-8">申请日期:</td>
+		                        <td class="p-8">注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;册&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：{$trademark.regist_num}</td>
+		                    </tr>
+		                    <tr class="text-left ">
+		                        <td class="p-8">申&nbsp;&nbsp;请&nbsp;&nbsp;人：<a href="/enterprise/detail.html?trademark.id=55">{$trademark.apply_name}</a></td>
+		                        <td class="p-8">使&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;&nbsp;期&nbsp;&nbsp;&nbsp;限：</td>
+		                    </tr>
+		                </tbody></table>
+		            </div>
+		            <!--商品服务项目-->
+		            <div id="2" class="trademarkdetails-title m-t-15 text-left">
+		                <span class="c-206 m-r-15 dis-inline "></span>
+		                <span>商品服务项目</span>
+		            </div>
+		            <div class="trademarkdetails-basic ">
+		                <div class="p-10 text-left">
+		                    
+		                </div>
+		            </div>
+		            <!--品牌解读-->
+		            <div id="3" class="trademarkdetails-title m-t-15 text-left">
+		                <span class="c-206 m-r-15 dis-inline "></span>
+		                <span>品牌解读</span>
+		            </div>
+		            <div class="trademarkdetails-basic ">
+		                <div class="p-10 text-left">
+		                    
+		                </div>
+		            </div>
+
+		            <!--评价列表-->
+		            <div id="4" class="trademarkdetails-title m-t-15 text-left">
+		                <span class="c-206 m-r-15 dis-inline "></span>
+		                <span>评价列表</span>
+		            </div>
+		            <div class="trademarkdetails-comment ">
+		                <div id="evaluatePager"></div>
+		                <div class="clear"></div>
+		            </div>
+		            <div class="clear"></div>
+
+		            <!--我要评价-->
+		            <div id="5" class="trademarkdetails-title m-t-15 text-left">
+		                <span class="c-206 m-r-15 dis-inline "></span>
+		                <span>我要评价</span>
+		            </div>
+		            <form action="/trademark/evaluate/submit.html" method="post" id="trademarkEvaluateForm">
+		                <input type="hidden" name="">
+		                <input type="hidden" name="trademark.id" value="57"/>
+		                <div class="trademarkdetails-basic text-left">
+		                    <textarea name="content" id="content" maxlength="500" class="trademarkdetails-basic-textarea"  rows="8"></textarea>
+		                </div>
+		                <div class="f-left m-t-15 f-15 c-3a3" id="remain">还可以输入500个字符</div>
+		                <div class="f-left m-t-15 f-15 c-3a3" style="margin-left: 15px;color: red;" id="evaluatedError"></div>
+		                <input type="submit" class="f-right m-t-35 Submit-comments f-18" value="提交评论" style="margin-right: 50px;" />
+		            </form>
+		            <div class="clear"></div>
+
+
+		        </div>
+
+		        <!--content-right-->
+		        <div class="trademarkdetails-right f-right">
+		            <!--热度排行-->
+		            <br>
+		            <div class="trademarkdetails-right-heat dis-inline  text-left" style="height: auto;">
+		                <div class="heat-gz "> <span class="dis-inline m-l-10">贵州 <strong>热度排行</strong></span></div>
+		                <div class=""><span class="p-l-20 p-r-20 p-t-10 p-b-10 dis-inline">   <strong>排序</strong></span><span class="p-l-20 p-r-20 p-t-10 p-b-10 dis-inline"> <strong>商标</strong> </span><span class="p-l-30 p-r-20 p-t-10 p-b-10 dis-inline"> <strong>查询量</strong></span></div>
+		                <ul>  
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=55')}"><span class="heat-number  text-center  dis-inline heat-red">1</span><span class="heat-name dis-inline"><strong>贵控</strong></span><span class="heat-list dis-inline  ">464次</span></a></li>
+			
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=1')}"><span class="heat-number  text-center  dis-inline heat-red">2</span><span class="heat-name dis-inline"><strong>贵州茅台酒</strong></span><span class="heat-list dis-inline  ">242次</span></a></li>
+
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=56')}"><span class="heat-number  text-center  dis-inline heat-red">3</span><span class="heat-name dis-inline"><strong>双井</strong></span><span class="heat-list dis-inline  ">239次</span></a></li>
+
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=757')}"><span class="heat-number  text-center  dis-inline">4</span><span class="heat-name   dis-inline">盘江</span><span class="heat-list dis-inline  ">223次</span></a></li>
+						
+
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=58')}"><span class="heat-number  text-center  dis-inline">5</span><span class="heat-name   dis-inline">图形</span><span class="heat-list dis-inline  ">190次</span></a></li>
+
+						
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=57')}"><span class="heat-number  text-center  dis-inline">6</span><span class="heat-name   dis-inline">金福禄</span><span class="heat-list dis-inline  ">174次</span></a></li>
+
+						
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=6')}"><span class="heat-number  text-center  dis-inline">7</span><span class="heat-name   dis-inline">陶华碧老干妈</span><span class="heat-list dis-inline  ">156次</span></a></li>
+
+						
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=73')}"><span class="heat-number  text-center  dis-inline">8</span><span class="heat-name   dis-inline">老来福</span><span class="heat-list dis-inline  ">152次</span></a></li>
+						
+
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=61')}"><span class="heat-number  text-center  dis-inline">9</span><span class="heat-name   dis-inline">恤彤</span><span class="heat-list dis-inline  ">130次</span></a></li>
+
+							<li class="m-b-7"><a href="{:url('/trademark/detail?id=64')}"><span class="heat-number  text-center  dis-inline">10</span><span class="heat-name   dis-inline">黔艺宝</span><span class="heat-list dis-inline  ">128次</span></a></li>
+		                </ul>
+		            </div>
+		            
+		        </div>
+    		</div>
+    	</div>
+    	<div class="clear"></div>
+    	<br><br>
+		{include file="page/footer" /}
+	</body>
+	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 2000,//可选选项，自动滑动
+				loop : true,//环路
+				prevButton:'.swiper-button-prev',//左右按钮
+				nextButton:'.swiper-button-next',
+				pagination : '.swiper-pagination',//分页器
+				autoplayDisableOnInteraction : false,//点击后继续播放
+			});
+			$('.swiper-container').mouseenter(function(){
+				mySwiper.stopAutoplay();
+			}).mouseleave(function(){
+				mySwiper.startAutoplay();
+			});
+			$("#big-nav .nav-box li").hover(function(){
+				$(this).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$(this).siblings("li").find("a").css({'background': '#2863c8'});
+			},function(){
+				$("#big-nav .nav-box li").eq(0).find("a").css({'background': 'rgba(0,0,0, 0.5)'});
+				$("#big-nav .nav-box li").eq(0).siblings("li").find("a").css({'background': '#2863c8'});
+			});
+			$("#big_main .main2 .main2_center ul li").click(function(){
+				$(this).children("h5").children("i").css({
+					"fontSize": "51px",
+				});
+				$(this).siblings("li").children("h5").children("i").css({
+					"fontSize": "28px",
+				});
+				$(this).children(".name").css({"display":"inline-block","margin-top":"0"});
+				$(this).siblings("li").children(".name").css({"display":"none","margin-top":"0"});
+				$(this).children(".small").css("display", "block");
+				$(this).siblings("li").children(".small").css("display", "none");
+			})
+			$("#returnTop").hover(function(){
+				$(this).find("a").slideDown();
+			},function(){
+				$(this).find("a").slideUp();
+			});
+			$(window).scroll(function(){
+				var top = ($(document).scrollTop());
+				if(top > 840){
+					$("#returnTop").show();
+				}else if(top <= 600){
+					$("#returnTop").hide();
+				}
+			});
+			$("#header2 li:eq(1)").click(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").find("a").css("color","#055aaa");
+			})
+			
+		})
+	</script>
+</html>

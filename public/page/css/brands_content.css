@@ -22,8 +22,6 @@ body {
   line-height: 117px;
 }
 #header #content ul .header1 {
-  width: 100px;
-  height: 100px;
   margin-right: 10px;
 }
 #header #content ul .header1 img {
@@ -42,8 +40,8 @@ body {
 }
 #header #content ul .header2 ul li a {
   color: #055aaa;
-  margin-left: 17px;
-  margin-right: 18px;
+  /* margin-left: 17px;
+  margin-right: 18px; */
 }
 #header #content ul .header2 ul li:nth-of-type(2) {
   background: #055aaa;
@@ -126,7 +124,6 @@ body {
   background: #fff;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: 54px;
 }
 #big_main .main_left {
   float: left;

@@ -23,17 +23,32 @@
 			if(strpos($request, 'region')){
 				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/scenic_museum.css" />';
 			}
-			if(strpos($request, 'brand')){
+			if(strpos($request, 'region/list')){
+				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/scenery_list.css" />';
+			}
+			if(strpos($request, 'region/detail')){
+				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/scenery_introduce.css" />';
+			}
+			if(strpos($request, 'brand') && !strpos($request, 'detail')){
 				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/brands.css" />';
+			}
+			if(strpos($request, 'brand/detail')){
+				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/brands_content.css" />';
 			}
 			if(strpos($request, 'product') && !strpos($request, 'info')){
 				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/product_museum.css" />';
+			}
+			if(strpos($request, 'product/ask')){
+				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/inquiry_sheet.css" />';
 			}
 			if(strpos($request, 'info') && strpos($request, 'product')){
 				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/product_details.css" />';
 			}
 			if(strpos($request, 'enterprise')){
 				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/enterprise.css" />';
+			}
+			if(strpos($request, 'trademark')){
+				echo '<link rel="stylesheet" type="text/css" href="'.PAGE_PATH.'css/trademark.css" />';
 			}
 		{/php}
 	</head>
@@ -43,7 +58,7 @@
 			<div id="content">
 				<ul>
 					<li class="header1">
-						<img src="{$Think.PAGE_PATH}img/bigDta-LOGO.png" />
+						<a href="{:url('/')}"><img src="{$Think.PAGE_PATH}img/logo.png" width="230" /></a>
 					</li>
 					<li class="header2">
 						<ul id="header2">
@@ -68,16 +83,21 @@
 						</ul>
 					</li>
 					<li class="header3">
-						<select>
-							<option value="pinpai">品牌</option>
-							<option value="pinpai">品牌1</option>
-							<option value="pinpai">品牌2</option>
-						</select>
-						<input type="text" id="search" placeholder="中国茅台酒厂有限责任公司" />
-						<button><i class="jy-iconfont icon-search"></i></button>
+						<form action="{:url('/enterprise')}" id="searchForm" method="post">
+							<select id="search">
+							<!--	<option value="{:url('/brand')}">品牌</option> -->
+								<option value="{:url('/enterprise')}">企业</option>
+								<option value="{:url('/trademark')}">商标</option>
+							</select>
+							
+							<input type="text" id="search" placeholder="中国茅台酒厂有限责任公司" name="keyword" />
+							<!-- <button><i class="jy-iconfont icon-search"></i></button> -->
+							<input type="image" src="{$Think.PAGE_PATH}img/submit.jpg" style="width: 60px;" />
+							<!-- <input type="submit" name="" value="搜　索" class="index-search-submit"> -->
+		        		</form>
 					</li>
 					<li class="header4">
-						<span class="land"><i class="jy-iconfont icon-denglu"></i> <a href="http://company.jiayou9.com" target="_blank" style="color: #045bab;">登陆</a></span>　
+						<span class="land"><i class="jy-iconfont icon-denglu"></i> <a href="http://company.jiayou9.com" target="_blank" style="color: #045bab;">登录</a></span>　
 						<!-- <span class="register"><i class="jy-iconfont icon-zhuce"></i> 注册</span> -->
 					</li>
 				</ul>
@@ -96,6 +116,12 @@
 			$("#header2 li").hover(function(){
 				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
 				$(this).siblings("li").css({"background": "#fff","border-bottom": "none"}).find("a").css("color","#055aaa");
+			})
+
+			//搜索
+			$('#search').change(function(){
+				var action = $(this).val();
+				$("#searchForm").attr("action", action);
 			})
 		})
 	</script>

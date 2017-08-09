@@ -13,15 +13,138 @@
 		        </article>
 			</div>
 		</div>
-		<div id="big_main">
-			<main class="main1">
-				商标馆
-			</main>
-			
+	
+		<div class="trademarkquery">
+		    <!--查询功能-->
+		    <div class="index-header-search">
+		        <form action="{:url('/trademark')}" id="trademarkForm" method="post">
+		            <input type="text" name="keyword" placeholder="-输入您想要查询的商标,如“茅台”-" class="index-search-input" value="{$keyword}">
+		            <input type="submit" name="" value="搜　索" class="index-search-submit">
+		        </form>
+		    </div>
+		    <div class="clear"></div>
+
+		    <!--商标分类-->
+		    <div class="trademarkquery-introduce">
+				<a href="{:url('/trademark?trademark_cat=1')}"  id="china_tag" class="china-trademark-introduce {if condition='$trademark_cat == 1' }trademark-active-introduce m-r-10 {/if}" ">贵州著名商标</a>
+				<a href="{:url('/trademark?trademark_cat=2')}"  id="guizhou_tag" class="china-trademark-introduce {if condition='$trademark_cat == 2' }trademark-active-introduce m-r-10 {/if}" ">驰名商标</a>
+			</div>
+		    <div class="clear"></div>
+
+			<div class="trademarkquery-class clearfix">
+					<div class="border-right p-20 f-left">商标分类</div>
+					<a href="{:url('/trademark')}" data="0" class="p-20 f-left" style="width:auto !important;padding: 20px !important;">不限</a>
+					<div class="f-left" style="width: 1020px;position: relative;">
+						<a href="{:url('/trademark?type=1')}" data="1" class="dis-inline  p-20">第1类&nbsp;化学原料</a>
+						<a href="{:url('/trademark?type=2')}" data="2" class="dis-inline  p-20">第2类&nbsp;涂料油漆</a>
+						<a href="{:url('/trademark?type=3')}" data="3" class="dis-inline  p-20">第3类&nbsp;日化用品</a>
+						<a href="{:url('/trademark?type=4')}" data="4" class="dis-inline  p-20">第4类&nbsp;燃料油脂</a>
+						<a href="{:url('/trademark?type=5')}" data="5" class="dis-inline  p-20">第5类&nbsp;医&nbsp;&nbsp;药</a>
+						<a href="{:url('/trademark?type=6')}" data="6" class="dis-inline  p-20">第6类&nbsp;金属材料</a>
+						<a href="javascript:;" class="trademarkquery-class-more  border" id="unfold-or-pack" style="padding:8px 15px 8px 15px !important;">展开更多&gt;</a>
+
+						<a href="{:url('/trademark?type=7')}" data="7" class="p-20 dis-none">第7类&nbsp;机械设备</a>
+						<a href="{:url('/trademark?type=8')}" data="8" class="p-20 dis-none">第8类&nbsp;手工器械</a>
+						<a href="{:url('/trademark?type=9')}" data="9" class="p-20 dis-none">第9类&nbsp;科学仪器</a>
+						<a href="{:url('/trademark?type=10')}" data="10" class="p-20 dis-none">第10类&nbsp;医疗器械</a>
+						<a href="{:url('/trademark?type=11')}" data="11" class="p-20 dis-none">第11类&nbsp;灯具空调</a>
+						<a href="{:url('/trademark?type=12')}" data="12" class="p-20 dis-none">第12类&nbsp;运输工具</a>
+						<a href="{:url('/trademark?type=13')}" data="13" class="p-20 dis-none">第13类&nbsp;军火烟火</a>
+						<a href="{:url('/trademark?type=14')}" data="14" class="p-20 dis-none">第14类&nbsp;珠宝钟表</a>
+						<a href="{:url('/trademark?type=15')}" data="15" class="p-20 dis-none">第15类&nbsp;乐&nbsp;&nbsp;器</a>
+						<a href="{:url('/trademark?type=16')}" data="16" class="p-20 dis-none">第16类&nbsp;办公用品</a>
+						<a href="{:url('/trademark?type=17')}" data="17" class="p-20 dis-none">第17类&nbsp;橡胶制品</a>
+						<a href="{:url('/trademark?type=18')}" data="18" class="p-20 dis-none">第18类&nbsp;皮革皮具</a>
+						<a href="{:url('/trademark?type=19')}" data="19" class="p-20 dis-none">第19类&nbsp;建筑材料</a>
+						<a href="{:url('/trademark?type=20')}" data="20" class="p-20 dis-none">第20类&nbsp;家&nbsp;&nbsp;具</a>
+						<a href="{:url('/trademark?type=21')}" data="21" class="p-20 dis-none">第21类&nbsp;厨房洁具</a>
+						<a href="{:url('/trademark?type=22')}" data="22" class="p-20 dis-none">第22类&nbsp;绳网袋篷</a>
+						<a href="{:url('/trademark?type=23')}" data="23" class="p-20 dis-none">第23类&nbsp;纱线丝</a>
+						<a href="{:url('/trademark?type=24')}" data="24" class="p-20 dis-none">第24类&nbsp;布料床单</a>
+						<a href="{:url('/trademark?type=25')}" data="25" class="p-20 dis-none">第25类&nbsp;服装鞋帽</a>
+						<a href="{:url('/trademark?type=26')}" data="26" class="p-20 dis-none">第26类&nbsp;纽扣拉链</a>
+						<a href="{:url('/trademark?type=27')}" data="27" class="p-20 dis-none">第27类&nbsp;地毯席垫</a>
+						<a href="{:url('/trademark?type=28')}" data="28" class="p-20 dis-none">第28类&nbsp;健身器材</a>
+						<a href="{:url('/trademark?type=29')}" data="29" class="p-20 dis-none">第29类&nbsp;食&nbsp;&nbsp;品</a>
+						<a href="{:url('/trademark?type=30')}" data="30" class="p-20 dis-none">第30类&nbsp;方便食品</a>
+						<a href="{:url('/trademark?type=31')}" data="31" class="p-20 dis-none">第31类&nbsp;饲料种籽</a>
+						<a href="{:url('/trademark?type=32')}" data="32" class="p-20 dis-none">第32类&nbsp;啤酒饮料</a>
+						<a href="{:url('/trademark?type=33')}" data="33" class="p-20 dis-none">第33类&nbsp;&nbsp;&nbsp;酒</a>
+						<a href="{:url('/trademark?type=34')}" data="34" class="p-20 dis-none">第34类&nbsp;烟草烟具</a>
+						<a href="{:url('/trademark?type=35')}" data="35" class="p-20 dis-none">第35类&nbsp;广告销售</a>
+						<a href="{:url('/trademark?type=36')}" data="36" class="p-20 dis-none">第36类&nbsp;金融物管</a>
+						<a href="{:url('/trademark?type=37')}" data="37" class="p-20 dis-none">第37类&nbsp;建筑修理</a>
+						<a href="{:url('/trademark?type=38')}" data="38" class="p-20 dis-none">第38类&nbsp;通讯服务</a>
+						<a href="{:url('/trademark?type=39')}" data="39" class="p-20 dis-none">第39类&nbsp;运输储藏</a>
+						<a href="{:url('/trademark?type=40')}" data="40" class="p-20 dis-none">第40类&nbsp;材料加工</a>
+						<a href="{:url('/trademark?type=41')}" data="41" class="p-20 dis-none">第41类&nbsp;教育娱乐</a>
+						<a href="{:url('/trademark?type=42')}" data="42" class="p-20 dis-none">第42类&nbsp;网站服务</a>
+						<a href="{:url('/trademark?type=43')}" data="43" class="p-20 dis-none">第43类&nbsp;餐饮住宿</a>
+						<a href="{:url('/trademark?type=44')}" data="44" class="p-20 dis-none">第44类&nbsp;医疗园艺</a>
+						<a href="{:url('/trademark?type=45')}" data="45" class="p-20 dis-none">第45类&nbsp;社会服务</a>
+					</div>
+				</div>
+
+	    <div class="middle">
+            <!--列表循环-->
+            <ul class="trademarkquery-item dis-inline f-left ">
+	                {foreach name="trademarks" item="trademark" key="k" }
+		                <li class="f-left">
+		                    <a href="{:url('/trademark/detail/?id='.$trademark.id)}" target="_blank">
+		                    	<img src="{$trademark.trademark_pic}" alt="">
+		                    </a>
+		                    <p>{$trademark.trademark_name}</p>
+		                    <a href="{:url('/trademark/detail?id='.$trademark.id)}" class="dis-inline trademarkquery-item-detail " target="_blank">查看详情</a>
+		                </li>
+	                {/foreach}
+                </ul>
+	        
+	        
+	       
+
+	        <!--热度排行-->
+	            <div class="heat dis-inline f-right text-left" style="height: auto;">
+					<div class="heat-gz "> <span class="dis-inline m-l-10">贵州 <strong>热度排行</strong></span></div>
+					<div class=""><span class="p-l-20 p-r-20 p-t-10 p-b-10 dis-inline">   <strong>排序</strong></span><span class="p-l-20 p-r-20 p-t-10 p-b-10 dis-inline"> <strong>商标</strong> </span><span class="p-l-30 p-r-20 p-t-10 p-b-10 dis-inline"> <strong>查询量</strong></span></div>
+					<ul>							
+							
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=55')}"><span class="heat-number  text-center  dis-inline heat-red">1</span><span class="heat-name dis-inline"><strong>贵控</strong></span><span class="heat-list dis-inline  ">464次</span></a></li>
+	
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=1')}"><span class="heat-number  text-center  dis-inline heat-red">2</span><span class="heat-name dis-inline"><strong>贵州茅台酒</strong></span><span class="heat-list dis-inline  ">242次</span></a></li>
+
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=56')}"><span class="heat-number  text-center  dis-inline heat-red">3</span><span class="heat-name dis-inline"><strong>双井</strong></span><span class="heat-list dis-inline  ">239次</span></a></li>
+
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=757')}"><span class="heat-number  text-center  dis-inline">4</span><span class="heat-name   dis-inline">盘江</span><span class="heat-list dis-inline  ">223次</span></a></li>
+				
+
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=58')}"><span class="heat-number  text-center  dis-inline">5</span><span class="heat-name   dis-inline">图形</span><span class="heat-list dis-inline  ">190次</span></a></li>
+
+				
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=57')}"><span class="heat-number  text-center  dis-inline">6</span><span class="heat-name   dis-inline">金福禄</span><span class="heat-list dis-inline  ">174次</span></a></li>
+
+				
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=6')}"><span class="heat-number  text-center  dis-inline">7</span><span class="heat-name   dis-inline">陶华碧老干妈</span><span class="heat-list dis-inline  ">156次</span></a></li>
+
+				
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=73')}"><span class="heat-number  text-center  dis-inline">8</span><span class="heat-name   dis-inline">老来福</span><span class="heat-list dis-inline  ">152次</span></a></li>
+				
+
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=61')}"><span class="heat-number  text-center  dis-inline">9</span><span class="heat-name   dis-inline">恤彤</span><span class="heat-list dis-inline  ">130次</span></a></li>
+
+					<li class="m-b-7"><a href="{:url('/trademark/detail?id=64')}"><span class="heat-number  text-center  dis-inline">10</span><span class="heat-name   dis-inline">黔艺宝</span><span class="heat-list dis-inline  ">128次</span></a></li>
+																								
+					</ul>
+				</div>
+	        </div>
+	    	<div class="clear"></div>
+
+	    <!--分页-->
+	    {$page}
+	  <!--  <div class="member_pagelist fr"><span class="page-num"><a href="javascript:void(0)" class="page-prev btn-disabled">上一页</a> <a href="" class="page-cur">1</a><a href="/enterprise/list.html?page=2" onclick="return toPage(this)">2</a><a href="/enterprise/list.html?page=3" onclick="return toPage(this)">3</a><a href="/enterprise/list.html?page=4" onclick="return toPage(this)">4</a><a href="/enterprise/list.html?page=2" class="page-next" onclick="return linkPage(this)">下一页</a> </span><span class="page-skip"><em>共<b>4</b>页&nbsp;&nbsp;到第</em><input type="tel" id="toPage" class="" value="1" onblur="this.value=this.value.replace(/[^\d]*/g, '')"> <em>页</em><a href="javascript:void(0)" class="page-btn" onclick="goPage()">确定</a></span></div><script type="text/javascript">function goPage(){ if($("#toPage").val()>4){alert("输入的页数不能大于总页数");return;}$("#enterpriseForm").attr("action", "/enterprise/list.html?page=" + $("#toPage").val()).submit();}function linkPage(obj){$("#enterpriseForm").attr("action", $(obj).attr("href")).submit();return false;}function toPage(obj){$("#enterpriseForm").attr("action", $(obj).attr("href")).submit();return false;}</script>
+	    <div class="clear"></div> -->
+		 <div class="clear"></div>
 		</div>
-		<div id="returnTop">
-			<a href="#header"><i class="jy-iconfont icon-top"></a></i>
-		</div>
+
 		{include file="page/footer" /}
 	</body>
 	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -78,6 +201,26 @@
 				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
 				$(this).siblings("li").find("a").css("color","#055aaa");
 			})
+
+			//展开更多 和 收起
+			$(".trademarkquery-class a").eq(7).nextAll().removeClass("dis-inline").addClass("dis-none");
+			var onOff = true;
+			/**
+			 * 展开收起
+			 */
+			$(".trademarkquery-class-more").click(function () {
+				if (onOff) {
+					$(".trademarkquery-class a").eq(7).nextAll().removeClass("dis-none").addClass("dis-inline");
+					$(this).html("收起");
+					onOff = false;
+				} else {
+					$(".trademarkquery-class a").eq(7).nextAll().removeClass("dis-inline").addClass("dis-none");
+					$(this).html("展开更多&gt;");
+					onOff = true;
+				}
+			});
+
+
 			
 		})
 	</script>

@@ -1,0 +1,105 @@
+{include file="page/header" /}
+	<body>
+		<div class="top"><h2><i class="jy-iconfont icon-index"></i><span class="span1">　<a href="{:url('/')}">首页</a></span>　>　<span class="span2"><a href="{:url('/product')}">产品馆</a></span>　>　<span class="span4">询价单</span></h2></div>
+		<div id="big_main">
+			<h2>询价单</h2>
+			<main class="main1">
+				<div class="main1_left"><img src="{$Think.PAGE_PATH}img/tuijian18.png" /></div>
+				<div class="main1_right">兰馨 2017新茶绿茶春茶贵州茶叶 特级耐泡明前雀舌120g湄潭翠芽礼盒装</div>
+			</main>
+			<main class="main2">
+				<table border="0" cellspacing="" cellpadding="">
+					<tr>
+						<th>数量：</th>
+						<td><input type="text" class="number" /></td>
+					</tr>
+					<tr>
+						<th>报价要求：</th>
+						<td>
+							<input type="text" class="requirement" /><br />
+							<input type="radio" class="radio1" />　含税价　　
+							<input type="radio" class="radio2" />　含增值税&运费
+						</td>
+					</tr>
+					<tr>
+						<th>期望交付日期：</th>
+						<td>下单后<input type="text" class="days" />天内交付</td>
+					</tr>
+					<tr>
+						<th>收货地：</th>
+						<td><input type="text" class="address" /></td>
+					</tr>
+					<tr>
+						<th>交易方式：</th>
+						<td>
+							<input type="radio" class="radio3" />　现款交易　　
+							<input type="radio" class="radio4" />　账期支付　　
+							<input type="radio" class="radio5" />　其他<br />
+							<input type="radio" class="radio6" />　增值税发票　
+							<input type="radio" class="radio7" />　普通发票　　
+							<input type="radio" class="radio8" />　不要发票
+							
+						</td>
+					</tr>
+					<tr>
+						<th>补充：</th>
+						<td><textarea name="" rows="" cols=""></textarea></td>
+					</tr>
+				</table>
+			</main>
+			<main class="main3">
+				<table border="0" cellspacing="" cellpadding="">
+					<tr>
+						<th>询价方式：</th>
+						<td>
+							<input type="radio" class="radio9" />　只允许我咨询的供应商报价　　　
+							<input type="radio" class="radio10" />　对平台多有供应商公开询价
+						</td>
+					</tr>
+					<tr>
+						<th>联系人：</th>
+						<td><input type="text" class="name" /></td>
+					</tr>
+					<tr>
+						<th>电话：</th>
+						<td><input type="tel" class="tel" /></td>
+					</tr>
+				</table>
+				<button class="release">发布</button>
+			</main>
+		</div>
+		<div id="returnTop">
+			<a href="#header"><i class="jy-iconfont icon-top"></a></i>
+		</div>
+		
+		{include file="page/footer" /}
+	</body>
+	<script src="{$Think.PAGE_PATH}js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{$Think.PAGE_PATH}js/jquery.raty.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#header2 li").click(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").find("a").css("color","#055aaa");
+			})
+			$("#header2 li").hover(function(){
+				$(this).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$(this).siblings("li").css({"background": "#fff","border-bottom": "none"}).find("a").css("color","#055aaa");
+			},function(){
+				$("#header2 li").eq(0).css({"background": "#055aaa","border-bottom": "5px solid #de0122"}).find("a").css("color","#fff");
+				$("#header2 li").eq(0).siblings("li").css({"background": "#fff","border-bottom": "none"}).find("a").css("color","#055aaa");
+			})
+			$(window).scroll(function(){
+				var top = ($(document).scrollTop());
+				if(top > 840){
+					$("#returnTop").show();
+				}else if(top <= 600){
+					$("#returnTop").hide();
+				}
+			});
+			
+		})
+	</script>
+</html>

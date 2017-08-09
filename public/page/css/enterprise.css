@@ -8,7 +8,7 @@ table {border-collapse: collapse;border-spacing: 0;}
 textarea {resize: none;}
 a {text-decoration: none;}
 a:hover {text-decoration: none;}
-img {border-style: none;border-width: 0;vertical-align: top;}
+img {border-style: none;border-width: 0;}
 
 /*公用*/
 .fl {float: left;}
